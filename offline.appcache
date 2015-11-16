@@ -1,0 +1,51 @@
+CACHE MANIFEST
+# version 1
+
+# Explicitly cached 'master entries'.
+CACHE:
+app/css/materialize.css
+app/css/materialize.min.css
+app/css/style.css
+app/css/fonts.css
+app/font/material-design-icons/Material-Design-Icons.eot
+app/font/material-design-icons/Material-Design-Icons.svg
+app/font/material-design-icons/Material-Design-Icons.ttf
+app/font/material-design-icons/Material-Design-Icons.woff
+app/font/material-design-icons/Material-Design-Icons.woff2
+app/font/roboto/Roboto-Bold.ttf
+app/font/roboto/Roboto-Bold.woff
+app/font/roboto/Roboto-Bold.woff2
+app/font/roboto/Roboto-Medium.ttf
+app/font/roboto/Roboto-Medium.woff
+app/font/roboto/Roboto-Medium.woff2
+app/font/roboto/Roboto-Regular.ttf
+app/font/roboto/Roboto-Regular.woff
+app/font/roboto/Roboto-Regular.woff2
+app/font/roboto/Roboto-Light.ttf
+app/font/roboto/Roboto-Light.woff
+app/font/roboto/Roboto-Light.woff2
+app/font/roboto/Roboto-Thin.ttf
+app/font/roboto/Roboto-Thin.woff
+app/font/roboto/Roboto-Thin.woff2
+app/font/material-design-icons/icons.woff2
+app/image/SGN-Logo.png
+app/image/camera.png
+app/image/takephoto.png
+app/js/javascript.js
+app/js/materialize.js
+app/js/materialize.min.js
+app/js/jquery.min.js
+app/js/parse-1.6.7.js
+app/js/offline.min.js
+app/js/index.js
+offline.appcache
+index.html
+
+
+# offline.html will be displayed if the user is offline
+FALLBACK:
+index.html
+
+# All other resources (e.g. sites) require the user to be online. 
+NETWORK:
+*

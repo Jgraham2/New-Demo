@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" manifest="offline.appcache">
+    
+<head>
+    <link rel="shortcut icon" href="">
+<!--  Scripts-->
+<script type="text/javascript" src="app/js/index.js"></script>
+<script type="text/javascript" src="app/js/offline.min.js"></script>
+<script type="text/javascript" src="app/js/jquery.min.js"></script>
+<script type="text/javascript" src="app/js/parse-1.6.7.js"></script>
+<script type="text/javascript" src="app/js/javascript.js"></script>
+<script type="text/javascript" src="app/js/materialize.js"></script>
+<script type="text/javascript" src="app/js/materialize.min.js"></script>
+
+<!-- CSS  -->
+<link href="app/css/materialize.css" type="text/css" rel="stylesheet" />
+<link href="app/css/materialize.min.css" type="text/css" rel="stylesheet" />
+<link href="app/css/style.css" type="text/css" rel="stylesheet"/>
+<link href="app/css/fonts.css" type="text/css" rel="stylesheet"/>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  
+    <title>Web Application</title>
+    
+</head>
+
+<body>
+    <script>
+   $('.side-nav').sideNav('show');
+   $('.collapsible').collapsible('hide');
+    </script>
+  <nav class="indigo darken-2 " role="navigation"> 
+      <img class="logo center" src="app/image/SGN-Logo.png" alt="logo">
+  <!-- === SideBar === -->
+  <ul id="slide-out" class="side-nav">
+    <li><a href="#!">First Sidebar Link</a></li>
+    <li><a href="#!">Second Sidebar Link</a></li>
+    <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+        <li>
+          <a class="collapsible-header">More Options<i class="mdi-navigation-arrow-drop-down"></i></a>
+          <div class="collapsible-body">
+            <ul>
+              <li><a href="#!">First option</a></li>
+              <li><a href="#!">Second option</a></li>
+              <li><a href="#!">Third option</a></li>
+              <li><a href="#!">Fourth option</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <!-- === NavBar === -->
+  <ul class="left hide-on-med-and-down">
+    <li><a href="#!">First Sidebar Link</a></li>
+    <li><a href="#!">Second Sidebar Link</a></li>
+    <li><a class="dropdown-button" href="#!" data-activates="d1">More Options<i class="mdi-navigation-arrow-drop-down right"></i></a>
+      <ul id='d1' class='dropdown-content'>
+        <li><a href="#!">First option</a></li>
+        <li><a href="#!">Second option</a></li>
+        <li><a href="#!">Third option</a></li>
+        <li><a href="#!">Fourth option</a></li>
+      </ul>
+    </li>
+  </ul>
+  
+  <!-- === NavBar Fixed Right Side === -->
+  <ul class="right"> 
+    <li><a class="dropdown-button" href="#!" data-activates="d2">My Account<i class="mdi-navigation-arrow-drop-down right"></i></a>
+      <ul id='d2' class='dropdown-content'>
+        <li><a href="#!">Profile</a></li>
+        <li><a href="#!">Log-Out</a></li>
+      </ul>
+    </li>
+  </ul>
+  <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+  </nav>     
+<div id="online-status" class="online" style="opacity: 0;"></div>	
+<script>
+        var displayOnlineStatus = document.getElementById("online-status");
+var isOnline = function () {
+                            displayOnlineStatus.innerHTML = "Online";
+                            displayOnlineStatus.className = "online";
+                            parseSend();
+                    },
+    isOffline = function () {
+                            displayOnlineStatus.innerHTML = "Offline";
+                            displayOnlineStatus.className = "offline";
+
+                    };
+    if (window.addEventListener) {
+
+            window.addEventListener("online", isOnline);
+            window.addEventListener("offline", isOffline);
+    }
+    else {
+            document.body.ononline = isOnline;
+            document.body.onoffline = isOffline;
+    }
+    if(navigator.onLine) {
+        checkOnLoad: true,
+        isOnline();
+    } else {
+        checkOnLoad: false,
+        isOffine();
+    }  
+</script>
+<div class="section no-pad-bot" id="index-banner">
+  <div class="container">
+    <h1 class="header center orange-text text-darken-2">SGN Gas Inspection Form</h1>
+    <div class="row center">
+<!--      <h5 class="header col s12 light"></h5>-->
+    </div>
+  </div>
+</div>
+
+<div class="input-field col s12"> 
+    <form class="container" id="form" data-parsley-validate >
+    <h3></h3>
+  
+     <div class="input-field col s6">
+          <input id="name" type="text" class="validate">
+          <label for="name">Audit Name</label>
+     </div>
+    
+  <div class="input-field col s6">
+          <input id="input1" type="text" class="validate">
+          <label for="input1">Auditor Name</label>
+     </div>
+    
+  <script> $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  });</script>
+  
+  <p>Date of Audit</p> 
+          <input type="date" id="datepicked" class="datepicker">
+  
+  <div class="input-field col s6">
+          <input type="text" id="input2" type="text">
+          <label for="input2">Question1?</label>
+     </div>
+
+  <div class="input-field col s6">
+          <input type="text" id="input3" type="text">
+          <label for="input3">Question2?</label>
+     </div>
+
+  <div class="input-field col s6">
+            <textarea class="materialize-textarea"  rows="8" cols="0" id="input4" ></textarea>
+          <label for="input4">What was your thoughts upon arrival?</label>
+     </div>
+  <div class="input-field col s6">
+            <textarea class="materialize-textarea"  rows="8" cols="0" id="input5" ></textarea>
+          <label for="input5">What else did you do?</label>
+     </div>
+  <div class="input-field col s6">
+            <textarea class="materialize-textarea"  rows="8" cols="0" id="input6" ></textarea>
+          <label for="input6">What happened when you left?</label>
+     </div>
+  
+  <p>Will the area need any of the below? (check all that apply)</p>
+  
+  <p>
+      <input type="checkbox" class="filled-in" id="box1"  />
+      <label for="box1">1</label>
+    </p>
+   <p>
+      <input type="checkbox" class="filled-in" id="box2" />
+      <label for="box2">2</label>
+    </p>
+   <p>
+      <input type="checkbox" class="filled-in" id="box3"  />
+      <label for="box3">3</label>
+    </p>
+   <p>
+      <input type="checkbox" class="filled-in" id="box4" />
+      <label for="box4">4</label>
+    </p>
+   <p>
+      <input type="checkbox" class="filled-in" id="box5" />
+      <label for="box5">5</label>
+    </p>
+
+    <p>What colour will you use?</p>
+    
+     <p>
+      <input name="group1" type="radio" id="test1" />
+      <label for="test1">Red</label>
+    </p>
+    <p>
+      <input name="group1" type="radio" id="test2" />
+      <label for="test2">Yellow</label>
+    </p>
+    <p>
+      <input name="group1" type="radio" id="test3"  />
+      <label for="test3">Green</label>
+    </p>
+      <p>
+        <input name="group1" type="radio" id="test4" />
+        <label for="test4">Brown</label>
+    </p>
+       <br>
+   
+   <p class="range-field">
+       On a scale of 0 to 10 (10 = High, 0 = Low) what would you choose?
+      <input type="range" id="range1" min="0" max="10" />
+    </p>  
+    <br>
+
+        <div id="photos" class="column">
+            <div class="col s12 m6">
+                <div class="card grey lighten-4">
+                    <div class="card-content">
+                        <center>
+                        <span class="card-title black-text">Photos</span>
+                            <div id="photos-content">
+                                <video id="video" style="display: none;" autoplay></video>
+                                <a class="btn waves-effect waves-light indigo darken-1" id="new" href="#photos" onclick="openCamera();"><img src="app/image/camera.png"></a>
+                                <a class="btn waves-effect waves-light indigo darken-1" id="snap" href="#photos" style="display: none;" onclick="takePhoto();"><img src="app/image/camera.png"></a>
+                                <!-- <a class="waves-effect waves-light btn" id="switch" href="#photos" style="display: none;" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>-->
+                                <br>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="btn-large waves-effect waves-light indigo darken-1" id="form-submit" onclick="post()" >Submit</a>
+
+    </form>
+</div>
+<br><br>
+<div class="section"></div>
+</div>
+
+<footer class="page-footer orange">
+    <div class="container"></div>
+</footer>
+
+</body>
+</html>
