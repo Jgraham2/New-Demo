@@ -135,9 +135,6 @@ var isOnline = function () {
     selectYears: 15 // Creates a dropdown of 15 years to control year
   });</script>
   
-  <p>Date of Audit</p> 
-          <input type="date" id="datepicked" class="datepicker">
-  
   <div class="input-field col s6">
           <input type="text" id="input2" type="text">
           <label for="input2">Question1?</label>
@@ -161,12 +158,14 @@ var isOnline = function () {
           <label for="input6">What happened when you left?</label>
      </div>
   
+  
   <p>Will the area need any of the below? (check all that apply)</p>
   
   <p>
-      <input type="checkbox" class="filled-in" id="box1" value="1" />
+      <input type="checkbox" name="boxone" class="filled-in" id="box1" value="1" />
       <label for="box1">1</label>
     </p>
+    
    <p>
       <input type="checkbox" class="filled-in" id="box2" value="2"/>
       <label for="box2">2</label>
