@@ -27,14 +27,23 @@
 
 <body>
     <script>
-   $('.side-nav').sideNav('show');
-   $('.button-collapse').collapsible('hide');
+$( document ).ready(function(){
+    $(".button-collapse").sideNav();
+})
+
+$( document ).ready(function(){
+  $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  });
+  })
     </script>
-  <nav class="indigo darken-2 " role="navigation"> 
-      <img class="logo center" src="app/image/SGN-Logo.png" alt="logo">
-  <!-- === NavBar === -->
-  <ul class="left hide-on-med-and-down" >
-    <li><a class="dropdown-button" href="#!" data-activates="d1">More Forms<i class="mdi-navigation-arrow-drop-down right"></i></a>
+      <nav class="indigo darken-4" role="navigation">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo"><img class="logo center" src="app/image/SGN-Logo.png" alt="logo"></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="dropdown-button" href="#!" data-activates="d1">More Forms<i class="mdi-navigation-arrow-drop-down right"></i></a>
       <ul id='d1' class='dropdown-content'>
         <li><a href="#!">First Form</a></li>
         <li><a href="#!">Second Form</a></li>
@@ -48,18 +57,30 @@
         <li><a href="#!">Tenth Form</a></li>
       </ul>
     </li>
-  </ul>
-  
-  <!-- === NavBar Fixed Right Side === -->
-  <ul class="right"> 
-    <li><a class="dropdown-button" href="#!" data-activates="d2">My Account<i class="mdi-navigation-arrow-drop-down right"></i></a>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+  <li><a class="dropdown-button" href="#!" data-activates="d2">More Forms<i class="mdi-navigation-arrow-drop-down right"></i></a>
       <ul id='d2' class='dropdown-content'>
-        <li><a href="#!">Profile</a></li>
-        <li><a href="#!">Log-Out</a></li>
+        <li><a href="#!">First Form</a></li>
+        <li><a href="#!">Second Form</a></li>
+        <li><a href="#!">Third Form</a></li>
+        <li><a href="#!">Fourth Form</a></li>
+         <li><a href="#!">Fifth Form</a></li>
+        <li><a href="#!">Sixth Form</a></li>
+        <li><a href="#!">Seventh Form</a></li>
+        <li><a href="#!">Eighth Form</a></li>
+         <li><a href="#!">Ninth Form</a></li>
+        <li><a href="#!">Tenth Form</a></li>
       </ul>
     </li>
-  </ul>
-  <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+    </div>
   </nav>     
 <div id="online-status" class="online" style="opacity: 0;"></div>	
 <script>
@@ -93,7 +114,7 @@ var isOnline = function () {
 </script>
 <div class="section no-pad-bot" id="index-banner">
   <div class="container">
-    <h3 class="header center orange-text text-darken-2">SGN Gas Inspection Form</h3>
+    <h4 class="header center orange-text text-darken-4">Plant & Maintenance Inspection Form</h4>
     <div class="row center">
 <!--      <h5 class="header col s12 light"></h5>-->
     </div>
@@ -106,12 +127,12 @@ var isOnline = function () {
   
      <div class="input-field col s6">
           <input id="name" type="text" class="validate">
-          <label for="name">Audit Name</label>
+          <label for="name">Site Location</label>
      </div>
     
   <div class="input-field col s6">
-          <input id="input1" type="text" class="validate">
-          <label for="input1">Auditor Name</label>
+          <input type="date" class="datepicker" id="input1">
+          <label for="input1">Date of Inspection</label>
      </div>
   
   <div class="input-field col s6">
@@ -210,8 +231,8 @@ var isOnline = function () {
                         <span class="card-title black-text">Photos</span>
                             <div id="photos-content">
                                 <video id="video" style="display: none;" autoplay></video>
-                                <a class="btn waves-effect waves-light indigo darken-1" id="new" href="#photos" onclick="openCamera();"><img src="app/image/camera.png"></a>
-                                <a class="btn waves-effect waves-light indigo darken-1" id="snap" href="#photos" style="display: none;" onclick="takePhoto();"><img src="app/image/camera.png"></a>
+                                <a class="btn waves-effect waves-light indigo darken-3" id="new" href="#photos" onclick="openCamera();"><img src="app/image/camera.png"></a>
+                                <a class="btn waves-effect waves-light indigo darken-3" id="snap" href="#photos" style="display: none;" onclick="takePhoto();"><img src="app/image/camera.png"></a>
                                 <!-- <a class="waves-effect waves-light btn" id="switch" href="#photos" style="display: none;" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>-->
                                 <br>
                             </div>
@@ -222,7 +243,7 @@ var isOnline = function () {
         </div>
     <br>
     <center>
-        <a class="btn-large waves-effect waves-light indigo darken-1" id="form-submit" onclick="post()" >Submit</a>
+        <a class="btn-large waves-effect waves-light indigo darken-3" id="form-submit" onclick="post()" >Submit</a>
         </center>
     </form>
 </div>
@@ -230,7 +251,7 @@ var isOnline = function () {
 <div class="section"></div>
 
 
-<footer class="page-footer orange">
+<footer class="page-footer deep-orange accent-4">
     <div class="container"></div>
 </footer>
 
