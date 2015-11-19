@@ -4,6 +4,7 @@
 <head>
     <link rel="shortcut icon" href="">
 <!--  Scripts-->
+<script type="text/javascript" src="app/js/html2canvas.js"></script>
 <script type="text/javascript" src="app/js/index.js"></script>
 <script type="text/javascript" src="app/js/offline.min.js"></script>
 <script type="text/javascript" src="app/js/jquery.min.js"></script>
@@ -11,7 +12,14 @@
 <script type="text/javascript" src="app/js/javascript.js"></script>
 <script type="text/javascript" src="app/js/materialize.js"></script>
 <script type="text/javascript" src="app/js/materialize.min.js"></script>
-
+<script type="text/javascript" src="app/js/flashcanvas.js"></script>
+<script type="text/javascript" src="app/js/jSignature.min.js"></script>
+<script type="text/javascript" src="app/js/jSignature.js"></script>
+<script type="text/javascript" src="app/js/jSignature.CompressorBase30.js"></script>
+<script type="text/javascript" src="app/js/jSignature.CompressorSVG.js"></script>
+<script type="text/javascript" src="app/js/jSignature.min.noconflict.js"></script>
+<script type="text/javascript" src="app/js/jSigUndoButton.js"></script>
+<script type="text/javascript" src="app/js/modernizr.js"></script>
 <!-- CSS  -->
 <link href="app/css/materialize.css" type="text/css" rel="stylesheet" />
 <link href="app/css/materialize.min.css" type="text/css" rel="stylesheet" />
@@ -221,6 +229,23 @@ var isOnline = function () {
             </div>
         </div>
     <br>
+   <!-- you load jquery somewhere above here ... -->
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="libs/flashcanvas.js"></script>
+	<![endif]-->
+        <div id="signatureparent">Please sign below:
+          <div id="signature">
+              <div style="padding:0 !important;margin:0 !important;width: 100% !important; height: 0 !important;margin-top:-1em !important;margin-bottom:1em !important;">
+                  <input type="button" value="Undo last stroke" style="position: absolute; display: none; top: auto; margin: 0px !important; padding: 0.5em !important; left: 435px;"><img style="position:absolute !important; top: auto; min-width:90px !important; max-width:180px !important;width:10% !important;border:none !important;padding: 0 !important;margin:0 !important;box-shadow:0 0 0 !important;" ></div>
+                <canvas style="margin: 0px; padding: 0px; border: none; height: 242px; width: 100%;" class="jSignature" width="966" height="242"></canvas><div style="padding:0 !important;margin:0 !important;width: 100% !important; height: 0 !important;margin-top:-1.5em !important;margin-bottom:1.5em !important;"></div></div></div>
+	<script src="jSignature.min.js"></script>
+	<div id="signature"></div>
+	<script>
+            $(document).ready(function() {
+	        $("#signature").jSignature()
+	    });
+	</script> 
+ 
     <center>
         <a class="btn-large waves-effect waves-light indigo darken-1" id="form-submit" onclick="post()" >Submit</a>
         </center>
