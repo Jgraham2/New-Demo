@@ -118,15 +118,26 @@ var isOnline = function () {
         isOffine();
     }  
 </script>
-<div class="section no-pad-bot" id="index-banner">
+<script>
+    $(document).ready(function(){
+    $('.collapsible').collapsible({
+      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
+  });
+</script>
+
+              <div class="section no-pad-bot" id="index-banner">
   <div class="container">
-    <h4 class="header center orange-text text-darken-4">Plant & Maintenance Inspection Form</h4>
+    <h3 class="header center orange-text text-darken-4">Plant & Maintenance Inspection Form</h3>
     <div class="row center">
 <!--      <h5 class="header col s12 light"></h5>-->
     </div>
   </div>
 </div>
-
+<ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header white"><i class="text-white"></i></div>
+      <div class="collapsible-body"><p>        
 <div class="input-field col s12"> 
     <form class="container" id="form" data-parsley-validate >
     <h3></h3>
@@ -247,36 +258,42 @@ var isOnline = function () {
                 </div>
             </div>
         </div>
-    <br>
-   <!-- you load jquery somewhere above here ... -->
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header  white"><i class=""></i></div>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+    <li>
+      <div class="collapsible-header  white"><i class=""></i></div>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+  </ul>
+<br>
+ <!-- you load jquery somewhere above here ... -->
 	<!--[if lt IE 9]>
 	<script type="text/javascript" src="libs/flashcanvas.js"></script>
 	<![endif]-->
-        <div id="signatureparent">Please sign below:
+<center><div id="signatureparent"><h5><u>Please sign below</u></h5></center>
           <div id="signature">
-              <div style="padding:0 !important;margin:0 !important;width: 100% !important; height: 0 !important;margin-top:-1em !important;margin-bottom:1em !important;">
+              <div style="padding:0 !important;margin:0 !important;width: 50% !important; height: 0 !important;margin-top:-1em !important;margin-bottom:1em !important;">
                   <input type="button" value="Undo last stroke" style="position: absolute; display: none; top: auto; margin: 0px !important; padding: 0.5em !important; left: 435px;"><img style="position:absolute !important; top: auto; min-width:90px !important; max-width:180px !important;width:10% !important;border:none !important;padding: 0 !important;margin:0 !important;box-shadow:0 0 0 !important;" ></div>
-                <canvas style="margin: 0px; padding: 0px; border: none; height: 242px; width: 100%;" class="jSignature" width="966" height="242"></canvas><div style="padding:0 !important;margin:0 !important;width: 100% !important; height: 0 !important;margin-top:-1.5em !important;margin-bottom:1.5em !important;"></div></div></div>
+                <canvas style="margin: 0px; padding: 0px; border: none; height:10px; width: 50%;" class="jSignature" width="966" height="242"></canvas><div style="padding:0 !important;margin:0 !important;width: 100% !important; height: 0 !important;margin-top:-1.5em !important;margin-bottom:1.5em !important;"></div></div></div>
 	<script src="jSignature.min.js"></script>
 	<div id="signature"></div>
 	<script>
             $(document).ready(function() {
-	        $("#signature").jSignature()
+	        $("#signature").jSignature();
 	    });
 	</script> 
- 
-    <center>
+           <center>
         <a class="btn-large waves-effect waves-light indigo darken-3" id="form-submit" onclick="post()" >Submit</a>
         </center>
     </form>
 </div>
+              
 <br><br>
 <div class="section"></div>
-
-
-<footer class="page-footer deep-orange accent-4">
-    <div class="container"></div>
-</footer>
 
 </body>
 </html>
