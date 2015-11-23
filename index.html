@@ -125,7 +125,6 @@ var isOnline = function () {
     });
   });
 </script>
-
               <div class="section no-pad-bot" id="index-banner">
   <div class="container">
     <h3 class="header center orange-text text-darken-4">Plant & Maintenance Inspection Form</h3>
@@ -134,25 +133,68 @@ var isOnline = function () {
     </div>
   </div>
 </div>
+<div class="container"> 
 <ul class="collapsible" data-collapsible="accordion">
     <li>
-      <div class="collapsible-header white"><i class="text-white"></i></div>
+      <div class="collapsible-header white"><h5>Details</h5></div>
       <div class="collapsible-body"><p>        
 <div class="input-field col s12"> 
     <form class="container" id="form" data-parsley-validate >
-    <h3></h3>
   
-     <div class="input-field col s6">
-          <input id="name" type="text" class="validate">
-          <label for="name">Site Location</label>
+        <script>
+            $(document).ready(function() {
+    $('select').material_select();
+  });
+            </script>
+        
+    <div class="input-field col s6" id="location">
+    <select style="grey-text">
+      <option value="" disabled selected >Choose Location of Inspection</option>
+      <option value="Aldershot">Aldershot</option>
+      <option value="Ashford">Ashford (Training Centre)</option>
+      <option value="Campbeltown">Campbeltown</option>
+      <option value="Coatbridge">Coatbridge</option>
+      <option value="Dundee">Dundee</option>
+      <option value="Dunfermline">Dunfermline</option>
+      <option value="East Kent">East Kent (Ashford)</option>
+      <option value="East Surrey">East Surrey (Replacement)</option>
+      <option value="Edinburgh">Edinburgh</option>
+      <option value="Glasgow">Glasgow</option>
+      <option value="Havant">Havant</option>
+      <option value="Hillington">Hillington</option>
+      <option value="Horley">Horley</option>
+      <option value="Isle of Wight">Isle of Wight</option>
+      <option value="Kent">Kent (Replacement)</option>
+      <option value="London">London (Kennington)</option>
+      <option value="London East">London East (Replacement)</option>
+      <option value="London West">London West (Replacement)</option>
+      <option value="Oban">Oban</option>
+      <option value="Oxford">Oxford</option>
+      <option value="Perth">Perth</option>
+      <option value="Poole">Poole</option>
+      <option value="Provan">Provan</option>
+      <option value="Reading">Reading</option>
+      <option value="Solent">Solent</option>
+      <option value="South Downs">South Downs (Replacement)</option>
+      <option value="Stornoway">Stornoway</option>
+      <option value="Surrey">Surrey</option>
+      <option value="Sussex">Sussex (Horsham)</option>
+      <option value="Thames Valley">Thames Valley (Replacement)</option>
+      <option value="Thatcham">Thatcham (Training Centre)</option>
+      <option value="Thurso">Thurso</option>
+      <option value="Wessex">Wessex (Replacement)</option>
+      <option value="West Kent">West Kent(St Mary's Cray)</option>
+      <option value="Wick">Wick</option>
+    </select>
+  </div>
+
+
+ <div class="input-field col s6">
+          <input type="date" class="datepicker" id="date">
+          <label for="date">Date of Inspection</label>
      </div>
-    
-  <div class="input-field col s6">
-          <input type="date" class="datepicker" id="input1">
-          <label for="input1">Date of Inspection</label>
-     </div>
-  
-  <div class="input-field col s6">
+              <br>
+ <!--  <div class="input-field col s6">
           <input type="text" id="input2" type="text">
           <label for="input2">Question1?</label>
      </div>
@@ -250,7 +292,7 @@ var isOnline = function () {
                                 <video id="video" style="display: none;" autoplay></video>
                                 <a class="btn waves-effect waves-light indigo darken-3" id="new" href="#photos" onclick="openCamera();"><i class="mdi-image-camera-alt"></i></a>
                                 <a class="btn waves-effect waves-light indigo darken-3" id="snap" href="#photos" style="display: none;" onclick="takePhoto();"><i class="mdi-image-camera-alt"></i></a>
-                                <!-- <a class="waves-effect waves-light btn" id="switch" href="#photos" style="display: none;" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>-->
+                                 <a class="waves-effect waves-light btn" id="switch" href="#photos" style="display: none;" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>
                                 <br>
                             </div>
                         </center>
@@ -258,27 +300,343 @@ var isOnline = function () {
                 </div>
             </div>
         </div>
-      </div>
+      </div>-->
     </li>
     <li>
-      <div class="collapsible-header  white"><i class=""></i></div>
-      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+        <div class="collapsible-header  white"><h5>Fire Prevention</h5></div>
+                <div class="container collapsible-body"><p>                       
+          
+         <div class="input-field col s6" id="fire1">
+    <select>
+      <option value="" disabled selected>Evacuation plan displayed and understood by all employees?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+  </div>
+                        
+    <div class="input-field col s6" id="fire2">
+    <select>
+      <option value="" disabled selected>Extinguishers in place, clearly marked for types of fire?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+  </div>
+                    
+        <div class="input-field col s6" id="fire3">
+    <select>
+      <option value="" disabled selected>Extinguishers clear of obstructions?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+  </div>
+                    
+            <div class="input-field col s6" id="fire4">
+    <select>
+      <option value="" disabled selected>Exit doors easily opened from the inside?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+  </div>
+                   
+            <div class="input-field col s6" id="fire5">
+    <select>
+      <option value="" disabled selected>Exit doors clear from obstructions?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+  </div>
+            
+                <div class="input-field col s6" id="fire6">
+    <select>
+      <option value="" disabled selected>Fire Alarms functioning correctly?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+  </div>                
+        
+          </div></li>
+    
+    <li>
+      <div class="collapsible-header  white"><h5>Building Safety</h5></div>
+              <div class="container collapsible-body"><p>
+          
+                       <div class="input-field col s6" id="building1">
+    <select>
+      <option value="" disabled selected>Floor surfaces even and uncluttered?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+  </div>
+            
+                <div class="input-field col s6" id="building2">
+    <select>
+      <option value="" disabled selected>Entry and Walkways kept clear?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+  </div>
+                  
+                <div class="input-field col s6" id="building3">
+    <select>
+      <option value="" disabled selected>Stair and Rises kept clear?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+  </div>
+               
+                <div class="input-field col s6" id="building4">
+    <select>
+      <option value="" disabled selected>Loading area clear and tidy?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+                </div>
+    
+              </div>
+    </li>
+        <li>
+      <div class="collapsible-header  white"><h5>Work Station</h5></div>
+              <div class="container collapsible-body"><p>
+          
+                    <div class="input-field col s6" id="work1">
+    <select>
+      <option value="" disabled selected>Clear of Rubbish?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+                </div>  
+                      
+                    <div class="input-field col s6" id="work2">
+    <select>
+      <option value="" disabled selected>Tools kept in safe place?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+                </div>
+                 
+                    <div class="input-field col s6" id="work3">
+    <select>
+      <option value="" disabled selected>No Damaged Tools?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+                </div>
+                  
+                    <div class="input-field col s6" id="work4">
+    <select>
+      <option value="" disabled selected>No sharp edges?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+                </div>
+                  
+                  </p></div>
     </li>
     <li>
-      <div class="collapsible-header  white"><i class=""></i></div>
-      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+      <div class="collapsible-header  white"><h5>Machines</h5></div>
+              <div class="container collapsible-body"><p>
+          
+                    <div class="input-field col s6" id="machines1">
+    <select>
+      <option value="" disabled selected>Are they kept clean?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+                </div>
+
+                    <div class="input-field col s6" id=machines2>
+    <select>
+      <option value="" disabled selected>Are the floors around machines clean and clear of obstruction?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+                </div>            
+                      
+                    <div class="input-field col s6" id="machines3">
+    <select>
+      <option value="" disabled selected>Starting and stopping devices in easy reach of operator?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+                </div>
+                  
+                    <div class="input-field col s6" id="machines4">
+    <select>
+      <option value="" disabled selected>Are operators fully trained to use the machines correctly?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+                </div>              
+                  
+                    <div class="input-field col s6" id="machines5">
+    <select>
+      <option value="" disabled selected>Safety gear being worn while operating machines?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+                </div>              
+               
+                  </p></div>
+    </li>
+        <li>
+      <div class="collapsible-header  white"><h5>Electrical Safety</h5></div>
+              <div class="container collapsible-body"><p>
+          
+                    <div class="input-field col s6" id="electric1">
+    <select>
+      <option value="" disabled selected>Safety switches installed?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+                </div>                  
+      
+                    <div class="input-field col s6" id="electric2">
+    <select>
+      <option value="" disabled selected>Switches and electrical equipment tested every 6 months?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+                </div>
+                  
+                    <div class="input-field col s6" id="electric3">
+    <select>
+      <option value="" disabled selected>No Broken plugs, leads, sockets or switches?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+                </div>  
+       
+                  </p></div>
+    </li>
+    <li>
+      <div class="collapsible-header  white"><h5>Chemical Safety</h5></div>
+              <div class="container collapsible-body"><p>
+        
+<div class="input-field col s6" id="chem1">
+    <select>
+      <option value="" disabled selected>Hazardous substance register completed and available?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+                </div>              
+                      
+    <div class="input-field col s6" id="chem2">
+    <select>
+      <option value="" disabled selected>Risk assessment completed for hazardous substances?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+                </div>     
+                  
+    <div class="input-field col s6" id="chem3">
+    <select>
+      <option value="" disabled selected>All containers labeled correctly?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+                </div>     
+                  
+    <div class="input-field col s6" id="chem4">
+    <select>
+      <option value="" disabled selected>Workers trained to handle hazardous material?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+                </div>  
+                  
+    <div class="input-field col s6" id="chem4">
+    <select>
+      <option value="" disabled selected>Is correct ventilation provided?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+                </div>   
+                  
+    <div class="input-field col s6" id="chem6">
+    <select>
+      <option value="" disabled selected>Are eye washes/showers easily accessed?</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label></label>
+                </div>                   
+                  
+                  </p></div>
     </li>
   </ul>
-<br>
+        <br>
  <!-- you load jquery somewhere above here ... -->
 	<!--[if lt IE 9]>
 	<script type="text/javascript" src="libs/flashcanvas.js"></script>
 	<![endif]-->
-<center><div id="signatureparent"><h5><u>Please sign below</u></h5></center>
+
+              <center><div id="signatureparent"><h5><u>Please print and sign below to confirm that you have completed this form accurately and to the best of your ability</u></h5></center>
+              <br>
+              <div class="container">
+              <div class="input-field col s6">
+          <input type="text" id="name" type="text" style="text-transform:uppercase">
+          <label for="input2">Full Name</label>
+     </div>
+              
           <div id="signature">
               <div style="padding:0 !important;margin:0 !important;width: 50% !important; height: 0 !important;margin-top:-1em !important;margin-bottom:1em !important;">
                   <input type="button" value="Undo last stroke" style="position: absolute; display: none; top: auto; margin: 0px !important; padding: 0.5em !important; left: 435px;"><img style="position:absolute !important; top: auto; min-width:90px !important; max-width:180px !important;width:10% !important;border:none !important;padding: 0 !important;margin:0 !important;box-shadow:0 0 0 !important;" ></div>
-                <canvas style="margin: 0px; padding: 0px; border: none; height:10px; width: 50%;" class="jSignature" width="966" height="242"></canvas><div style="padding:0 !important;margin:0 !important;width: 100% !important; height: 0 !important;margin-top:-1.5em !important;margin-bottom:1.5em !important;"></div></div></div>
+                <canvas style="margin: 0px; padding: 0px; border: none; height:0px; width: 50%;" class="jSignature" width="966" height="242"></canvas><div style="padding:0 !important;margin:0 !important;width: 100% !important; height: 0 !important;margin-top:-1.5em !important;margin-bottom:1.5em !important;"></div></div>
 	<script src="jSignature.min.js"></script>
 	<div id="signature"></div>
 	<script>
@@ -286,12 +644,14 @@ var isOnline = function () {
 	        $("#signature").jSignature();
 	    });
 	</script> 
-           <center>
+        
+<center>
         <a class="btn-large waves-effect waves-light indigo darken-3" id="form-submit" onclick="post()" >Submit</a>
         </center>
     </form>
 </div>
-              
+
+      
 <br><br>
 <div class="section"></div>
 
