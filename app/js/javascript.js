@@ -7,31 +7,42 @@
     
     function parseSend() {
         Parse.initialize("BJcCfj2UEJfZ3zCGplMcvjryobYTXgL1CnuZVxJZ", "MmFeTfIrXhwEUWK5ynHZ6GCsxgi1Ew1z4EnzKdo1");
-        var Audit = Parse.Object.extend("Audit");
+        var pmAudit = Parse.Object.extend("pmAudit");
         var data = JSON.parse(localStorage.getItem("formInput"));
         
         data.forEach (function(value) {
-            var audit = new Audit();
+            var audit = new pmAudit();
+            audit.set("Location", value.location);
+            audit.set("Date", value.date);
+            audit.set("Fire1", value.fire1);
+            audit.set("Fire2", value.fire2);
+            audit.set("Fire3", value.fire3);
+            audit.set("Fire4", value.fire4);
+            audit.set("Fire5", value.fire5);
+            audit.set("Fire6", value.fire6);
+            audit.set("Building1", value.building1);
+            audit.set("Building2", value.building2);
+            audit.set("Building3", value.building3);
+            audit.set("Building4", value.building4);
+            audit.set("Work1", value.work1);
+            audit.set("Work2", value.work2);
+            audit.set("Work3", value.work3);
+            audit.set("Work4", value.work4);
+            audit.set("Machines1", value.machines1);
+            audit.set("Machines2", value.machines2);
+            audit.set("Machines3", value.machines3);
+            audit.set("Machines4", value.machines4);
+            audit.set("Machines5", value.machines5);
+            audit.set("Electric1", value.electric1);
+            audit.set("Electric2", value.electric2);
+            audit.set("Electric3", value.electric3);
+            audit.set("Chem1", value.chem1);
+            audit.set("Chem2", value.chem2);
+            audit.set("Chem3", value.chem3);
+            audit.set("Chem4", value.chem4);
+            audit.set("Chem5", value.chem5);
+            audit.set("Chem6", value.chem6);
             audit.set("name", value.name);
-            audit.set("input1", value.input1);
-            audit.set("input2", value.input2);
-            audit.set("input3", value.input3);
-            audit.set("input4", value.input4);
-            audit.set("input5", value.input5);
-            audit.set("input6", value.input6);
-            audit.set("box1", value.box1);
-            audit.set("box2", value.box2);
-            audit.set("box3", value.box3);
-            audit.set("box4", value.box4);
-            audit.set("box5", value.box5);
-            audit.set("test1", value.test1);
-            audit.set("test2", value.test2);
-            audit.set("test3", value.test3);
-            audit.set("test4", value.test4);
-            audit.set("yes1", value.yes1);
-            audit.set("no1", value.no1);
-            audit.set("range1", value.range1);
-            audit.set("photos", value.photos);               
             audit.save({
                 success: function(){
                     localStorage.clear();
@@ -51,30 +62,48 @@
         if (jsonArray == undefined || jsonArray == null || jsonArray.length == 0){
             jsonArray = [];
         }
-        var txtName = $('#name').val();
-        var txtInputOne = $('#input1').val();
-        var txtInputTwo = $('#input2').val();
-        var txtInputThree = $('#input3').val();
-        var txtInputFour = $('#input4').val();
-        var txtInputFive = $('#input5').val(); 
-        var txtInputSix = $('#input6').val();
-        var txtBoxOne = $('#box1:checked').val();
-        var txtBoxTwo = $('#box2:checked').val();
-        var txtBoxThree = $('#box3:checked').val(); 
-        var txtBoxFour = $('#box4:checked').val();
-        var txtBoxFive = $('#box5:checked').val();
-        var txtTestOne = $('#test1:checked').val();
-        var txtTestTwo = $('#test2:checked').val(); 
-        var txtTestThree = $('#test3:checked').val();
-        var txtTestFour = $('#test4:checked').val();
-        var txtYesOne = $('#yes1:checked').val();
-        var txtNoOne = $('#no1:checked').val(); 
-        var txtRangeOne = $('#range1').val(); 
-        var txtPhotos = $('#photos').val();
         
-        var formInput = {name:txtName,input1:txtInputOne,input2:txtInputTwo,input3:txtInputThree,input4:txtInputFour,input5:txtInputFive,
-        input6:txtInputSix,box1:txtBoxOne,box2:txtBoxTwo,box3:txtBoxThree,box4:txtBoxFour,box5:txtBoxFive,test1:txtTestOne,test2:txtTestTwo,test3:txtTestThree,
-        test4:txtTestFour,yes1:txtYesOne,no1:txtNoOne,range1:txtRangeOne,photos:txtPhotos};
+        var txtLocation = $('#location:checked').val();
+        var txtDate = $('#date').val();
+        var txtFireOne = $('#fire1:checked').val();
+        var txtFireTwo = $('#fire2:checked').val();
+        var txtFireThree = $('#fire3:checked').val();
+        var txtFireFour = $('#fire4:checked').val();
+        var txtFireFive = $('#fire5:checked').val();
+        var txtFireSix = $('#fire6:checked').val();
+        var txtBuildingOne = $('#building1:checked').val();
+        var txtBuildingTwo = $('#building2:checked').val();
+        var txtBuildingThree = $('#building3:checked').val();
+        var txtBuildingFour = $('#building4:checked').val();
+        var txtWorkOne = $('#work1:checked').val();
+        var txtWorkTwo = $('#work2:checked').val();
+        var txtWorkThree = $('#work3:checked').val();
+        var txtWorkFour = $('#work4:checked').val();
+        var txtMachinesOne = $('#machines1:checked').val();
+        var txtMachinesTwo = $('#machines2:checked').val();
+        var txtMachinesThree = $('#machines3:checked').val();
+        var txtMachinesFour = $('#machines4:checked').val();
+        var txtMachinesFive = $('#machines5:checked').val();
+        var txtElectricOne = $('#electric1:checked').val();
+        var txtElectricTwo = $('#electric2:checked').val();
+        var txtElectricThree = $('#electric3:checked').val();
+        var txtChemOne = $('#chem1:checked').val();
+        var txtChemTwo= $('#chem2:checked').val();
+        var txtChemThree = $('#chem3:checked').val();
+        var txtChemFour = $('#chem4:checked').val();
+        var txtChemFive = $('#chem5:checked').val();
+        var txtChemSix = $('#chem6:checked').val();
+        var txtName = $('#name').val();
+        //var txtSignature = $('#signature').val();
+        
+        var formInput = {txtLocation:location,txtDate:date,
+            txtFireOne:fire1,txtFireTwo:fire2,txtFireThree:fire3,txtfireFour:fire4,txtFireFive:fire5,txtFireSix:fire6,
+            txtBuildingOne:building1,txtBuildingTwo:building2,txtBuilingThree:building3,txtBuildingFour:building4,
+            txtWorkOne:work1,txtWorkTwo:work2,txtWorkThree:work3,txtWorkFour:work4, 
+            txtMachinesOne:machines1,txtMachinesTwo:machines2,txtMachinesThree:machines3,txtMachinesFour:machines4,txtMachinesFive:machines5,
+            txtElectricOne:electric1,txtElectricTwo:electric2,txtElectricThree:electric3,
+            txtChemOne:chem1,txtChemTwo:chem2,txtChemThree:chem3,txtChemFour:chem4,txtChemFive:chem5,txtChemSix:chem6, 
+            txtName:name};
         jsonArray.push(formInput);
         localStorage.setItem("formInput", JSON.stringify(jsonArray));
         alert("Saved Offline!");    
