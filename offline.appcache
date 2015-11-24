@@ -38,6 +38,9 @@ app/js/jquery.min.js
 app/js/parse-1.6.7.js
 app/js/offline.min.js
 app/js/index.js
+app/js/flashcanvas.js
+app/js/flashcanvas.swf
+app/js/jSignature.js
 offline.appcache
 index.html
 

@@ -4,7 +4,6 @@
 <head>
     <link rel="shortcut icon" href="">
 <!--  Scripts-->
-<script type="text/javascript" src="app/js/html2canvas.js"></script>
 <script type="text/javascript" src="app/js/index.js"></script>
 <script type="text/javascript" src="app/js/offline.min.js"></script>
 <script type="text/javascript" src="app/js/jquery.min.js"></script>
@@ -13,7 +12,6 @@
 <script type="text/javascript" src="app/js/materialize.js"></script>
 <script type="text/javascript" src="app/js/materialize.min.js"></script>
 <script type="text/javascript" src="app/js/flashcanvas.js"></script>
-<script type="text/javascript" src="app/js/jSignature.min.js"></script>
 <script type="text/javascript" src="app/js/jSignature.js"></script>
 <script type="text/javascript" src="app/js/jSignature.CompressorBase30.js"></script>
 <script type="text/javascript" src="app/js/jSignature.CompressorSVG.js"></script>
@@ -125,6 +123,7 @@ var isOnline = function () {
     });
   });
 </script>
+<form id="form" data-parsley-validate >
               <div class="section no-pad-bot" id="index-banner">
   <div class="container">
     <h3 class="header center orange-text text-darken-4">Plant & Maintenance Inspection Form</h3>
@@ -134,12 +133,14 @@ var isOnline = function () {
   </div>
 </div>
 <div class="container"> 
+    
 <ul class="collapsible" data-collapsible="accordion">
     <li>
       <div class="collapsible-header white"><h5>Details</h5></div>
-      <div class="collapsible-body"><p>        
+      <div class="collapsible-body"><p>  
+          <div class="container">
 <div class="input-field col s12"> 
-    <form class="container" id="form" data-parsley-validate >
+   
   
         <script>
             $(document).ready(function() {
@@ -147,8 +148,8 @@ var isOnline = function () {
   });
             </script>
         
-    <div class="input-field col s6" id="location">
-    <select style="grey-text">
+    <div class="input-field col s6">
+    <select style="grey-text" id="location">
       <option value="" disabled selected >Choose Location of Inspection</option>
       <option value="Aldershot">Aldershot</option>
       <option value="Ashford">Ashford (Training Centre)</option>
@@ -301,13 +302,15 @@ var isOnline = function () {
             </div>
         </div>
       </div>-->
+ </div>
+              </div>
     </li>
     <li>
         <div class="collapsible-header  white"><h5>Fire Prevention</h5></div>
                 <div class="container collapsible-body"><p>                       
           
-         <div class="input-field col s6" id="fire1">
-    <select>
+         <div class="input-field col s6" >
+    <select id="fire1">
       <option value="" disabled selected>Evacuation plan displayed and understood by all employees?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -316,18 +319,18 @@ var isOnline = function () {
     <label></label>
   </div>
                         
-    <div class="input-field col s6" id="fire2">
-    <select>
+    <div class="input-field col s6">
+    <select id="fire2">
       <option value="" disabled selected>Extinguishers in place, clearly marked for types of fire?</option>
-      <option value="Yes">Yes</option>
-      <option value="No">No</option>
-      <option value="N/A">N/A</option>
+      <option value="Yes" id="fire2y">Yes</option>
+      <option value="No" id="fire2n">No</option>
+      <option value="N/A" id="fire2o">N/A</option>
     </select>
     <label></label>
   </div>
                     
-        <div class="input-field col s6" id="fire3">
-    <select>
+        <div class="input-field col s6">
+    <select id="fire3">
       <option value="" disabled selected>Extinguishers clear of obstructions?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -336,8 +339,8 @@ var isOnline = function () {
     <label></label>
   </div>
                     
-            <div class="input-field col s6" id="fire4">
-    <select>
+            <div class="input-field col s6">
+    <select id="fire4">
       <option value="" disabled selected>Exit doors easily opened from the inside?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -346,8 +349,8 @@ var isOnline = function () {
     <label></label>
   </div>
                    
-            <div class="input-field col s6" id="fire5">
-    <select>
+            <div class="input-field col s6">
+    <select id="fire5">
       <option value="" disabled selected>Exit doors clear from obstructions?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -356,8 +359,8 @@ var isOnline = function () {
     <label></label>
   </div>
             
-                <div class="input-field col s6" id="fire6">
-    <select>
+                <div class="input-field col s6">
+    <select id="fire6">
       <option value="" disabled selected>Fire Alarms functioning correctly?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -372,8 +375,8 @@ var isOnline = function () {
       <div class="collapsible-header  white"><h5>Building Safety</h5></div>
               <div class="container collapsible-body"><p>
           
-                       <div class="input-field col s6" id="building1">
-    <select>
+                       <div class="input-field col s6">
+    <select id="building1">
       <option value="" disabled selected>Floor surfaces even and uncluttered?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -382,8 +385,8 @@ var isOnline = function () {
     <label></label>
   </div>
             
-                <div class="input-field col s6" id="building2">
-    <select>
+                <div class="input-field col s6">
+    <select id="building2">
       <option value="" disabled selected>Entry and Walkways kept clear?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -392,8 +395,8 @@ var isOnline = function () {
     <label></label>
   </div>
                   
-                <div class="input-field col s6" id="building3">
-    <select>
+                <div class="input-field col s6">
+    <select id="building3">
       <option value="" disabled selected>Stair and Rises kept clear?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -402,8 +405,8 @@ var isOnline = function () {
     <label></label>
   </div>
                
-                <div class="input-field col s6" id="building4">
-    <select>
+                <div class="input-field col s6">
+    <select id="building4">
       <option value="" disabled selected>Loading area clear and tidy?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -418,8 +421,8 @@ var isOnline = function () {
       <div class="collapsible-header  white"><h5>Work Station</h5></div>
               <div class="container collapsible-body"><p>
           
-                    <div class="input-field col s6" id="work1">
-    <select>
+                    <div class="input-field col s6">
+    <select id="work1">
       <option value="" disabled selected>Clear of Rubbish?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -428,8 +431,8 @@ var isOnline = function () {
     <label></label>
                 </div>  
                       
-                    <div class="input-field col s6" id="work2">
-    <select>
+                    <div class="input-field col s6">
+    <select id="work2">
       <option value="" disabled selected>Tools kept in safe place?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -438,8 +441,8 @@ var isOnline = function () {
     <label></label>
                 </div>
                  
-                    <div class="input-field col s6" id="work3">
-    <select>
+                    <div class="input-field col s6">
+    <select id="work3">
       <option value="" disabled selected>No Damaged Tools?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -448,8 +451,8 @@ var isOnline = function () {
     <label></label>
                 </div>
                   
-                    <div class="input-field col s6" id="work4">
-    <select>
+                    <div class="input-field col s6">
+    <select id="work4">
       <option value="" disabled selected>No sharp edges?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -464,8 +467,8 @@ var isOnline = function () {
       <div class="collapsible-header  white"><h5>Machines</h5></div>
               <div class="container collapsible-body"><p>
           
-                    <div class="input-field col s6" id="machines1">
-    <select>
+                    <div class="input-field col s6">
+    <select id="machines1">
       <option value="" disabled selected>Are they kept clean?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -474,8 +477,8 @@ var isOnline = function () {
     <label></label>
                 </div>
 
-                    <div class="input-field col s6" id=machines2>
-    <select>
+                    <div class="input-field col s6">
+    <select id="machines2">
       <option value="" disabled selected>Are the floors around machines clean and clear of obstruction?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -484,8 +487,8 @@ var isOnline = function () {
     <label></label>
                 </div>            
                       
-                    <div class="input-field col s6" id="machines3">
-    <select>
+                    <div class="input-field col s6">
+    <select id="machines3">
       <option value="" disabled selected>Starting and stopping devices in easy reach of operator?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -494,8 +497,8 @@ var isOnline = function () {
     <label></label>
                 </div>
                   
-                    <div class="input-field col s6" id="machines4">
-    <select>
+                    <div class="input-field col s6">
+    <select id="machines4">
       <option value="" disabled selected>Are operators fully trained to use the machines correctly?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -504,8 +507,8 @@ var isOnline = function () {
     <label></label>
                 </div>              
                   
-                    <div class="input-field col s6" id="machines5">
-    <select>
+                    <div class="input-field col s6">
+    <select id="machines5">
       <option value="" disabled selected>Safety gear being worn while operating machines?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -520,8 +523,8 @@ var isOnline = function () {
       <div class="collapsible-header  white"><h5>Electrical Safety</h5></div>
               <div class="container collapsible-body"><p>
           
-                    <div class="input-field col s6" id="electric1">
-    <select>
+                    <div class="input-field col s6">
+    <select id="electric1">
       <option value="" disabled selected>Safety switches installed?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -530,8 +533,8 @@ var isOnline = function () {
     <label></label>
                 </div>                  
       
-                    <div class="input-field col s6" id="electric2">
-    <select>
+                    <div class="input-field col s6">
+    <select id="electric2">
       <option value="" disabled selected>Switches and electrical equipment tested every 6 months?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -540,8 +543,8 @@ var isOnline = function () {
     <label></label>
                 </div>
                   
-                    <div class="input-field col s6" id="electric3">
-    <select>
+                    <div class="input-field col s6">
+    <select id="electric3">
       <option value="" disabled selected>No Broken plugs, leads, sockets or switches?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -556,8 +559,8 @@ var isOnline = function () {
       <div class="collapsible-header  white"><h5>Chemical Safety</h5></div>
               <div class="container collapsible-body"><p>
         
-<div class="input-field col s6" id="chem1">
-    <select>
+<div class="input-field col s6">
+    <select id="chem1">
       <option value="" disabled selected>Hazardous substance register completed and available?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -566,8 +569,8 @@ var isOnline = function () {
     <label></label>
                 </div>              
                       
-    <div class="input-field col s6" id="chem2">
-    <select>
+    <div class="input-field col s6">
+    <select id="chem2">
       <option value="" disabled selected>Risk assessment completed for hazardous substances?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -576,8 +579,8 @@ var isOnline = function () {
     <label></label>
                 </div>     
                   
-    <div class="input-field col s6" id="chem3">
-    <select>
+    <div class="input-field col s6">
+    <select id="chem3">
       <option value="" disabled selected>All containers labeled correctly?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -586,8 +589,8 @@ var isOnline = function () {
     <label></label>
                 </div>     
                   
-    <div class="input-field col s6" id="chem4">
-    <select>
+    <div class="input-field col s6">
+    <select id="chem4">
       <option value="" disabled selected>Workers trained to handle hazardous material?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -596,8 +599,8 @@ var isOnline = function () {
     <label></label>
                 </div>  
                   
-    <div class="input-field col s6" id="chem5">
-    <select>
+    <div class="input-field col s6">
+    <select id="chem5">
       <option value="" disabled selected>Is correct ventilation provided?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -606,8 +609,8 @@ var isOnline = function () {
     <label></label>
                 </div>   
                   
-    <div class="input-field col s6" id="chem6">
-    <select>
+    <div class="input-field col s6" >
+    <select id="chem6">
       <option value="" disabled selected>Are eye washes/showers easily accessed?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -637,7 +640,6 @@ var isOnline = function () {
               <div style="padding:0 !important;margin:0 !important;width: 50% !important; height: 0 !important;margin-top:-1em !important;margin-bottom:1em !important;">
                   <input type="button" value="Undo last stroke" style="position: absolute; display: none; top: auto; margin: 0px !important; padding: 0.5em !important; left: 435px;"><img style="position:absolute !important; top: auto; min-width:90px !important; max-width:180px !important;width:10% !important;border:none !important;padding: 0 !important;margin:0 !important;box-shadow:0 0 0 !important;" ></div>
                 <canvas style="margin: 0px; padding: 0px; border: none; height:0px; width: 50%;" class="jSignature" width="966" height="242"></canvas><div style="padding:0 !important;margin:0 !important;width: 100% !important; height: 0 !important;margin-top:-1.5em !important;margin-bottom:1.5em !important;"></div></div>
-	<script src="jSignature.min.js"></script>
 	<div id="signature"></div>
 	<script>
             $(document).ready(function() {
@@ -648,9 +650,10 @@ var isOnline = function () {
 <center>
         <a class="btn-large waves-effect waves-light indigo darken-3" id="form-submit" onclick="post()" >Submit</a>
         </center>
-    </form>
+    
 </div>
 
+              </form>
       
 <br><br>
 <div class="section"></div>
