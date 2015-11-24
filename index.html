@@ -137,7 +137,7 @@ var isOnline = function () {
 <ul class="collapsible" data-collapsible="accordion">
     <li>
       <div class="collapsible-header white"><h5>Details</h5></div>
-      <div class="collapsible-body"><p>  
+      <div class="collapsible-body"><p>             
           <div class="container">
 <div class="input-field col s12"> 
    
@@ -193,8 +193,56 @@ var isOnline = function () {
  <div class="input-field col s6">
           <input type="date" class="datepicker" id="date">
           <label for="date">Date of Inspection</label>
+          
      </div>
-              <br>
+            <script> 
+                $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+  $('.modal-trigger').leanModal({
+      dismissible: true, // Modal can be dismissed by clicking outside of the modal
+      opacity: .5, // Opacity of modal background
+      in_duration: 300, // Transition in duration
+      out_duration: 200, // Transition out duration
+    }
+  )});
+           </script>
+               <!-- Modal Trigger -->
+  <a class="btn modal-trigger" href="#modal1">Modal</a>
+<!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+   <!-- Modal Trigger -->
+  <a class="btn modal-trigger" href="#modal2">Modal</a>
+<!-- Modal Structure -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+   <!-- Modal Trigger -->
+  <a class="btn modal-trigger" href="#modal3">Modal</a>
+<!-- Modal Structure -->
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+<br><br>
  <!--  <div class="input-field col s6">
           <input type="text" id="input2" type="text">
           <label for="input2">Question1?</label>
@@ -304,6 +352,7 @@ var isOnline = function () {
       </div>-->
  </div>
               </div>
+    <br>      
     </li>
     <li>
         <div class="collapsible-header  white"><h5>Fire Prevention</h5></div>
@@ -367,9 +416,49 @@ var isOnline = function () {
       <option value="N/A">N/A</option>
     </select>
     <label></label>
-  </div>                
+  </div>     
+
+               <!-- Modal Trigger -->
+  <a class="btn modal-trigger" href="#modal4">Modal</a>
+<!-- Modal Structure -->
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+   <!-- Modal Trigger -->
+  <a class="btn modal-trigger" href="#modal5">Modal</a>
+<!-- Modal Structure -->
+  <div id="modal5" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+   <!-- Modal Trigger -->
+  <a class="btn modal-trigger" href="#modal6">Modal</a>
+<!-- Modal Structure -->
+  <div id="modal6" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+<br><br>
         
-          </div></li>
+</p> </div>
+    
+    </li>
     
     <li>
       <div class="collapsible-header  white"><h5>Building Safety</h5></div>
@@ -414,8 +503,47 @@ var isOnline = function () {
     </select>
     <label></label>
                 </div>
-    
+ 
+               <!-- Modal Trigger -->
+  <a class="btn modal-trigger" href="#modal7">Modal</a>
+<!-- Modal Structure -->
+  <div id="modal7" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+   <!-- Modal Trigger -->
+  <a class="btn modal-trigger" href="#modal8">Modal</a>
+<!-- Modal Structure -->
+  <div id="modal8" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+   <!-- Modal Trigger -->
+  <a class="btn modal-trigger" href="#modal9">Modal</a>
+<!-- Modal Structure -->
+  <div id="modal9" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+<br><br> 
               </div>
+      
+ 
     </li>
         <li>
       <div class="collapsible-header  white"><h5>Work Station</h5></div>
@@ -460,8 +588,48 @@ var isOnline = function () {
     </select>
     <label></label>
                 </div>
-                  
+
+               <!-- Modal Trigger -->
+  <a class="btn modal-trigger" href="#modal10">Modal</a>
+<!-- Modal Structure -->
+  <div id="modal10" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+   <!-- Modal Trigger -->
+  <a class="btn modal-trigger" href="#modal11">Modal</a>
+<!-- Modal Structure -->
+  <div id="modal11" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+   <!-- Modal Trigger -->
+  <a class="btn modal-trigger" href="#modal12">Modal</a>
+<!-- Modal Structure -->
+  <div id="modal12" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+<br><br>               
                   </p></div>
+      
+ 
+      
     </li>
     <li>
       <div class="collapsible-header  white"><h5>Machines</h5></div>
@@ -516,8 +684,47 @@ var isOnline = function () {
     </select>
     <label></label>
                 </div>              
-               
+ 
+               <!-- Modal Trigger -->
+  <a class="btn modal-trigger" href="#modal13">Modal</a>
+<!-- Modal Structure -->
+  <div id="modal13" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+   <!-- Modal Trigger -->
+  <a class="btn modal-trigger" href="#modal14">Modal</a>
+<!-- Modal Structure -->
+  <div id="modal14" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+   <!-- Modal Trigger -->
+  <a class="btn modal-trigger" href="#modal15">Modal</a>
+<!-- Modal Structure -->
+  <div id="modal15" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+<br><br>             
                   </p></div>
+      
+
     </li>
         <li>
       <div class="collapsible-header  white"><h5>Electrical Safety</h5></div>
@@ -552,8 +759,48 @@ var isOnline = function () {
     </select>
     <label></label>
                 </div>  
-       
+ 
+               <!-- Modal Trigger -->
+  <a class="btn modal-trigger" href="#modal16">Modal</a>
+<!-- Modal Structure -->
+  <div id="modal16" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+   <!-- Modal Trigger -->
+  <a class="btn modal-trigger" href="#modal17">Modal</a>
+<!-- Modal Structure -->
+  <div id="modal17" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+   <!-- Modal Trigger -->
+  <a class="btn modal-trigger" href="#modal18">Modal</a>
+<!-- Modal Structure -->
+  <div id="modal18" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+<br><br>      
                   </p></div>
+      
+      
+ 
     </li>
     <li>
       <div class="collapsible-header  white"><h5>Chemical Safety</h5></div>
@@ -618,8 +865,47 @@ var isOnline = function () {
     </select>
     <label></label>
                 </div>                   
-                  
+
+               <!-- Modal Trigger -->
+  <a class="btn modal-trigger" href="#modal19">Modal</a>
+<!-- Modal Structure -->
+  <div id="modal19" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+   <!-- Modal Trigger -->
+  <a class="btn modal-trigger" href="#modal20">Modal</a>
+<!-- Modal Structure -->
+  <div id="modal20" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+   <!-- Modal Trigger -->
+  <a class="btn modal-trigger" href="#modal21">Modal</a>
+<!-- Modal Structure -->
+  <div id="modal21" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+<br><br>                
                   </p></div>
+      
+ 
     </li>
   </ul>
         <br>
