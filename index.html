@@ -207,39 +207,46 @@ var isOnline = function () {
   )});
            </script>
                <!-- Modal Trigger -->
-  <a class="btn modal-trigger" href="#modal1">Modal</a>
+  <a class="btn modal-trigger" href="#modal1">Add Notes</a>
 <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
+      <h4>Notes</h4>
+      <div class="input-field col s6">
+            <textarea class="materialize-textarea"  rows="20" cols="0" id="notes1" ></textarea>
+          <label for="notes1">Please enter any additional note related to questions in this section here:</label>
+     </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
     </div>
   </div>
    <!-- Modal Trigger -->
-  <a class="btn modal-trigger" href="#modal2">Modal</a>
+  <a class="btn modal-trigger right" href="#modal2">Take Photo</a>
 <!-- Modal Structure -->
   <div id="modal2" class="modal">
     <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
+      <h4>Photos</h4>
+       <div id="photos1" class="column">
+            <div class="col s12 m6">
+                <div class="card grey lighten-4">
+                    <div class="card-content">
+                        <center>
+                            <div id="photos-content">
+                                <video id="video" style="display: none;" autoplay></video>
+                                <a class="btn indigo darken-3" id="new" href="#photos" onclick="openCamera();"><i class="mdi-image-camera-alt"></i></a>
+                                <a class="btn indigo darken-3" id="snap" href="#photos" style="display: none;" onclick="takePhoto();"><i class="mdi-image-camera-alt"></i></a>
+                                <a class="btn" id="switch" href="#photos" style="display: none;" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>
+                                <br>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
-   <!-- Modal Trigger -->
-  <a class="btn modal-trigger" href="#modal3">Modal</a>
-<!-- Modal Structure -->
-  <div id="modal3" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Back</a>
     </div>
   </div>
 <br><br>
@@ -414,47 +421,52 @@ var isOnline = function () {
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
-    </select>
+    </select>                   
     <label></label>
   </div>     
 
                <!-- Modal Trigger -->
-  <a class="btn modal-trigger" href="#modal4">Modal</a>
+  <a class="btn modal-trigger" href="#modal4">Add Notes</a>
 <!-- Modal Structure -->
   <div id="modal4" class="modal">
     <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
+      <h4>Notes</h4>
+      <div class="input-field col s6">
+            <textarea class="materialize-textarea"  rows="20" cols="0" id="notes2" ></textarea>
+          <label for="notes2">Please enter any additional note related to questions in this section here:</label>
+     </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
     </div>
   </div>
    <!-- Modal Trigger -->
-  <a class="btn modal-trigger" href="#modal5">Modal</a>
+  <a class="btn modal-trigger right" href="#modal5">Take Photo</a>
 <!-- Modal Structure -->
   <div id="modal5" class="modal">
     <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
+      <h4>Photos</h4>
+       <div id="photos2" class="column">
+            <div class="col s12 m6">
+                <div class="card grey lighten-4">
+                    <div class="card-content">
+                        <center>
+                            <div id="photos-content2">
+                                <video id="video2" style="display: none;" autoplay></video>
+                                <a class="btn indigo darken-3" id="new2" href="#photos" onclick="openCamera();"><i class="mdi-image-camera-alt"></i></a>
+                                <a class="btn indigo darken-3" id="snap2" href="#photos" style="display: none;" onclick="takePhoto();"><i class="mdi-image-camera-alt"></i></a>
+                                <a class="btn" id="switch2" href="#photos" style="display: none;" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>
+                                <br>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
   </div>
-   <!-- Modal Trigger -->
-  <a class="btn modal-trigger" href="#modal6">Modal</a>
-<!-- Modal Structure -->
-  <div id="modal6" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
+      </div>
 <br><br>
+  
         
 </p> </div>
     
@@ -505,42 +517,48 @@ var isOnline = function () {
                 </div>
  
                <!-- Modal Trigger -->
-  <a class="btn modal-trigger" href="#modal7">Modal</a>
+  <a class="btn modal-trigger" href="#modal7">Add Notes</a>
 <!-- Modal Structure -->
   <div id="modal7" class="modal">
     <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
+ <div class="modal-content">
+      <h4>Notes</h4>
+      <div class="input-field col s6">
+            <textarea class="materialize-textarea"  rows="20" cols="0" id="notes3" ></textarea>
+          <label for="notes3">Please enter any additional note related to questions in this section here:</label>
+     </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
     </div>
   </div>
+  </div>
    <!-- Modal Trigger -->
-  <a class="btn modal-trigger" href="#modal8">Modal</a>
+  <a class="btn modal-trigger right" href="#modal8">Take Photo</a>
 <!-- Modal Structure -->
   <div id="modal8" class="modal">
     <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
+      <h4>Photos</h4>
+       <div id="photos3" class="column">
+            <div class="col s12 m6">
+                <div class="card grey lighten-4">
+                    <div class="card-content">
+                        <center>
+                            <div id="photos-content3">
+                                <video id="video3" style="display: none;" autoplay></video>
+                                <a class="btn indigo darken-3" id="new3" href="#photos" onclick="openCamera();"><i class="mdi-image-camera-alt"></i></a>
+                                <a class="btn indigo darken-3" id="snap3" href="#photos" style="display: none;" onclick="takePhoto();"><i class="mdi-image-camera-alt"></i></a>
+                                <a class="btn" id="switch3" href="#photos" style="display: none;" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>
+                                <br>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
   </div>
-   <!-- Modal Trigger -->
-  <a class="btn modal-trigger" href="#modal9">Modal</a>
-<!-- Modal Structure -->
-  <div id="modal9" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
-<br><br> 
+      </div>
+<br><br>
               </div>
       
  
@@ -590,41 +608,45 @@ var isOnline = function () {
                 </div>
 
                <!-- Modal Trigger -->
-  <a class="btn modal-trigger" href="#modal10">Modal</a>
+  <a class="btn modal-trigger" href="#modal10">Add Notes</a>
 <!-- Modal Structure -->
   <div id="modal10" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
+  <div class="modal-content">
+      <h4>Notes</h4>
+      <div class="input-field col s6">
+            <textarea class="materialize-textarea"  rows="20" cols="0" id="notes4" ></textarea>
+          <label for="notes4">Please enter any additional note related to questions in this section here:</label>
+     </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
     </div>
   </div>
    <!-- Modal Trigger -->
-  <a class="btn modal-trigger" href="#modal11">Modal</a>
+  <a class="btn modal-trigger right" href="#modal11">Take Photo</a>
 <!-- Modal Structure -->
-  <div id="modal11" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
-   <!-- Modal Trigger -->
-  <a class="btn modal-trigger" href="#modal12">Modal</a>
-<!-- Modal Structure -->
-  <div id="modal12" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
+<div id="modal11" class="modal">
+   <div class="modal-content">
+      <h4>Photos</h4>
+       <div id="photos4" class="column">
+            <div class="col s12 m6">
+                <div class="card grey lighten-4">
+                    <div class="card-content">
+                        <center>
+                            <div id="photos-content4">
+                                <video id="video3" style="display: none;" autoplay></video>
+                                <a class="btn indigo darken-3" id="new4" href="#photos" onclick="openCamera();"><i class="mdi-image-camera-alt"></i></a>
+                                <a class="btn indigo darken-3" id="snap4" href="#photos" style="display: none;" onclick="takePhoto();"><i class="mdi-image-camera-alt"></i></a>
+                                <a class="btn" id="switch4" href="#photos" style="display: none;" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>
+                                <br>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+</div>
 <br><br>               
                   </p></div>
       
@@ -686,41 +708,45 @@ var isOnline = function () {
                 </div>              
  
                <!-- Modal Trigger -->
-  <a class="btn modal-trigger" href="#modal13">Modal</a>
+  <a class="btn modal-trigger" href="#modal13">Add Notes</a>
 <!-- Modal Structure -->
   <div id="modal13" class="modal">
     <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
+      <h4>Notes</h4>
+      <div class="input-field col s6">
+            <textarea class="materialize-textarea"  rows="20" cols="0" id="notes5" ></textarea>
+          <label for="notes5">Please enter any additional note related to questions in this section here:</label>
+     </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
     </div>
   </div>
    <!-- Modal Trigger -->
-  <a class="btn modal-trigger" href="#modal14">Modal</a>
+  <a class="btn modal-trigger right" href="#modal14">Take Photo</a>
 <!-- Modal Structure -->
   <div id="modal14" class="modal">
     <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
+      <h4>Photos</h4>
+       <div id="photos5" class="column">
+            <div class="col s12 m6">
+                <div class="card grey lighten-4">
+                    <div class="card-content">
+                        <center>
+                            <div id="photos-content5">
+                                <video id="video5" style="display: none;" autoplay></video>
+                                <a class="btn indigo darken-3" id="new5" href="#photos" onclick="openCamera();"><i class="mdi-image-camera-alt"></i></a>
+                                <a class="btn indigo darken-3" id="snap5" href="#photos" style="display: none;" onclick="takePhoto();"><i class="mdi-image-camera-alt"></i></a>
+                                <a class="btn" id="switch5" href="#photos" style="display: none;" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>
+                                <br>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
   </div>
-   <!-- Modal Trigger -->
-  <a class="btn modal-trigger" href="#modal15">Modal</a>
-<!-- Modal Structure -->
-  <div id="modal15" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
+ </div>     
 <br><br>             
                   </p></div>
       
@@ -761,40 +787,42 @@ var isOnline = function () {
                 </div>  
  
                <!-- Modal Trigger -->
-  <a class="btn modal-trigger" href="#modal16">Modal</a>
+  <a class="btn modal-trigger" href="#modal16">Add Notes</a>
 <!-- Modal Structure -->
   <div id="modal16" class="modal">
     <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
+      <h4>Notes</h4>
+      <div class="input-field col s6">
+            <textarea class="materialize-textarea"  rows="20" cols="0" id="notes6" ></textarea>
+          <label for="notes6">Please enter any additional note related to questions in this section here:</label>
+     </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
     </div>
   </div>
    <!-- Modal Trigger -->
-  <a class="btn modal-trigger" href="#modal17">Modal</a>
+  <a class="btn modal-trigger right" href="#modal17">Take Photo</a>
 <!-- Modal Structure -->
   <div id="modal17" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
-   <!-- Modal Trigger -->
-  <a class="btn modal-trigger" href="#modal18">Modal</a>
-<!-- Modal Structure -->
-  <div id="modal18" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
+  <h4>Photos</h4>
+       <div id="photos6" class="column">
+            <div class="col s12 m6">
+                <div class="card grey lighten-4">
+                    <div class="card-content">
+                        <center>
+                            <div id="photos-content6">
+                                <video id="video6" style="display: none;" autoplay></video>
+                                <a class="btn indigo darken-3" id="new6" href="#photos" onclick="openCamera();"><i class="mdi-image-camera-alt"></i></a>
+                                <a class="btn indigo darken-3" id="snap6" href="#photos" style="display: none;" onclick="takePhoto();"><i class="mdi-image-camera-alt"></i></a>
+                                <a class="btn" id="switch6" href="#photos" style="display: none;" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>
+                                <br>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
   </div>
 <br><br>      
                   </p></div>
@@ -867,47 +895,51 @@ var isOnline = function () {
                 </div>                   
 
                <!-- Modal Trigger -->
-  <a class="btn modal-trigger" href="#modal19">Modal</a>
+  <a class="btn modal-trigger" href="#modal19">Add Notes</a>
 <!-- Modal Structure -->
   <div id="modal19" class="modal">
     <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
+      <h4>Notes</h4>
+      <div class="input-field col s6">
+            <textarea class="materialize-textarea"  rows="20" cols="0" id="notes7" ></textarea>
+          <label for="notes7">Please enter any additional note related to questions in this section here:</label>
+     </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
     </div>
   </div>
    <!-- Modal Trigger -->
-  <a class="btn modal-trigger" href="#modal20">Modal</a>
+  <a class="btn modal-trigger right" href="#modal20">Take Photo</a>
 <!-- Modal Structure -->
   <div id="modal20" class="modal">
     <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
+      <h4>Photos</h4>
+       <div id="photos7" class="column">
+            <div class="col s12 m6">
+                <div class="card grey lighten-4">
+                    <div class="card-content">
+                        <center>
+                            <div id="photos-content7">
+                                <video id="video7" style="display: none;" autoplay></video>
+                                <a class="btn indigo darken-3" id="new7" href="#photos" onclick="openCamera();"><i class="mdi-image-camera-alt"></i></a>
+                                <a class="btn indigo darken-3" id="snap7" href="#photos" style="display: none;" onclick="takePhoto();"><i class="mdi-image-camera-alt"></i></a>
+                                <a class="btn" id="switch7" href="#photos" style="display: none;" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>
+                                <br>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
   </div>
-   <!-- Modal Trigger -->
-  <a class="btn modal-trigger" href="#modal21">Modal</a>
-<!-- Modal Structure -->
-  <div id="modal21" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
+</div>
 <br><br>                
                   </p></div>
       
  
     </li>
-  </ul>
+  </ul> 
         <br>
  <!-- you load jquery somewhere above here ... -->
 	<!--[if lt IE 9]>
