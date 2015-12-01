@@ -247,113 +247,6 @@ var isOnline = function () {
     </div>
   </div>
 <br><br>
- <!--  <div class="input-field col s6">
-          <input type="text" id="input2" type="text">
-          <label for="input2">Question1?</label>
-     </div>
-
-  <div class="input-field col s6">
-          <input type="text" id="input3" type="text">
-          <label for="input3">Question2?</label>
-     </div>
-
-  <div class="input-field col s6">
-            <textarea class="materialize-textarea"  rows="8" cols="0" id="input4" ></textarea>
-          <label for="input4">What was your thoughts upon arrival?</label>
-     </div>
-  <div class="input-field col s6">
-            <textarea class="materialize-textarea"  rows="8" cols="0" id="input5" ></textarea>
-          <label for="input5">What else did you do?</label>
-     </div>
-  <div class="input-field col s6">
-            <textarea class="materialize-textarea"  rows="8" cols="0" id="input6" ></textarea>
-          <label for="input6">What happened when you left?</label>
-     </div>
-  
-  <p>Will the area need any of the below? (check all that apply)</p>
-  
-  <p>
-      <input type="checkbox" name="boxone" class="filled-in" id="box1" value="1" />
-      <label for="box1">1</label>
-    </p>
-    
-   <p>
-      <input type="checkbox" class="filled-in" id="box2" value="2"/>
-      <label for="box2">2</label>
-    </p>
-   <p>
-      <input type="checkbox" class="filled-in" id="box3"  value="3" />
-      <label for="box3">3</label>
-    </p>
-   <p>
-      <input type="checkbox" class="filled-in" id="box4" value="4"/>
-      <label for="box4">4</label>
-    </p>
-   <p>
-      <input type="checkbox" class="filled-in" id="box5" value="5"/>
-      <label for="box5">5</label>
-    </p>
-    <br>
-    
-    <fieldset id="group1">
-    <p>What colour will you use?</p>
-    
-     <p>
-      <input name="group1" type="radio" id="test1" value="Red" />
-      <label for="test1">Red</label>
-    </p>
-    <p>
-      <input name="group1" type="radio" id="test2" value="Yellow"/>
-      <label for="test2">Yellow</label>
-    </p>
-    <p>
-      <input name="group1" type="radio" id="test3" value="Green" />
-      <label for="test3">Green</label>
-    </p>
-      <p>
-        <input name="group1" type="radio" id="test4" value="Blue"/>
-        <label for="test4">Blue</label>
-    </p>
-    </fieldset>
-       <br>
-   <fieldset id="group2">
-       <p> Yes or No?</p>
-    <p>
-      <input name="group2" type="radio" id="yes1" value="Yes" />
-      <label for="yes1">Yes</label>
-    </p>
-      <p>
-        <input name="group2" type="radio" id="no1" value="No"/>
-        <label for="no1">No</label>
-    </p>
-    </fieldset>
-       <br>
-   
-   <p class="range-field">
-       On a scale of 0 to 10 (10 = High, 0 = Low) what would you choose?
-      <input type="range" id="range1" min="0" max="10" />
-    </p>  
-    <br>
-
-        <div id="photos" class="column">
-            <div class="col s12 m6">
-                <div class="card grey lighten-4">
-                    <div class="card-content">
-                        <center>
-                        <span class="card-title black-text">Photos</span>
-                            <div id="photos-content">
-                                <video id="video" style="display: none;" autoplay></video>
-                                <a class="btn waves-effect waves-light indigo darken-3" id="new" href="#photos" onclick="openCamera();"><i class="mdi-image-camera-alt"></i></a>
-                                <a class="btn waves-effect waves-light indigo darken-3" id="snap" href="#photos" style="display: none;" onclick="takePhoto();"><i class="mdi-image-camera-alt"></i></a>
-                                 <a class="waves-effect waves-light btn" id="switch" href="#photos" style="display: none;" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>
-                                <br>
-                            </div>
-                        </center>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </div>-->
  </div>
               </div>
     <br>      
@@ -364,62 +257,62 @@ var isOnline = function () {
                     <div class="container white">
          <div class="input-field col s6" >
     <select id="fire1">
-      <option value="" disabled selected>Evacuation plan displayed and understood by all employees?</option>
+      <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+             <label for="fire1" style="font-size: medium">Evacuation plan displayed and understood by all employees?</label>
   </div>
                         
     <div class="input-field col s6">
     <select id="fire2">
-      <option value="" disabled selected>Extinguishers in place, clearly marked for types of fire?</option>
+      <option value="" disabled selected> </option>
       <option value="Yes" id="fire2y">Yes</option>
       <option value="No" id="fire2n">No</option>
       <option value="N/A" id="fire2o">N/A</option>
     </select>
-    <label></label>
+    <label for="fire2" style="font-size: medium">Extinguishers in place, clearly marked for types of fire?</label>
   </div>
                     
         <div class="input-field col s6">
     <select id="fire3">
-      <option value="" disabled selected>Extinguishers clear of obstructions?</option>
+      <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="fire3" style="font-size: medium">Extinguishers clear of obstructions?</label>
   </div>
                     
             <div class="input-field col s6">
     <select id="fire4">
-      <option value="" disabled selected>Exit doors easily opened from the inside?</option>
+      <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="fire4" style="font-size: medium">Exit doors easily opened from the inside?</label>
   </div>
                    
             <div class="input-field col s6">
     <select id="fire5">
-      <option value="" disabled selected>Exit doors clear from obstructions?</option>
+      <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="fire5" style="font-size: medium">Exit doors clear from obstructions?</label>
   </div>
             
                 <div class="input-field col s6">
     <select id="fire6">
-      <option value="" disabled selected>Fire Alarms functioning correctly?</option>
+      <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>                   
-    <label></label>
+    <label for="fire6" style="font-size: medium">Fire Alarms functioning correctly?</label>
   </div>     
 
                <!-- Modal Trigger -->
@@ -474,42 +367,42 @@ var isOnline = function () {
                   <div class="container white">        
                        <div class="input-field col s6">
     <select id="building1">
-      <option value="" disabled selected>Floor surfaces even and uncluttered?</option>
+      <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="building1" style="font-size: medium">Floor surfaces even and uncluttered?</label>
   </div>
             
                 <div class="input-field col s6">
     <select id="building2">
-      <option value="" disabled selected>Entry and Walkways kept clear?</option>
+      <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="building2" style="font-size: medium">Entry and Walkways kept clear?</label>
   </div>
                   
                 <div class="input-field col s6">
     <select id="building3">
-      <option value="" disabled selected>Stair and Rises kept clear?</option>
+      <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="building3" style="font-size: medium">Stair and Rises kept clear?</label>
   </div>
                
                 <div class="input-field col s6">
     <select id="building4">
-      <option value="" disabled selected>Loading area clear and tidy?</option>
+      <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="building4" style="font-size: medium">Loading area clear and tidy?</label>
                 </div>
  
                <!-- Modal Trigger -->
@@ -565,42 +458,42 @@ var isOnline = function () {
                   <div class="container white">
                     <div class="input-field col s6">
     <select id="work1">
-      <option value="" disabled selected>Clear of Rubbish?</option>
+      <option value="" disabled selected></option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="work1" style="font-size: medium">Clear of Rubbish?</label>
                 </div>  
                       
                     <div class="input-field col s6">
     <select id="work2">
-      <option value="" disabled selected>Tools kept in safe place?</option>
+      <option value="" disabled selected></option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="work2" style="font-size: medium">Tools kept in safe place?</label>
                 </div>
                  
                     <div class="input-field col s6">
     <select id="work3">
-      <option value="" disabled selected>No Damaged Tools?</option>
+      <option value="" disabled selected></option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="work3" style="font-size: medium">No Damaged Tools?</label>
                 </div>
                   
                     <div class="input-field col s6">
     <select id="work4">
-      <option value="" disabled selected>No sharp edges?</option>
+      <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="work4" style="font-size: medium">No sharp edges?</label>
                 </div>
 
                <!-- Modal Trigger -->
@@ -654,52 +547,52 @@ var isOnline = function () {
                   <div class="container white">
                     <div class="input-field col s6">
     <select id="machines1">
-      <option value="" disabled selected>Are they kept clean?</option>
+      <option value="" disabled selected></option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="machines1" style="font-size: medium">Are they kept clean?</label>
                 </div>
 
                     <div class="input-field col s6">
     <select id="machines2">
-      <option value="" disabled selected>Are the floors around machines clean and clear of obstruction?</option>
+      <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="machines2" style="font-size: medium">Are the floors around machines clean and clear of obstruction?</label>
                 </div>            
                       
                     <div class="input-field col s6">
     <select id="machines3">
-      <option value="" disabled selected>Starting and stopping devices in easy reach of operator?</option>
+      <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="machines3" style="font-size: medium">Starting and stopping devices in easy reach of operator?</label>
                 </div>
                   
                     <div class="input-field col s6">
     <select id="machines4">
-      <option value="" disabled selected>Are operators fully trained to use the machines correctly?</option>
+      <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="machines4" style="font-size: medium">Are operators fully trained to use the machines correctly?</label>
                 </div>              
                   
                     <div class="input-field col s6">
     <select id="machines5">
-      <option value="" disabled selected>Safety gear being worn while operating machines?</option>
+      <option value="" disabled selected></option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="machines5" style="font-size: medium">Safety gear being worn while operating machines?</label>
                 </div>              
  
                <!-- Modal Trigger -->
@@ -752,32 +645,32 @@ var isOnline = function () {
                   <div class="container white">
                     <div class="input-field col s6">
     <select id="electric1">
-      <option value="" disabled selected>Safety switches installed?</option>
+      <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="electric1" style="font-size: medium">Safety switches installed?</label>
                 </div>                  
       
                     <div class="input-field col s6">
     <select id="electric2">
-      <option value="" disabled selected>Switches and electrical equipment tested every 6 months?</option>
+      <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="electric2" style="font-size: medium">Switches and electrical equipment tested every 6 months?</label>
                 </div>
                   
                     <div class="input-field col s6">
     <select id="electric3">
-      <option value="" disabled selected>No Broken plugs, leads, sockets or switches?</option>
+      <option value="" disabled selected></option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="electric3" style="font-size: medium">No Broken plugs, leads, sockets or switches?</label>
                 </div>  
  
                <!-- Modal Trigger -->
@@ -829,62 +722,62 @@ var isOnline = function () {
         <div class="container white">
 <div class="input-field col s6">
     <select id="chem1">
-      <option value="" disabled selected>Hazardous substance register completed and available?</option>
+      <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="chem1" style="font-size: medium">Hazardous substance register completed and available?</label>
                 </div>              
                       
     <div class="input-field col s6">
     <select id="chem2">
-      <option value="" disabled selected>Risk assessment completed for hazardous substances?</option>
+      <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="chem2" style="font-size: medium">Risk assessment completed for hazardous substances?</label>
                 </div>     
                   
     <div class="input-field col s6">
     <select id="chem3">
-      <option value="" disabled selected>All containers labeled correctly?</option>
+      <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="chem3" style="font-size: medium">All containers labeled correctly?</label>
                 </div>     
                   
     <div class="input-field col s6">
     <select id="chem4">
-      <option value="" disabled selected>Workers trained to handle hazardous material?</option>
+      <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="chem4" style="font-size: medium">Workers trained to handle hazardous material?</label>
                 </div>  
                   
     <div class="input-field col s6">
     <select id="chem5">
-      <option value="" disabled selected>Is correct ventilation provided?</option>
+      <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="chem5" style="font-size: medium">Is correct ventilation provided?</label>
                 </div>   
                   
     <div class="input-field col s6" >
     <select id="chem6">
-      <option value="" disabled selected>Are eye washes/showers easily accessed?</option>
+      <option value="" disabled selected></option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label></label>
+    <label for="chem6" style="font-size: medium">Are eye washes/showers easily accessed?</label>
                 </div>                   
 
                <!-- Modal Trigger -->

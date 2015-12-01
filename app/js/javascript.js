@@ -14,6 +14,7 @@
             var audit = new pmAudit();
             audit.set("location", value.location);
             audit.set("date", value.date);
+            audit.set("notes1", value.notes1);
             audit.set("fire1", value.fire1);
             audit.set("fire2", value.fire2);
             audit.set("fire3", value.fire3);
@@ -64,6 +65,7 @@
         }  
         var txtLocation = $('#location option:selected').val();
         var txtDate = $('#date').val();
+        var txtNotesOne = $('#notes1 option:selected').val();
         var txtFireOne = $("#fire1 option:selected").attr("value");
         var txtFireTwo = $('#fire2 option:selected').val();
         var txtFireThree = $('#fire3 option:selected').val();
@@ -95,7 +97,7 @@
         var txtName = $('#name').val();
         //var txtSignature = $('#signature').val(); 
         
-        var formInput = {location:txtLocation,date:txtDate,
+        var formInput = {location:txtLocation,date:txtDate,notes1:txtNotesOne,
             fire1:txtFireOne,fire2:txtFireTwo,fire3:txtFireThree,fire4:txtFireFour,fire5:txtFireFive,fire6:txtFireSix,
             building1:txtBuildingOne,building2:txtBuildingTwo,building3:txtBuildingThree,building4:txtBuildingFour,
             work1:txtWorkOne,work2:txtWorkTwo,work3:txtWorkThree,work4:txtWorkFour, 
