@@ -116,12 +116,33 @@ var isOnline = function () {
       accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
     });
   });
+  
+  $(document).ready(function(){
+    $('select').on('change', function(){
+        var cntreq = 0;
+        var cntvals = 0;
+        $('select').each(function() {
+            if($(this).attr('required') === 'required') {
+                cntreq++;
+                if($(this).val() !== '') {
+                    cntvals++;
+                }
+            }
+        });
+        var count = (cntvals/cntreq)*100;
+        $('#percentage').empty();
+        $('#percentage').append(count+'% completed');
+    });
+});
 </script>
 <form id="form" data-parsley-validate >
               <div class="section no-pad-bot" id="index-banner">
   <div class="container">
     <h3 class="header center orange-text text-darken-4">Plant & Maintenance Inspection Form</h3>
     <div class="row center">
+        <div class="progress" >
+      <div class="determinate" id='percentage'></div>
+  </div>
 <!--      <h5 class="header col s12 light"></h5>-->
     </div>
   </div>
@@ -130,7 +151,7 @@ var isOnline = function () {
     
 <ul class="collapsible indigo darken-4" data-collapsible="accordion">
     <li>
-      <div class="collapsible-header indigo darken-4"><h5 class="white-text">Details</h5></div>
+        <div class="collapsible-header indigo darken-4"><h5 class="white-text">Details</h5></div>
       <div class="collapsible-body white"><p>             
           <div class="container white">
 <div class="input-field col s12"> 
@@ -143,7 +164,7 @@ var isOnline = function () {
             </script>
         
     <div class="input-field col s6">
-    <select style="grey-text" id="location">
+    <select style="grey-text" id="location" required="required">
       <option value="" disabled selected >Choose Location of Inspection</option>
       <option value="Aldershot">Aldershot</option>
       <option value="Ashford">Ashford (Training Centre)</option>
@@ -185,7 +206,7 @@ var isOnline = function () {
 
 
  <div class="input-field col s6">
-          <input type="date" class="datepicker" id="date">
+          <input type="date" class="datepicker" id="date" required="required">
           <label for="date">Date of Inspection</label>
           
      </div>
@@ -214,65 +235,37 @@ var isOnline = function () {
       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
     </div>
   </div>
-   <!-- Modal Trigger -->
-  <a class="btn indigo darken-3 modal-trigger right" href="#modal2">Take Photo</a>
-<!-- Modal Structure -->
-  <div id="modal2" class="modal">
-    <div class="modal-content">
-      <h4>Photos</h4>
-       <div id="photos" class="column">
-            <div class="col s12 m6">
-                <div class="card grey lighten-4">
-                    <div class="card-content">
-                        <center>
-                            <div id="photos-content">
-                                <video id="video" style="display: none;" autoplay></video>
-                                <a class="btn indigo darken-3" id="new" href="#photos" onclick="openCamera();"><i class="mdi-image-camera-alt"></i></a>
-                                <a class="btn indigo darken-3" id="snap" href="#photos" style="display: none;" onclick="takePhoto();"><i class="mdi-image-camera-alt"></i></a>
-<!--                                <a class="btn" id="switch" href="#photos" style="display: none;" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>-->
-                                <br>
-                            </div>
-                        </center>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Back</a>
-    </div>
   </div>
 <br><br>
  </div>
-              </div>
-    <br>      
+              </div>    
     </li>
     <li>
         <div class="collapsible-header indigo darken-4"><h5 class="white-text">Fire Prevention</h5></div>
                 <div class="collapsible-body white"><p>                       
                     <div class="container white">
          <div class="input-field col s6" >
-    <select id="fire1">
+    <select id="fire1" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-             <label for="fire1" style="font-size: medium">Evacuation plan displayed and understood by all employees?</label>
+             <label for="fire1" style="font-size: medium">Evacuation plan understood by all employees?</label>
   </div>
                         
     <div class="input-field col s6">
-    <select id="fire2">
+    <select id="fire2" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes" id="fire2y">Yes</option>
       <option value="No" id="fire2n">No</option>
       <option value="N/A" id="fire2o">N/A</option>
     </select>
-    <label for="fire2" style="font-size: medium">Extinguishers in place, clearly marked for types of fire?</label>
+    <label for="fire2" style="font-size: medium">Extinguishers visible and marked for types of fire?</label>
   </div>
                     
         <div class="input-field col s6">
-    <select id="fire3">
+    <select id="fire3" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -288,11 +281,11 @@ var isOnline = function () {
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label for="fire4" style="font-size: medium">Exit doors easily opened from the inside?</label>
+    <label for="fire4" style="font-size: medium">Exit doors easily opened from inside?</label>
   </div>
                    
             <div class="input-field col s6">
-    <select id="fire5">
+    <select id="fire5" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -302,7 +295,7 @@ var isOnline = function () {
   </div>
             
                 <div class="input-field col s6">
-    <select id="fire6">
+    <select id="fire6" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -325,44 +318,17 @@ var isOnline = function () {
       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
     </div>
   </div>
-   <!-- Modal Trigger -->
-  <a class="btn indigo darken-3 modal-trigger right" href="#modal5">Take Photo</a>
-<!-- Modal Structure -->
-  <div id="modal5" class="modal">
-    <div class="modal-content">
-      <h4>Photos</h4>
-       <div id="photos2" class="column">
-            <div class="col s12 m6">
-                <div class="card grey lighten-4">
-                    <div class="card-content">
-                        <center>
-                            <div id="photos-content2">
-                                <video id="video2" style="display: none;" autoplay></video>
-                                <a class="btn indigo darken-3" id="new2" href="#photos" onclick="openCamera();"><i class="mdi-image-camera-alt"></i></a>
-                                <a class="btn indigo darken-3" id="snap2" href="#photos" style="display: none;" onclick="takePhoto();"><i class="mdi-image-camera-alt"></i></a>
-                                <a class="btn" id="switch2" href="#photos" style="display: none;" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>
-                                <br>
-                            </div>
-                        </center>
-                    </div>
-                </div>
-            </div>
-        </div>
-  </div>
-      </div>
 <br><br>
   
         
-</p> </div> </div>
-    
-    </li>
-    
+</p> </div> </div>   
+    </li>  
     <li>
       <div class="collapsible-header  indigo darken-4"><h5 class="white-text">Building Safety</h5></div>
               <div class="collapsible-body white"><p>
                   <div class="container white">        
                        <div class="input-field col s6">
-    <select id="building1">
+    <select id="building1" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -382,7 +348,7 @@ var isOnline = function () {
   </div>
                   
                 <div class="input-field col s6">
-    <select id="building3">
+    <select id="building3" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -392,7 +358,7 @@ var isOnline = function () {
   </div>
                
                 <div class="input-field col s6">
-    <select id="building4">
+    <select id="building4" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -418,31 +384,7 @@ var isOnline = function () {
     </div>
   </div>
   </div>
-   <!-- Modal Trigger -->
-  <a class="btn indigo darken-3 modal-trigger right" href="#modal8">Take Photo</a>
-<!-- Modal Structure -->
-  <div id="modal8" class="modal">
-    <div class="modal-content">
-      <h4>Photos</h4>
-       <div id="photos3" class="column">
-            <div class="col s12 m6">
-                <div class="card grey lighten-4">
-                    <div class="card-content">
-                        <center>
-                            <div id="photos-content3">
-                                <video id="video3" style="display: none;" autoplay></video>
-                                <a class="btn indigo darken-3" id="new3" href="#photos" onclick="openCamera();"><i class="mdi-image-camera-alt"></i></a>
-                                <a class="btn indigo darken-3" id="snap3" href="#photos" style="display: none;" onclick="takePhoto();"><i class="mdi-image-camera-alt"></i></a>
-                                <a class="btn" id="switch3" href="#photos" style="display: none;" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>
-                                <br>
-                            </div>
-                        </center>
-                    </div>
-                </div>
-            </div>
-        </div>
-  </div>
-      </div>
+ 
 <br><br>
               </div> </div> 
       
@@ -453,7 +395,7 @@ var isOnline = function () {
               <div class="collapsible-body white"><p>
                   <div class="container white">
                     <div class="input-field col s6">
-    <select id="work1">
+    <select id="work1" required="required">
       <option value="" disabled selected></option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -463,7 +405,7 @@ var isOnline = function () {
                 </div>  
                       
                     <div class="input-field col s6">
-    <select id="work2">
+    <select id="work2" required="required">
       <option value="" disabled selected></option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -473,7 +415,7 @@ var isOnline = function () {
                 </div>
                  
                     <div class="input-field col s6">
-    <select id="work3">
+    <select id="work3" required="required">
       <option value="" disabled selected></option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -483,7 +425,7 @@ var isOnline = function () {
                 </div>
                   
                     <div class="input-field col s6">
-    <select id="work4">
+    <select id="work4" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -507,31 +449,6 @@ var isOnline = function () {
       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
     </div>
   </div>
-   <!-- Modal Trigger -->
-  <a class="btn indigo darken-3 modal-trigger right" href="#modal11">Take Photo</a>
-<!-- Modal Structure -->
-<div id="modal11" class="modal">
-   <div class="modal-content">
-      <h4>Photos</h4>
-       <div id="photos4" class="column">
-            <div class="col s12 m6">
-                <div class="card grey lighten-4">
-                    <div class="card-content">
-                        <center>
-                            <div id="photos-content4">
-                                <video id="video3" style="display: none;" autoplay></video>
-                                <a class="btn indigo darken-3" id="new4" href="#photos" onclick="openCamera();"><i class="mdi-image-camera-alt"></i></a>
-                                <a class="btn indigo darken-3" id="snap4" href="#photos" style="display: none;" onclick="takePhoto();"><i class="mdi-image-camera-alt"></i></a>
-                                <a class="btn" id="switch4" href="#photos" style="display: none;" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>
-                                <br>
-                            </div>
-                        </center>
-                    </div>
-                </div>
-            </div>
-        </div>
-   </div>
-</div>
 <br><br>               
 </p></div></div>
     
@@ -542,7 +459,7 @@ var isOnline = function () {
               <div class="collapsible-body white"><p>
                   <div class="container white">
                     <div class="input-field col s6">
-    <select id="machines1">
+    <select id="machines1" required="required">
       <option value="" disabled selected></option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -558,31 +475,31 @@ var isOnline = function () {
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label for="machines2" style="font-size: medium">Are the floors around machines clean and clear of obstruction?</label>
+    <label for="machines2" style="font-size: medium">Floor around machines clear of obstruction?</label>
                 </div>            
                       
                     <div class="input-field col s6">
-    <select id="machines3">
+    <select id="machines3" required="required" >
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label for="machines3" style="font-size: medium">Starting and stopping devices in easy reach of operator?</label>
+    <label for="machines3" style="font-size: medium">Start/Stop devices in easy reach of operator?</label>
                 </div>
                   
                     <div class="input-field col s6">
-    <select id="machines4">
+    <select id="machines4" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label for="machines4" style="font-size: medium">Are operators fully trained to use the machines correctly?</label>
+    <label for="machines4" style="font-size: medium">Are operators fully trained to use the machines?</label>
                 </div>              
                   
                     <div class="input-field col s6">
-    <select id="machines5">
+    <select id="machines5" required="required">
       <option value="" disabled selected></option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -606,31 +523,7 @@ var isOnline = function () {
       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
     </div>
   </div>
-   <!-- Modal Trigger -->
-  <a class="btn indigo darken-3 modal-trigger right" href="#modal14">Take Photo</a>
-<!-- Modal Structure -->
-  <div id="modal14" class="modal">
-    <div class="modal-content">
-      <h4>Photos</h4>
-       <div id="photos5" class="column">
-            <div class="col s12 m6">
-                <div class="card grey lighten-4">
-                    <div class="card-content">
-                        <center>
-                            <div id="photos-content5">
-                                <video id="video5" style="display: none;" autoplay></video>
-                                <a class="btn indigo darken-3" id="new5" href="#photos" onclick="openCamera();"><i class="mdi-image-camera-alt"></i></a>
-                                <a class="btn indigo darken-3" id="snap5" href="#photos" style="display: none;" onclick="takePhoto();"><i class="mdi-image-camera-alt"></i></a>
-                                <a class="btn" id="switch5" href="#photos" style="display: none;" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>
-                                <br>
-                            </div>
-                        </center>
-                    </div>
-                </div>
-            </div>
-        </div>
-  </div>
- </div>     
+   
 <br><br>             
 </p></div></div>    
 
@@ -640,7 +533,7 @@ var isOnline = function () {
               <div class="collapsible-body white"><p>
                   <div class="container white">
                     <div class="input-field col s6">
-    <select id="electric1">
+    <select id="electric1" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -650,17 +543,17 @@ var isOnline = function () {
                 </div>                  
       
                     <div class="input-field col s6">
-    <select id="electric2">
+    <select id="electric2" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label for="electric2" style="font-size: medium">Switches and electrical equipment tested every 6 months?</label>
+    <label for="electric2" style="font-size: medium">Electrical equipment tested every 6 months?</label>
                 </div>
                   
                     <div class="input-field col s6">
-    <select id="electric3">
+    <select id="electric3" required="required">
       <option value="" disabled selected></option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -684,29 +577,7 @@ var isOnline = function () {
       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
     </div>
   </div>
-   <!-- Modal Trigger -->
-  <a class="btn indigo darken-3 modal-trigger right" href="#modal17">Take Photo</a>
-<!-- Modal Structure -->
-  <div id="modal17" class="modal">
-  <h4>Photos</h4>
-       <div id="photos6" class="column">
-            <div class="col s12 m6">
-                <div class="card grey lighten-4">
-                    <div class="card-content">
-                        <center>
-                            <div id="photos-content6">
-                                <video id="video6" style="display: none;" autoplay></video>
-                                <a class="btn indigo darken-3" id="new6" href="#photos" onclick="openCamera();"><i class="mdi-image-camera-alt"></i></a>
-                                <a class="btn indigo darken-3" id="snap6" href="#photos" style="display: none;" onclick="takePhoto();"><i class="mdi-image-camera-alt"></i></a>
-                                <a class="btn" id="switch6" href="#photos" style="display: none;" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>
-                                <br>
-                            </div>
-                        </center>
-                    </div>
-                </div>
-            </div>
-        </div>
-  </div>
+
 <br><br>      
 </p></div></div>
       
@@ -717,27 +588,27 @@ var isOnline = function () {
               <div class="collapsible-body white"><p>
         <div class="container white">
 <div class="input-field col s6">
-    <select id="chem1">
+    <select id="chem1" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label for="chem1" style="font-size: medium">Hazardous substance register completed and available?</label>
+    <label for="chem1" style="font-size: medium">Hazardous substance register completed?</label>
                 </div>              
                       
     <div class="input-field col s6">
-    <select id="chem2">
+    <select id="chem2" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label for="chem2" style="font-size: medium">Risk assessment completed for hazardous substances?</label>
+    <label for="chem2" style="font-size: medium">Hazardous substances risk assessment complete?</label>
                 </div>     
                   
     <div class="input-field col s6">
-    <select id="chem3">
+    <select id="chem3" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -757,7 +628,7 @@ var isOnline = function () {
                 </div>  
                   
     <div class="input-field col s6">
-    <select id="chem5">
+    <select id="chem5" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -767,7 +638,7 @@ var isOnline = function () {
                 </div>   
                   
     <div class="input-field col s6" >
-    <select id="chem6">
+    <select id="chem6" required="required">
       <option value="" disabled selected></option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -791,22 +662,39 @@ var isOnline = function () {
       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
     </div>
   </div>
-   <!-- Modal Trigger -->
-  <a class="btn indigo darken-3 modal-trigger right" href="#modal20">Take Photo</a>
-<!-- Modal Structure -->
-  <div id="modal20" class="modal">
-    <div class="modal-content">
-      <h4>Photos</h4>
-       <div id="photos7" class="column">
+<br><br>                
+</p></div></div>    
+ 
+    </li>
+  
+           <li>
+      <div class="collapsible-header indigo darken-4"><h5 class="white-text">Supporting Material</h5></div>
+              <div class="collapsible-body white"><p>
+                  <div class="container white">
+                    <div class="input-field col s6">
+     <h5>Documents/Files:</h5>                
+        <div class="file-field input-field">
+      <div class="btn indigo darken-3">
+        <span>File</span>
+        <input type="file" multiple>
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" placeholder="Upload one or more files">
+      </div>
+    </div>                
+                        
+ 
+      <h5>Photos:</h5>
+       <div id="photos" class="column">
             <div class="col s12 m6">
                 <div class="card grey lighten-4">
                     <div class="card-content">
                         <center>
-                            <div id="photos-content7">
-                                <video id="video7" style="display: none;" autoplay></video>
-                                <a class="btn indigo darken-3" id="new7" href="#photos" onclick="openCamera();"><i class="mdi-image-camera-alt"></i></a>
-                                <a class="btn indigo darken-3" id="snap7" href="#photos" style="display: none;" onclick="takePhoto();"><i class="mdi-image-camera-alt"></i></a>
-                                <a class="btn" id="switch7" href="#photos" style="display: none;" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>
+                            <div id="photos-content">
+                                <video id="video" style="display: none;" autoplay></video>
+                                <a class="btn indigo darken-3" id="new" href="#photos" onclick="openCamera();"><i class="mdi-image-camera-alt"></i></a>
+                                <a class="btn indigo darken-3" id="snap" href="#photos" style="display: none;" onclick="takePhoto();"><i class="mdi-image-camera-alt"></i></a>
+<!--                            <a class="btn" id="switch" href="#photos" style="display: none;" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>-->
                                 <br>
                             </div>
                         </center>
@@ -814,13 +702,12 @@ var isOnline = function () {
                 </div>
             </div>
         </div>
-  </div>
-</div>
-<br><br>                
+<br><br>      
 </p></div></div>
       
  
     </li>
+    
   </ul> 
         <br>
  <!-- you load jquery somewhere above here ... -->
