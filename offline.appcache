@@ -44,6 +44,7 @@ app/js/flashcanvas.swf
 app/js/jSignature.js
 offline.appcache
 index.html
+VehicleCheck.html
 
 
 # offline.html will be displayed if the user is offline
