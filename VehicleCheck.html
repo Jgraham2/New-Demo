@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en" manifest="offline.appcache">
+    
+<head>
+    <link rel="shortcut icon" href="">
+<!--  Scripts-->
+<script type="text/javascript" src="app/js/index.js"></script>
+<script type="text/javascript" src="app/js/offline.min.js"></script>
+<script type="text/javascript" src="app/js/jquery.min.js"></script>
+<script type="text/javascript" src="app/js/parse-1.6.7.js"></script>
+<script type="text/javascript" src="app/js/javascript.js"></script>
+<script type="text/javascript" src="app/js/materialize.js"></script>
+<script type="text/javascript" src="app/js/materialize.min.js"></script>
+<script type="text/javascript" src="app/js/flashcanvas.js"></script>
+<script type="text/javascript" src="app/js/jSignature.js"></script>
+<script type="text/javascript" src="app/js/jSignature.CompressorBase30.js"></script>
+<script type="text/javascript" src="app/js/jSignature.CompressorSVG.js"></script>
+<script type="text/javascript" src="app/js/jSignature.min.noconflict.js"></script>
+<script type="text/javascript" src="app/js/jSigUndoButton.js"></script>
+<script type="text/javascript" src="app/js/modernizr.js"></script>
+<!-- CSS  -->
+<link href="app/css/materialize.css" type="text/css" rel="stylesheet" />
+<link href="app/css/materialize.min.css" type="text/css" rel="stylesheet" />
+<link href="app/css/style.css" type="text/css" rel="stylesheet"/>
+<link href="app/css/fonts.css" type="text/css" rel="stylesheet"/>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  
+    <title>Transport & Driving Safety Inspection</title>
+    
+</head>
+
+<body>
+    <script>
+$( document ).ready(function(){
+    $(".button-collapse").sideNav();
+})
+
+$( document ).ready(function(){
+  $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  });
+  })
+    </script>
+      <nav class="indigo darken-4" role="navigation">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo"><img class="logo center" src="app/image/SGN-Logo.png" alt="logo"></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="dropdown-button" href="#!" data-activates="d1">More Forms<i class="mdi-navigation-arrow-drop-down right"></i></a>
+      <ul id='d1' class='dropdown-content'>
+        <li><a href="VehicleCheck.html">Transport  & Driving Safety Inspection</a></li>
+        <li><a href="#!">WID DREPR</a></li>
+        <li><a href="#!">WID Mains</a></li>
+        <li><a href="#!">WID Serve Construction Services</a></li>
+        <li><a href="#!">WID Meter</a></li>
+        <li><a href="index.html">Plant & Maintenance Inspection</a></li>
+      </ul>
+    </li>
+        <li><a href="badges.html">Account</a></li>
+        <li><a href="collapsible.html">Help</a></li>
+        <li><a href="mobile.html">Log Out</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+  <li><a class="dropdown-button" href="#!" data-activates="d2">More Forms<i class="mdi-navigation-arrow-drop-down right"></i></a>
+      <ul id='d2' class='dropdown-content'>
+        <li><a href="VehicleCheck.html">Transport  & Driving Safety Inspection</a></li>
+        <li><a href="#!">WID DREPR</a></li>
+        <li><a href="#!">WID Mains</a></li>
+        <li><a href="#!">WID Serve Construction Services</a></li>
+         <li><a href="#!">WID Meter</a></li>
+        <li><a href="index.html">Plant & Maintenance Inspection</a></li>
+      </ul>
+    </li>
+        <li><a href="badges.html">Account</a></li>
+        <li><a href="collapsible.html">Help</a></li>
+        <li><a href="mobile.html">Log Out</a></li>
+      </ul>
+    </div>
+  </nav>     
+<div id="online-status" class="online" style="opacity: 0;"></div>	
+<script>
+        var displayOnlineStatus = document.getElementById("online-status");
+var isOnline = function () {
+                            displayOnlineStatus.innerHTML = "Online";
+                            displayOnlineStatus.className = "online";
+                            parseSend();
+                    },
+    isOffline = function () {
+                            displayOnlineStatus.innerHTML = "Offline";
+                            displayOnlineStatus.className = "offline";
+
+                    };
+    if (window.addEventListener) {
+
+            window.addEventListener("online", isOnline);
+            window.addEventListener("offline", isOffline);
+    }
+    else {
+            document.body.ononline = isOnline;
+            document.body.onoffline = isOffline;
+    }
+    if(navigator.onLine) {
+        checkOnLoad: true,
+        isOnline();
+    } else {
+        checkOnLoad: false,
+        isOffine();
+    }  
+</script>
+<script>
+    $(document).ready(function(){
+    $('.collapsible').collapsible({
+      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
+  });
+  
+  $(document).ready(function(){
+    $('select').on('change', function(){
+        var cntreq = 0;
+        var cntvals = 0;
+        $('select').each(function() {
+            if($(this).attr('required') === 'required') {
+                cntreq++;
+                if($(this).val() !== '') {
+                    cntvals++;
+                }
+            }
+        });
+        var count = (cntvals/cntreq)*100;
+        $('#percentage').empty();
+        $('#percentage').append(count+'% completed');
+    });
+});
+</script>
+<form id="form" data-parsley-validate >
+              <div class="section no-pad-bot" id="index-banner">
+  <div class="container">
+    <h3 class="header center black-text">Transport & Driving Safety Inspection</h3>
+    <div class="row center">
+        <div class="progress" >
+      <div class="determinate" id='percentage'></div>
+  </div>
+<!--      <h5 class="header col s12 light"></h5>-->
+    </div>
+  </div>
+</div>
+<div class="container "> 
+    
+<ul class="collapsible indigo darken-4" data-collapsible="accordion">
+    <li>
+        <div class="collapsible-header indigo darken-4"><h5 class="white-text">Details</h5></div>
+      <div class="collapsible-body white"><p>             
+          <div class="container white">
+<div class="input-field col s12"> 
+   
+  
+        <script>
+            $(document).ready(function() {
+    $('select').material_select();
+  });
+            </script>
+        
+    <div class="input-field col s6">
+    <select style="grey-text" id="location" required="required">
+      <option value="" disabled selected >Choose Location of Inspection</option>
+      <option value="Aldershot">Aldershot</option>
+      <option value="Ashford">Ashford (Training Centre)</option>
+      <option value="Campbeltown">Campbeltown</option>
+      <option value="Coatbridge">Coatbridge</option>
+      <option value="Dundee">Dundee</option>
+      <option value="Dunfermline">Dunfermline</option>
+      <option value="East Kent">East Kent (Ashford)</option>
+      <option value="East Surrey">East Surrey (Replacement)</option>
+      <option value="Edinburgh">Edinburgh</option>
+      <option value="Glasgow">Glasgow</option>
+      <option value="Havant">Havant</option>
+      <option value="Hillington">Hillington</option>
+      <option value="Horley">Horley</option>
+      <option value="Isle of Wight">Isle of Wight</option>
+      <option value="Kent">Kent (Replacement)</option>
+      <option value="London">London (Kennington)</option>
+      <option value="London East">London East (Replacement)</option>
+      <option value="London West">London West (Replacement)</option>
+      <option value="Oban">Oban</option>
+      <option value="Oxford">Oxford</option>
+      <option value="Perth">Perth</option>
+      <option value="Poole">Poole</option>
+      <option value="Provan">Provan</option>
+      <option value="Reading">Reading</option>
+      <option value="Solent">Solent</option>
+      <option value="South Downs">South Downs (Replacement)</option>
+      <option value="Stornoway">Stornoway</option>
+      <option value="Surrey">Surrey</option>
+      <option value="Sussex">Sussex (Horsham)</option>
+      <option value="Thames Valley">Thames Valley (Replacement)</option>
+      <option value="Thatcham">Thatcham (Training Centre)</option>
+      <option value="Thurso">Thurso</option>
+      <option value="Wessex">Wessex (Replacement)</option>
+      <option value="West Kent">West Kent(St Mary's Cray)</option>
+      <option value="Wick">Wick</option>
+    </select>
+  </div>
+
+
+ <div class="input-field col s6">
+          <input type="date" class="datepicker" id="date" required="required">
+          <label for="date">Date of Inspection</label>
+          
+     </div>
+            <script> 
+                $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+  $('.modal-trigger').leanModal({
+      dismissible: true, // Modal can be dismissed by clicking outside of the modal
+      opacity: .5, // Opacity of modal background
+      in_duration: 300, // Transition in duration
+      out_duration: 200, // Transition out duration
+    }
+  )});
+           </script>
+               <!-- Modal Trigger -->
+  <a class="btn indigo darken-3 modal-trigger" href="#modal1">Add Notes</a>
+<!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <div class="input-field col s6">
+            <textarea class="materialize-textarea"  rows="20" cols="0" id="notes1" ></textarea>
+          <label for="notes1">Please enter any additional notes for this section here:</label>
+     </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
+    </div>
+  </div>
+  </div>
+<br><br>
+ </div>
+              </div>    
+    </li>
+    <li>
+        <div class="collapsible-header indigo darken-4"><h5 class="white-text">Fire Prevention</h5></div>
+                <div class="collapsible-body white"><p>                       
+                    <div class="container white">
+         <div class="input-field col s6" >
+    <select id="fire1" required="required">
+      <option value="" disabled selected> </option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+             <label for="fire1" style="font-size: medium">Evacuation plan understood by all employees?</label>
+  </div>
+                        
+    <div class="input-field col s6">
+    <select id="fire2" required="required">
+      <option value="" disabled selected> </option>
+      <option value="Yes" id="fire2y">Yes</option>
+      <option value="No" id="fire2n">No</option>
+      <option value="N/A" id="fire2o">N/A</option>
+    </select>
+    <label for="fire2" style="font-size: medium">Extinguishers visible and marked for types of fire?</label>
+  </div>
+                    
+        <div class="input-field col s6">
+    <select id="fire3" required="required">
+      <option value="" disabled selected> </option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="fire3" style="font-size: medium">Extinguishers clear of obstructions?</label>
+  </div>
+                    
+            <div class="input-field col s6">
+    <select id="fire4">
+      <option value="" disabled selected> </option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="fire4" style="font-size: medium">Exit doors easily opened from inside?</label>
+  </div>
+                   
+            <div class="input-field col s6">
+    <select id="fire5" required="required">
+      <option value="" disabled selected> </option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="fire5" style="font-size: medium">Exit doors clear from obstructions?</label>
+  </div>
+            
+                <div class="input-field col s6">
+    <select id="fire6" required="required">
+      <option value="" disabled selected> </option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>                   
+    <label for="fire6" style="font-size: medium">Fire Alarms functioning correctly?</label>
+  </div>     
+
+               <!-- Modal Trigger -->
+  <a class="btn indigo darken-3 modal-trigger" href="#modal4">Add Notes</a>
+<!-- Modal Structure -->
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <div class="input-field col s6">
+            <textarea class="materialize-textarea"  rows="20" cols="0" id="notes2" ></textarea>
+          <label for="notes2">Please enter any additional notes for this section here:</label>
+     </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
+    </div>
+  </div>
+<br><br>
+  
+        
+</p> </div> </div>   
+    </li>  
+    <li>
+      <div class="collapsible-header  indigo darken-4"><h5 class="white-text">Building Safety</h5></div>
+              <div class="collapsible-body white"><p>
+                  <div class="container white">        
+                       <div class="input-field col s6">
+    <select id="building1" required="required">
+      <option value="" disabled selected> </option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="building1" style="font-size: medium">Floor surfaces even and uncluttered?</label>
+  </div>
+            
+                <div class="input-field col s6">
+    <select id="building2">
+      <option value="" disabled selected> </option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="building2" style="font-size: medium">Entry and Walkways kept clear?</label>
+  </div>
+                  
+                <div class="input-field col s6">
+    <select id="building3" required="required">
+      <option value="" disabled selected> </option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="building3" style="font-size: medium">Stair and Rises kept clear?</label>
+  </div>
+               
+                <div class="input-field col s6">
+    <select id="building4" required="required">
+      <option value="" disabled selected> </option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="building4" style="font-size: medium">Loading area clear and tidy?</label>
+                </div>
+ 
+               <!-- Modal Trigger -->
+  <a class="btn indigo darken-3 modal-trigger" href="#modal7">Add Notes</a>
+<!-- Modal Structure -->
+  <div id="modal7" class="modal">
+    <div class="modal-content">
+ <div class="modal-content">
+      
+      <div class="input-field col s6">
+            <textarea class="materialize-textarea"  rows="20" cols="0" id="notes3" ></textarea>
+          <label for="notes3">Please enter any additional notes for this section here:</label>
+     </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
+    </div>
+  </div>
+  </div>
+ 
+<br><br>
+              </div> </div> 
+      
+ 
+    </li>
+        <li>
+      <div class="collapsible-header  indigo darken-4"><h5 class="white-text">Work Station</h5></div>
+              <div class="collapsible-body white"><p>
+                  <div class="container white">
+                    <div class="input-field col s6">
+    <select id="work1" required="required">
+      <option value="" disabled selected></option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="work1" style="font-size: medium">Clear of Rubbish?</label>
+                </div>  
+                      
+                    <div class="input-field col s6">
+    <select id="work2" required="required">
+      <option value="" disabled selected></option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="work2" style="font-size: medium">Tools kept in safe place?</label>
+                </div>
+                 
+                    <div class="input-field col s6">
+    <select id="work3" required="required">
+      <option value="" disabled selected></option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="work3" style="font-size: medium">No Damaged Tools?</label>
+                </div>
+                  
+                    <div class="input-field col s6">
+    <select id="work4" required="required">
+      <option value="" disabled selected> </option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="work4" style="font-size: medium">No sharp edges?</label>
+                </div>
+
+               <!-- Modal Trigger -->
+  <a class="btn indigo darken-3 modal-trigger" href="#modal10">Add Notes</a>
+<!-- Modal Structure -->
+  <div id="modal10" class="modal">
+  <div class="modal-content">
+    
+      <div class="input-field col s6">
+            <textarea class="materialize-textarea"  rows="20" cols="0" id="notes4" ></textarea>
+          <label for="notes4">Please enter any additional notes for this section here:</label>
+     </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
+    </div>
+  </div>
+<br><br>               
+</p></div></div>
+    
+      
+    </li>
+    <li>
+      <div class="collapsible-header indigo darken-4"><h5 class="white-text">Machines</h5></div>
+              <div class="collapsible-body white"><p>
+                  <div class="container white">
+                    <div class="input-field col s6">
+    <select id="machines1" required="required">
+      <option value="" disabled selected></option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="machines1" style="font-size: medium">Are they kept clean?</label>
+                </div>
+
+                    <div class="input-field col s6">
+    <select id="machines2">
+      <option value="" disabled selected> </option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="machines2" style="font-size: medium">Floor around machines clear of obstruction?</label>
+                </div>            
+                      
+                    <div class="input-field col s6">
+    <select id="machines3" required="required" >
+      <option value="" disabled selected> </option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="machines3" style="font-size: medium">Start/Stop devices in easy reach of operator?</label>
+                </div>
+                  
+                    <div class="input-field col s6">
+    <select id="machines4" required="required">
+      <option value="" disabled selected> </option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="machines4" style="font-size: medium">Are operators fully trained to use the machines?</label>
+                </div>              
+                  
+                    <div class="input-field col s6">
+    <select id="machines5" required="required">
+      <option value="" disabled selected></option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="machines5" style="font-size: medium">Safety gear being worn while operating machines?</label>
+                </div>              
+ 
+               <!-- Modal Trigger -->
+  <a class="btn indigo darken-3 modal-trigger" href="#modal13">Add Notes</a>
+<!-- Modal Structure -->
+  <div id="modal13" class="modal">
+    <div class="modal-content">
+      
+      <div class="input-field col s6">
+            <textarea class="materialize-textarea"  rows="20" cols="0" id="notes5" ></textarea>
+          <label for="notes5">Please enter any additional notes for this section here:</label>
+     </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
+    </div>
+  </div>
+   
+<br><br>             
+</p></div></div>    
+
+    </li>
+        <li>
+      <div class="collapsible-header indigo darken-4"><h5 class="white-text">Electrical Safety</h5></div>
+              <div class="collapsible-body white"><p>
+                  <div class="container white">
+                    <div class="input-field col s6">
+    <select id="electric1" required="required">
+      <option value="" disabled selected> </option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="electric1" style="font-size: medium">Safety switches installed?</label>
+                </div>                  
+      
+                    <div class="input-field col s6">
+    <select id="electric2" required="required">
+      <option value="" disabled selected> </option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="electric2" style="font-size: medium">Electrical equipment tested every 6 months?</label>
+                </div>
+                  
+                    <div class="input-field col s6">
+    <select id="electric3" required="required">
+      <option value="" disabled selected></option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="electric3" style="font-size: medium">No Broken plugs, leads, sockets or switches?</label>
+                </div>  
+ 
+               <!-- Modal Trigger -->
+  <a class="btn indigo darken-3 modal-trigger" href="#modal16">Add Notes</a>
+<!-- Modal Structure -->
+  <div id="modal16" class="modal">
+    <div class="modal-content">
+     
+      <div class="input-field col s6">
+            <textarea class="materialize-textarea"  rows="20" cols="0" id="notes6" ></textarea>
+          <label for="notes6">Please enter any additional notes for this section here:</label>
+     </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
+    </div>
+  </div>
+
+<br><br>      
+</p></div></div>
+      
+ 
+    </li>
+    <li>
+      <div class="collapsible-header  indigo darken-4"><h5 class="white-text">Chemical Safety</h5></div>
+              <div class="collapsible-body white"><p>
+        <div class="container white">
+<div class="input-field col s6">
+    <select id="chem1" required="required">
+      <option value="" disabled selected> </option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="chem1" style="font-size: medium">Hazardous substance register completed?</label>
+                </div>              
+                      
+    <div class="input-field col s6">
+    <select id="chem2" required="required">
+      <option value="" disabled selected> </option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="chem2" style="font-size: medium">Hazardous substances risk assessment complete?</label>
+                </div>     
+                  
+    <div class="input-field col s6">
+    <select id="chem3" required="required">
+      <option value="" disabled selected> </option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="chem3" style="font-size: medium">All containers labeled correctly?</label>
+                </div>     
+                  
+    <div class="input-field col s6">
+    <select id="chem4">
+      <option value="" disabled selected> </option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="chem4" style="font-size: medium">Workers trained to handle hazardous material?</label>
+                </div>  
+                  
+    <div class="input-field col s6">
+    <select id="chem5" required="required">
+      <option value="" disabled selected> </option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="chem5" style="font-size: medium">Is correct ventilation provided?</label>
+                </div>   
+                  
+    <div class="input-field col s6" >
+    <select id="chem6" required="required">
+      <option value="" disabled selected></option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+    <label for="chem6" style="font-size: medium">Are eye washes/showers easily accessed?</label>
+                </div>                   
+
+               <!-- Modal Trigger -->
+  <a class="btn indigo darken-3 modal-trigger" href="#modal19">Add Notes</a>
+<!-- Modal Structure -->
+  <div id="modal19" class="modal">
+    <div class="modal-content">
+     
+      <div class="input-field col s6">
+            <textarea class="materialize-textarea"  rows="20" cols="0" id="notes7" ></textarea>
+          <label for="notes7">Please enter any additional notes for this section here:</label>
+     </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
+    </div>
+  </div>
+<br><br>                
+</p></div></div>    
+ 
+    </li>
+  
+           <li>
+      <div class="collapsible-header indigo darken-4"><h5 class="white-text">Supporting Material</h5></div>
+              <div class="collapsible-body white"><p>
+                  <div class="container white">
+                    <div class="input-field col s6">
+     <h5>Documents/Files:</h5>                
+        <div class="file-field input-field">
+      <div class="btn indigo darken-3">
+        <span>File</span>
+        <input type="file" multiple>
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" placeholder="Upload one or more files">
+      </div>
+    </div>                
+                        
+ 
+      <h5>Photos:</h5>
+       <div id="photos" class="column">
+            <div class="col s12 m6">
+                <div class="card grey lighten-4">
+                    <div class="card-content">
+                        <center>
+                            <div id="photos-content">
+                                <video id="video" style="display: none;" autoplay></video>
+                                <a class="btn indigo darken-3" id="new" href="#photos" onclick="openCamera();"><i class="mdi-image-camera-alt"></i></a>
+                                <a class="btn indigo darken-3" id="snap" href="#photos" style="display: none;" onclick="takePhoto();"><i class="mdi-image-camera-alt"></i></a>
+<!--                            <a class="btn" id="switch" href="#photos" style="display: none;" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>-->
+                                <br>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+<br><br>      
+</p></div></div>
+      
+ 
+    </li>
+    
+  </ul> 
+        <br>
+ <!-- you load jquery somewhere above here ... -->
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="libs/flashcanvas.js"></script>
+	<![endif]-->
+
+              <center><div id="signatureparent"><h5><u>Please sign below to confirm that you have completed this form accurately and to the best of your ability</u></h5></center>
+              <br>
+              <div class="container">
+              <div class="input-field col s6">
+          <input type="text" id="name" type="text">
+          <label for="input2">Full Name</label>
+     </div>
+              
+          <div id="signature">
+              <div style="padding:0 !important;margin:0 !important;width: 50% !important; height: 0 !important;margin-top:-1em !important;margin-bottom:1em !important;">
+                  <input type="button" value="Undo last stroke" style="position: absolute; display: none; top: auto; margin: 0px !important; padding: 0.5em !important; left: 435px;"><img style="position:absolute !important; top: auto; min-width:90px !important; max-width:180px !important;width:10% !important;border:none !important;padding: 0 !important;margin:0 !important;box-shadow:0 0 0 !important;" ></div>
+                <canvas style="margin: 0px; padding: 0px; border: none; height:0px; width: 50%;" class="jSignature" width="966" height="242"></canvas><div style="padding:0 !important;margin:0 !important;width: 100% !important; height: 0 !important;margin-top:-1.5em !important;margin-bottom:1.5em !important;"></div></div>
+	<div id="signature"></div>
+	<script>
+            $(document).ready(function() {
+	        $("#signature").jSignature();
+	    });
+	</script> 
+        
+<center>
+        <a class="btn-large waves-effect waves-light indigo darken-3" id="form-submit" onclick="post()" >Submit</a>
+        </center>
+    
+</div>
+
+              </form>
+      
+<br><br>
+<div class="section"></div>
+
+</body>
+</html>
