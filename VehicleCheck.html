@@ -164,7 +164,7 @@ var isOnline = function () {
             </script>
         
     <div class="input-field col s6">
-    <select style="grey-text" id="location" required="required">
+    <select style="grey-text" id="checkLocation" required="required">
       <option value="" disabled selected >Choose Location of Inspection</option>
       <option value="Aldershot">Aldershot</option>
       <option value="Ashford">Ashford (Training Centre)</option>
@@ -206,7 +206,7 @@ var isOnline = function () {
 
 
  <div class="input-field col s6">
-          <input type="date" class="datepicker" id="date" required="required">
+          <input type="date" class="datepicker" id="datePick" required="required">
           <label for="date">Date of Inspection</label>
           
      </div>
@@ -222,13 +222,13 @@ var isOnline = function () {
   )});
            </script>
                <!-- Modal Trigger -->
-  <a class="btn indigo darken-3 modal-trigger" href="#modal1">Add Notes</a>
+  <a class="btn indigo darken-3 modal-trigger" href="#mode1">Add Notes</a>
 <!-- Modal Structure -->
-  <div id="modal1" class="modal">
+  <div id="mode1" class="modal">
     <div class="modal-content">
       <div class="input-field col s6">
-            <textarea class="materialize-textarea"  rows="20" cols="0" id="notes1" ></textarea>
-          <label for="notes1">Please enter any additional notes for this section here:</label>
+            <textarea class="materialize-textarea"  rows="20" cols="0" id="note1" ></textarea>
+          <label for="note1">Please enter any additional notes for this section here:</label>
      </div>
     </div>
     <div class="modal-footer">
@@ -245,13 +245,13 @@ var isOnline = function () {
                 <div class="collapsible-body white"><p>                       
                     <div class="container white">
          <div class="input-field col s6" >
-          <input placeholder=" " id="last_name" type="text" class="validate">
-          <label for="last_name" style="font-size: medium">Registration</label>      
+          <input placeholder=" " id="reg" type="text" class="validate">
+          <label for="reg" style="font-size: medium">Registration</label>      
   </div>
                         <br>
                         <div class="input-field col s6" >
              <br>
-    <select id="fire1" required="required">
+    <select id="owner" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">John Cunningham</option>
       <option value="No">Peter Fitzgerald</option>
@@ -267,58 +267,60 @@ var isOnline = function () {
              <br>
   </div>      
                         <div>   
-                    <div class="input-field col s6" id="form2">
-                        <label for="form2" style="font-size: medium">Please select the Vehicle Type</label>
+                    <div class="input-field col s6" id="types">
+                        <label for="types" style="font-size: medium">Please select the Vehicle Type</label>
              <p>
-      <input name="group1" type="radio" id="test1" />
-      <label for="test1">Van</label>
+      <input name="group1" type="radio" id="type1" />
+      <label for="type1">Van</label>
     </p>
     <p>
-      <input name="group1" type="radio" id="test2" />
-      <label for="test2">Lorry</label>
+      <input name="group1" type="radio" id="type2" />
+      <label for="type2">Lorry</label>
     </p>
     <p>
-      <input name="group1" type="radio" id="test3"  />
-      <label for="test3">Car</label>
+      <input name="group1" type="radio" id="type3"  />
+      <label for="type3">Car</label>
     </p>
       <p>
-        <input name="group1" type="radio" id="test4"/>
-        <label for="test4">Other</label>
+        <input name="group1" type="radio" id="type4"/>
+        <label for="type4">Other</label>
     </p><br>
              
   </div> 
            </div>              
 
          <div class="input-field col s6" >
-          <input placeholder=" " id="last_namez" type="text" class="validate">
-          <label for="last_namez" style="font-size: medium">Odometer Number Reading (Mileage)</label>      
+          <input placeholder=" " id="miles" type="text" class="validate">
+          <label for="miles" style="font-size: medium">Odometer Number Reading (Mileage)</label>      
          </div><br>
          
+         <div class="input-field col s6" >
               <label for="filled-in-box" style="font-size: medium">Is the vehicle parked correctly?</label>         
                         <p>
-      <input type="checkbox" class="filled-in" id="filled-in-box" />
-      <label for="filled-in-box">Yes</label>
+      <input type="checkbox" class="filled-in" value="Yes" id="parkedYes" />
+      <label for="filled-in-box" >Yes</label>
     </p>
 <p>
-      <input type="checkbox" class="filled-in" id="filled-in-boxz" />
+      <input type="checkbox" class="filled-in" value="Yes" id="parkedNo" />
       <label for="filled-in-boxz">No</label>
     </p>
-    
+    </div>
+         
     <br>
     <label>Percentage of Usuage</label>
     <p class="range-field">
-      <input type="range" id="test5" min="0" max="100" />
+      <input type="range" id="use" min="0" max="100" />
     </p>
     
     
                <!-- Modal Trigger -->
-  <a class="btn indigo darken-3 modal-trigger" href="#modal4">Add Notes</a>
+  <a class="btn indigo darken-3 modal-trigger" href="#mode2">Add Notes</a>
 <!-- Modal Structure -->
-  <div id="modal4" class="modal">
+  <div id="mode2" class="modal">
     <div class="modal-content">
       <div class="input-field col s6">
-            <textarea class="materialize-textarea"  rows="20" cols="0" id="notes2" ></textarea>
-          <label for="notes2">Please enter any additional notes for this section here:</label>
+            <textarea class="materialize-textarea"  rows="20" cols="0" id="note2" ></textarea>
+          <label for="note2">Please enter any additional notes for this section here:</label>
      </div>
     </div>
     <div class="modal-footer">
@@ -336,7 +338,7 @@ var isOnline = function () {
                     <div class="container white">
          <div class="input-field col s6" >
              <br>
-    <select id="fire1" required="required">
+    <select id="select1" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -349,7 +351,7 @@ var isOnline = function () {
                         
     <div class="input-field col s6">
         <br><br>
-    <select id="fire2" required="required">
+    <select id="select2" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes" id="fire2y">Yes</option>
       <option value="No" id="fire2n">No</option>
@@ -360,7 +362,7 @@ as necessary?</label><br>
   </div>
                     
         <div class="input-field col s6"><br>
-    <select id="fire3" required="required">
+    <select id="select3" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -370,7 +372,7 @@ as necessary?</label><br>
   </div>
                     
             <div class="input-field col s6"><br>
-    <select id="fire4">
+    <select id="select4">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -382,12 +384,12 @@ reached?</label><br>
                
 
                <!-- Modal Trigger -->
-  <a class="btn indigo darken-3 modal-trigger" href="#modal4">Add Notes</a>
+  <a class="btn indigo darken-3 modal-trigger" href="#mode4">Add Notes</a>
 <!-- Modal Structure -->
-  <div id="modal4" class="modal">
+  <div id="mode4" class="modal">
     <div class="modal-content">
       <div class="input-field col s6">
-            <textarea class="materialize-textarea"  rows="20" cols="0" id="notes2" ></textarea>
+            <textarea class="materialize-textarea"  rows="20" cols="0" id="note3" ></textarea>
           <label for="notes2">Please enter any additional notes for this section here:</label>
      </div>
     </div>
@@ -405,7 +407,7 @@ reached?</label><br>
               <div class="collapsible-body white"><p>
                   <div class="container white">        
                        <div class="input-field col s6"><br><br>
-    <select id="building1" required="required">
+    <select id="main1" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -416,7 +418,7 @@ predetermined intervals of time or mileage?</label><br>
   </div>
             
                 <div class="input-field col s6"><br><br>
-    <select id="building2">
+    <select id="main2">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -427,7 +429,7 @@ out remedial work?</label><br>
   </div>
                   
                 <div class="input-field col s6"><br><br>
-    <select id="building3" required="required">
+    <select id="main3" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -439,15 +441,15 @@ a competent person</label><br>
                
  
                <!-- Modal Trigger -->
-  <a class="btn indigo darken-3 modal-trigger" href="#modal7">Add Notes</a>
+  <a class="btn indigo darken-3 modal-trigger" href="#mode3">Add Notes</a>
 <!-- Modal Structure -->
-  <div id="modal7" class="modal">
+  <div id="mode3" class="modal">
     <div class="modal-content">
  <div class="modal-content">
       
       <div class="input-field col s6">
-            <textarea class="materialize-textarea"  rows="20" cols="0" id="notes3" ></textarea>
-          <label for="notes3">Please enter any additional notes for this section here:</label>
+            <textarea class="materialize-textarea"  rows="20" cols="0" id="note4" ></textarea>
+          <label for="note4">Please enter any additional notes for this section here:</label>
      </div>
     </div>
     <div class="modal-footer">
@@ -466,7 +468,7 @@ a competent person</label><br>
               <div class="collapsible-body white"><p>
                   <div class="container white">
                     <div class="input-field col s6"><br><br>
-    <select id="work1" required="required">
+    <select id="risk1" required="required">
       <option value="" disabled selected></option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -476,7 +478,7 @@ a competent person</label><br>
                 </div>  
                       
                     <div class="input-field col s6"><br><br>
-    <select id="work2" required="required">
+    <select id="risk2" required="required">
       <option value="" disabled selected></option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -487,7 +489,7 @@ follow any other site rules?</label><br>
                 </div>
                  
                     <div class="input-field col s6"><br><br>
-    <select id="work3" required="required">
+    <select id="risk3" required="required">
       <option value="" disabled selected></option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -498,7 +500,7 @@ pedestrian traffic using them?</label><br>
                 </div>
                   
                     <div class="input-field col s6"><br><br>
-    <select id="work4" required="required">
+    <select id="risk4" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -508,13 +510,13 @@ pedestrian traffic using them?</label><br>
                 <br></div>
 
                <!-- Modal Trigger -->
-  <a class="btn indigo darken-3 modal-trigger" href="#modal10">Add Notes</a>
+  <a class="btn indigo darken-3 modal-trigger" href="#mode5">Add Notes</a>
 <!-- Modal Structure -->
-  <div id="modal10" class="modal">
+  <div id="mode5" class="modal">
   <div class="modal-content">
     
       <div class="input-field col s6">
-            <textarea class="materialize-textarea"  rows="20" cols="0" id="notes4" ></textarea>
+            <textarea class="materialize-textarea"  rows="20" cols="0" id="note5" ></textarea>
           <label for="notes4">Please enter any additional notes for this section here:</label>
      </div>
     </div>
@@ -532,7 +534,7 @@ pedestrian traffic using them?</label><br>
               <div class="collapsible-body white"><p>
                   <div class="container white">
                     <div class="input-field col s6"><br><br>
-    <select id="machines1" required="required">
+    <select id="drive1" required="required">
       <option value="" disabled selected></option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -543,7 +545,7 @@ authorised to drive</label><br>
                 </div>
 
                     <div class="input-field col s6"><br>
-    <select id="machines2">
+    <select id="drive2">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -554,7 +556,7 @@ are competent?</label><br>
                 </div>            
                       
                     <div class="input-field col s6"><br><br><br>
-    <select id="machines3" required="required" >
+    <select id="drive3" required="required" >
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -565,7 +567,7 @@ particular hazards, speed limits, the appropriate parking and loading areas, etc
                 </div>
                   
                     <div class="input-field col s6"><br><br>
-    <select id="machines4" required="required">
+    <select id="drive4" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -576,14 +578,14 @@ ensure their continued competence?</label><br>
                 </div>                                   
  
                <!-- Modal Trigger -->
-  <a class="btn indigo darken-3 modal-trigger" href="#modal13">Add Notes</a>
+  <a class="btn indigo darken-3 modal-trigger" href="#mode6">Add Notes</a>
 <!-- Modal Structure -->
-  <div id="modal13" class="modal">
+  <div id="mode6" class="modal">
     <div class="modal-content">
       
       <div class="input-field col s6">
-            <textarea class="materialize-textarea"  rows="20" cols="0" id="notes5" ></textarea>
-          <label for="notes5">Please enter any additional notes for this section here:</label>
+            <textarea class="materialize-textarea"  rows="20" cols="0" id="note5" ></textarea>
+          <label for="note5">Please enter any additional notes for this section here:</label>
      </div>
     </div>
     <div class="modal-footer">
@@ -608,7 +610,7 @@ ensure their continued competence?</label><br>
         <input type="file" multiple>
       </div>
       <div class="file-path-wrapper">
-        <input class="file-path validate" type="text" placeholder="Upload one or more files">
+        <input class="file-path validate" type="text" placeholder="Upload one or more files" id="file">
       </div>
     </div>                
                         
@@ -648,7 +650,7 @@ ensure their continued competence?</label><br>
               <br>
               <div class="container">
               <div class="input-field col s6">
-          <input type="text" id="name" type="text">
+          <input type="text" id="fullName" type="text">
           <label for="input2">Full Name</label>
      </div>
               
