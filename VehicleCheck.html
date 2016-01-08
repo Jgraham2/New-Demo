@@ -241,10 +241,101 @@ var isOnline = function () {
               </div>    
     </li>
     <li>
+        <div class="collapsible-header indigo darken-4"><h5 class="white-text">Vehicle Check</h5></div>
+                <div class="collapsible-body white"><p>                       
+                    <div class="container white">
+         <div class="input-field col s6" >
+          <input placeholder=" " id="last_name" type="text" class="validate">
+          <label for="last_name" style="font-size: medium">Registration</label>      
+  </div>
+                        <br>
+                        <div class="input-field col s6" >
+             <br>
+    <select id="fire1" required="required">
+      <option value="" disabled selected> </option>
+      <option value="Yes">John Cunningham</option>
+      <option value="No">Peter Fitzgerald</option>
+      <option value="N/A">Samantha Miller</option>
+      <option value="Yes">Adam Richards</option>
+      <option value="No">Emma Jones</option>
+      <option value="N/A">Paul McKenna</option>
+      <option value="Yes">Frank Evans</option>
+      <option value="No">Robert Brown</option>
+      <option value="N/A">Jane Summers</option>
+    </select>
+             <label for="fire1" style="font-size: medium">Please select the Owner of the Vehicle</label>
+             <br>
+  </div>      
+                        <div>   
+                    <div class="input-field col s6" id="form2">
+                        <label for="form2" style="font-size: medium">Please select the Vehicle Type</label>
+             <p>
+      <input name="group1" type="radio" id="test1" />
+      <label for="test1">Van</label>
+    </p>
+    <p>
+      <input name="group1" type="radio" id="test2" />
+      <label for="test2">Lorry</label>
+    </p>
+    <p>
+      <input name="group1" type="radio" id="test3"  />
+      <label for="test3">Car</label>
+    </p>
+      <p>
+        <input name="group1" type="radio" id="test4"/>
+        <label for="test4">Other</label>
+    </p><br>
+             
+  </div> 
+           </div>              
+
+         <div class="input-field col s6" >
+          <input placeholder=" " id="last_namez" type="text" class="validate">
+          <label for="last_namez" style="font-size: medium">Odometer Number Reading (Mileage)</label>      
+         </div><br>
+         
+              <label for="filled-in-box" style="font-size: medium">Is the vehicle parked correctly?</label>         
+                        <p>
+      <input type="checkbox" class="filled-in" id="filled-in-box" />
+      <label for="filled-in-box">Yes</label>
+    </p>
+<p>
+      <input type="checkbox" class="filled-in" id="filled-in-boxz" />
+      <label for="filled-in-boxz">No</label>
+    </p>
+    
+    <br>
+    <label>Percentage of Usuage</label>
+    <p class="range-field">
+      <input type="range" id="test5" min="0" max="100" />
+    </p>
+    
+    
+               <!-- Modal Trigger -->
+  <a class="btn indigo darken-3 modal-trigger" href="#modal4">Add Notes</a>
+<!-- Modal Structure -->
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <div class="input-field col s6">
+            <textarea class="materialize-textarea"  rows="20" cols="0" id="notes2" ></textarea>
+          <label for="notes2">Please enter any additional notes for this section here:</label>
+     </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
+    </div>
+  </div>
+<br><br>
+  
+        
+</p> </div> </div>   
+    </li>  
+    <li>
         <div class="collapsible-header indigo darken-4"><h5 class="white-text">Vehicle Selection and Suitability</h5></div>
                 <div class="collapsible-body white"><p>                       
                     <div class="container white">
          <div class="input-field col s6" >
+             <br>
     <select id="fire1" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
@@ -252,10 +343,12 @@ var isOnline = function () {
       <option value="N/A">N/A</option>
     </select>
              <label for="fire1" style="font-size: medium">Have suitable vehicles and attachments been selected for the tasks which are actually
-undertaken?</label>
+                 undertaken?</label>
+             <br>
   </div>
                         
     <div class="input-field col s6">
+        <br><br>
     <select id="fire2" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes" id="fire2y">Yes</option>
@@ -263,20 +356,20 @@ undertaken?</label>
       <option value="N/A" id="fire2o">N/A</option>
     </select>
     <label for="fire2" style="font-size: medium">Are they provided with horns, lights, reflectors, reversing lights and other safety features
-as necessary?</label>
+as necessary?</label><br>
   </div>
                     
-        <div class="input-field col s6">
+        <div class="input-field col s6"><br>
     <select id="fire3" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label for="fire3" style="font-size: medium">Do they have effective service and parking brakes?</label>
+    <label for="fire3" style="font-size: medium">Do they have effective service and parking brakes?</label><br>
   </div>
                     
-            <div class="input-field col s6">
+            <div class="input-field col s6"><br>
     <select id="fire4">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
@@ -284,7 +377,7 @@ as necessary?</label>
       <option value="N/A">N/A</option>
     </select>
     <label for="fire4" style="font-size: medium">Is there a safe means of access to and from the vehicles and other parts that need to be
-reached?</label>
+reached?</label><br>
   </div>
                
 
@@ -311,7 +404,7 @@ reached?</label>
       <div class="collapsible-header  indigo darken-4"><h5 class="white-text">Vehicle Maintenance</h5></div>
               <div class="collapsible-body white"><p>
                   <div class="container white">        
-                       <div class="input-field col s6">
+                       <div class="input-field col s6"><br><br>
     <select id="building1" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
@@ -319,10 +412,10 @@ reached?</label>
       <option value="N/A">N/A</option>
     </select>
     <label for="building1" style="font-size: medium">Is there a regular preventative maintenance programme for every vehicle, carried out at
-predetermined intervals of time or mileage?</label>
+predetermined intervals of time or mileage?</label><br>
   </div>
             
-                <div class="input-field col s6">
+                <div class="input-field col s6"><br><br>
     <select id="building2">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
@@ -330,10 +423,10 @@ predetermined intervals of time or mileage?</label>
       <option value="N/A">N/A</option>
     </select>
     <label for="building2" style="font-size: medium">Is there a system for reporting faults on the vehicle and associated equipment and carrying
-out remedial work?</label>
+out remedial work?</label><br>
   </div>
                   
-                <div class="input-field col s6">
+                <div class="input-field col s6"><br><br>
     <select id="building3" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
@@ -341,7 +434,7 @@ out remedial work?</label>
       <option value="N/A">N/A</option>
     </select>
     <label for="building3" style="font-size: medium">Where vehicle attachments lift people or objects, are thorough examinations undertaken by
-a competent person</label>
+a competent person</label><br>
   </div>
                
  
@@ -372,17 +465,17 @@ a competent person</label>
       <div class="collapsible-header  indigo darken-4"><h5 class="white-text">Workplace Transport Risk</h5></div>
               <div class="collapsible-body white"><p>
                   <div class="container white">
-                    <div class="input-field col s6">
+                    <div class="input-field col s6"><br><br>
     <select id="work1" required="required">
       <option value="" disabled selected></option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
       <option value="N/A">N/A</option>
     </select>
-    <label for="work1" style="font-size: medium">Is the level of supervision sufficient to ensure that safe standards are maintained?</label>
+    <label for="work1" style="font-size: medium">Is the level of supervision sufficient to ensure that safe standards are maintained?</label><br>
                 </div>  
                       
-                    <div class="input-field col s6">
+                    <div class="input-field col s6"><br><br>
     <select id="work2" required="required">
       <option value="" disabled selected></option>
       <option value="Yes">Yes</option>
@@ -390,10 +483,10 @@ a competent person</label>
       <option value="N/A">N/A</option>
     </select>
     <label for="work2" style="font-size: medium">Do drivers drive with care, eg use the correct routes, drive within the speed limit and
-follow any other site rules?</label>
+follow any other site rules?</label><br>
                 </div>
                  
-                    <div class="input-field col s6">
+                    <div class="input-field col s6"><br><br>
     <select id="work3" required="required">
       <option value="" disabled selected></option>
       <option value="Yes">Yes</option>
@@ -401,10 +494,10 @@ follow any other site rules?</label>
       <option value="N/A">N/A</option>
     </select>
     <label for="work3" style="font-size: medium">Are the roads and footways suitable for the types and volumes of vehicular traffic and
-pedestrian traffic using them?</label>
+pedestrian traffic using them?</label><br>
                 </div>
                   
-                    <div class="input-field col s6">
+                    <div class="input-field col s6"><br><br>
     <select id="work4" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
@@ -412,7 +505,7 @@ pedestrian traffic using them?</label>
       <option value="N/A">N/A</option>
     </select>
     <label for="work4" style="font-size: medium">Are roadways marked where necessary and are road signs, as used in the Highway Code, installed where necessary?</label>
-                </div>
+                <br></div>
 
                <!-- Modal Trigger -->
   <a class="btn indigo darken-3 modal-trigger" href="#modal10">Add Notes</a>
@@ -438,7 +531,7 @@ pedestrian traffic using them?</label>
       <div class="collapsible-header indigo darken-4"><h5 class="white-text">Driver competence</h5></div>
               <div class="collapsible-body white"><p>
                   <div class="container white">
-                    <div class="input-field col s6">
+                    <div class="input-field col s6"><br><br>
     <select id="machines1" required="required">
       <option value="" disabled selected></option>
       <option value="Yes">Yes</option>
@@ -446,10 +539,10 @@ pedestrian traffic using them?</label>
       <option value="N/A">N/A</option>
     </select>
     <label for="machines1" style="font-size: medium">Do drivers possess the necessary licences or certificates for the vehicles they are
-authorised to drive</label>
+authorised to drive</label><br>
                 </div>
 
-                    <div class="input-field col s6">
+                    <div class="input-field col s6"><br>
     <select id="machines2">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
@@ -457,10 +550,10 @@ authorised to drive</label>
       <option value="N/A">N/A</option>
     </select>
     <label for="machines2" style="font-size: medium">Do you check the previous experience of your drivers and assess them to ensure they
-are competent?</label>
+are competent?</label><br>
                 </div>            
                       
-                    <div class="input-field col s6">
+                    <div class="input-field col s6"><br><br><br>
     <select id="machines3" required="required" >
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
@@ -468,10 +561,10 @@ are competent?</label>
       <option value="N/A">N/A</option>
     </select>
     <label for="machines3" style="font-size: medium">Do you provide site specific training on how to perform the job, and information about
-particular hazards, speed limits, the appropriate parking and loading areas, etc?</label>
+particular hazards, speed limits, the appropriate parking and loading areas, etc?</label><br>
                 </div>
                   
-                    <div class="input-field col s6">
+                    <div class="input-field col s6"><br><br>
     <select id="machines4" required="required">
       <option value="" disabled selected> </option>
       <option value="Yes">Yes</option>
@@ -479,7 +572,7 @@ particular hazards, speed limits, the appropriate parking and loading areas, etc
       <option value="N/A">N/A</option>
     </select>
     <label for="machines4" style="font-size: medium">Do you have a planned programme of refresher training for drivers and others to
-ensure their continued competence?</label>
+ensure their continued competence?</label><br>
                 </div>                                   
  
                <!-- Modal Trigger -->
