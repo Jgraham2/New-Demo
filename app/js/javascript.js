@@ -1,62 +1,6 @@
-
-
-     function post() {
-        save();
-      parseSend();
+    function send() {
+        save()
     }
-    
-    function parseSend() {
-       Parse.initialize("BJcCfj2UEJfZ3zCGplMcvjryobYTXgL1CnuZVxJZ", "MmFeTfIrXhwEUWK5ynHZ6GCsxgi1Ew1z4EnzKdo1");
-        var pmAudit = Parse.Object.extend("pmAudit");
-        var data = JSON.parse(localStorage.getItem("formInput"));
-        
-        data.forEach (function(value) {
-            var audit = new pmAudit();
-            audit.set("location", value.location);
-            audit.set("date", value.date);
-            audit.set("notes1", value.notes1);
-            audit.set("fire1", value.fire1);
-            audit.set("fire2", value.fire2);
-            audit.set("fire3", value.fire3);
-            audit.set("fire4", value.fire4);
-            audit.set("fire5", value.fire5);
-            audit.set("fire6", value.fire6);
-            audit.set("building1", value.building1);
-            audit.set("building2", value.building2);
-            audit.set("building3", value.building3);
-            audit.set("building4", value.building4);
-            audit.set("work1", value.work1);
-            audit.set("work2", value.work2);
-            audit.set("work3", value.work3);
-            audit.set("work4", value.work4);
-            audit.set("machines1", value.machines1);
-            audit.set("machines2", value.machines2);
-            audit.set("machines3", value.machines3);
-            audit.set("machines4", value.machines4);
-            audit.set("machines5", value.machines5);
-            audit.set("electric1", value.electric1);
-            audit.set("electric2", value.electric2);
-            audit.set("electric3", value.electric3);
-            audit.set("chem1", value.chem1);
-            audit.set("chem2", value.chem2);
-            audit.set("chem3", value.chem3);
-            audit.set("chem4", value.chem4);
-            audit.set("chem5", value.chem5);
-            audit.set("chem6", value.chem6);
-            audit.set("name", value.name);
-            audit.save({
-                success: function(){
-                    localStorage.clear();
-                    alert("Online Save Successful!");
-                    location.reload();
-                }, error: function(error){
-                    //alert("Items not saved correctly");
-                    //console.log("Error:"+error.message);
-                }
-            });
-            
-        });     
-    }  
     
     function save() {
         var jsonArray = JSON.parse(localStorage.getItem("formInput")); 
@@ -65,7 +9,6 @@
         }  
         var txtLocation = $('#location option:selected').val();
         var txtDate = $('#date').val();
-        var txtNotesOne = $('#notes1 option:selected').val();
         var txtFireOne = $("#fire1 option:selected").attr("value");
         var txtFireTwo = $('#fire2 option:selected').val();
         var txtFireThree = $('#fire3 option:selected').val();
@@ -97,7 +40,7 @@
         var txtName = $('#name').val();
         //var txtSignature = $('#signature').val(); 
         
-        var formInput = {location:txtLocation,date:txtDate,notes1:txtNotesOne,
+        var formInput = {location:txtLocation,date:txtDate,
             fire1:txtFireOne,fire2:txtFireTwo,fire3:txtFireThree,fire4:txtFireFour,fire5:txtFireFive,fire6:txtFireSix,
             building1:txtBuildingOne,building2:txtBuildingTwo,building3:txtBuildingThree,building4:txtBuildingFour,
             work1:txtWorkOne,work2:txtWorkTwo,work3:txtWorkThree,work4:txtWorkFour, 
@@ -105,8 +48,27 @@
             electric1:txtElectricOne,electric2:txtElectricTwo,electric3:txtElectricThree,
             chem1:txtChemOne,chem2:txtChemTwo,chem3:txtChemThree,chem4:txtChemFour,chem5:txtChemFive,chem6:txtChemSix, 
             name:txtName};
+        
+        
+        var firebaseRoot = new Firebase('https://fir-93e3b.firebaseio.com/');
+        var auditRef = firebaseRoot.child('audit');
+        
+        var connectedRef = new Firebase("https://fir-93e3b.firebaseio.com/.info/connected");
+        connectedRef.on("value", function(snap) {
+        if (snap.val() === true) {
+        
+        auditRef.push(formInput);
+        alert("Saved Online!"); 
+        location.reload();
+            
+        } else {
         jsonArray.push(formInput);
         localStorage.setItem("formInput", JSON.stringify(jsonArray));
-        alert("Saved Offline!");    
+        alert("Saved Offline!"); 
+        }
+        });
+           
         
     }
+
+   

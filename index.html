@@ -4,10 +4,11 @@
 <head>
     <link rel="shortcut icon" href="">
 <!--  Scripts-->
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
 <script type="text/javascript" src="app/js/index.js"></script>
 <script type="text/javascript" src="app/js/offline.min.js"></script>
 <script type="text/javascript" src="app/js/jquery.min.js"></script>
-<script type="text/javascript" src="app/js/parse-1.6.7.js"></script>
+<script type="text/javascript" src="app/js/firebase.js"></script>
 <script type="text/javascript" src="app/js/javascript.js"></script>
 <script type="text/javascript" src="app/js/materialize.js"></script>
 <script type="text/javascript" src="app/js/materialize.min.js"></script>
@@ -26,6 +27,18 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    
+    <script>
+      // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCgnmmC2gj0gsrajsWKkKjl6fu7lI26vV0",
+    authDomain: "fir-93e3b.firebaseapp.com",
+    databaseURL: "https://fir-93e3b.firebaseio.com",
+    storageBucket: "fir-93e3b.appspot.com",
+  };
+  firebase.initializeApp(config);
+
+    </script>
   
     <title>Plant & Maintenance Inspection</title>
     
@@ -85,8 +98,7 @@ $( document ).ready(function(){
         var displayOnlineStatus = document.getElementById("online-status");
 var isOnline = function () {
                             displayOnlineStatus.innerHTML = "Online";
-                            displayOnlineStatus.className = "online";
-                            parseSend();
+                            displayOnlineStatus.className = "online";                          
                     },
     isOffline = function () {
                             displayOnlineStatus.innerHTML = "Offline";
@@ -761,7 +773,7 @@ var isOnline = function () {
 	</script> 
         
 <center>
-        <a class="btn-large waves-effect waves-light indigo darken-3" id="form-submit" onclick="post()" >Submit</a>
+        <a class="btn-large waves-effect waves-light indigo darken-3" id="form-submit" onclick="send()" >Submit</a>
         </center>
     
 </div>
