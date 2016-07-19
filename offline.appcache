@@ -32,7 +32,8 @@ app/image/SGN-Logo.png
 app/image/camera.png
 app/image/takephoto.png
 app/image/sgn_background.jpg
-app/js/javascript.js
+app/js/baseUpload.js
+app/js/firebase.js
 app/js/materialize.js
 app/js/materialize.min.js
 app/js/jquery.min.js
