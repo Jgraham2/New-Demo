@@ -1,5 +1,9 @@
 function send() {
         save()
+        post()
+    localStorage.clear();
+    setTimeout(function() { refresh(); }, 3000);
+
     }
     
     function save() {
@@ -49,37 +53,29 @@ function send() {
             chem1:txtChemOne,chem2:txtChemTwo,chem3:txtChemThree,chem4:txtChemFour,chem5:txtChemFive,chem6:txtChemSix, 
             name:txtName};
         
-        var firebaseRoot = new Firebase('https://fir-93e3b.firebaseio.com/');
-        var auditRef = firebaseRoot.child('audit');
-        
-        var connectedRef = new Firebase("https://fir-93e3b.firebaseio.com/.info/connected");
-        connectedRef.on("value", function(snap) {
-        if (snap.val() === true) {
-        
-        auditRef.push(formInput);
-        alert("Saved Online!"); 
-        location.reload();
-            
-        } else {
         jsonArray.push(formInput);
         localStorage.setItem("formInput", JSON.stringify(jsonArray));
         alert("Saved Offline!"); 
-        }
-        });
-           
-        
+
     }
 
-/*
+
 function post() {
-    var firebaseRoot = new Firebase('https://fir-93e3b.firebaseio.com/');
+        var firebaseRoot = new Firebase('https://fir-93e3b.firebaseio.com/');
         var auditRef = firebaseRoot.child('audit');
-        var data = localStorage.getItem('formInput');
-        auditRef.push(data);
-        alert("Saved Online!"); 
-        localStorage.clear();
-        location.reload();      
+        var newRef = auditRef.push();
+        var data = JSON.parse(localStorage.getItem('formInput'));
+    
+        newRef.set(data);
+
+                    alert("Saved Online!"); 
+              
+       
 }
-*/
+
+function refresh() {
+    location.reload();
+}
+
 
 
