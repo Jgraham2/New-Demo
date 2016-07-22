@@ -6,6 +6,7 @@
 <!--  Scripts-->
 <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
 <script type="text/javascript" src="app/js/index.js"></script>
+<script type="text/javascript" src="app/js/offline.js"></script>
 <script type="text/javascript" src="app/js/offline.min.js"></script>
 <script type="text/javascript" src="app/js/jquery.min.js"></script>
 <script type="text/javascript" src="app/js/firebase.js"></script>
@@ -94,34 +95,6 @@ $( document ).ready(function(){
     </div>
   </nav>     
 <div id="online-status" class="online" style="opacity: 0;"></div>	
-<script>
-        var displayOnlineStatus = document.getElementById("online-status");
-var isOnline = function () {
-                            displayOnlineStatus.innerHTML = "Online";
-                            displayOnlineStatus.className = "online";                          
-                    },
-    isOffline = function () {
-                            displayOnlineStatus.innerHTML = "Offline";
-                            displayOnlineStatus.className = "offline";
-
-                    };
-    if (window.addEventListener) {
-
-            window.addEventListener("online", isOnline);
-            window.addEventListener("offline", isOffline);
-    }
-    else {
-            document.body.ononline = isOnline;
-            document.body.onoffline = isOffline;
-    }
-    if(navigator.onLine) {
-        checkOnLoad: true,
-        isOnline();
-    } else {
-        checkOnLoad: false,
-        isOffine();
-    }  
-</script>
 <script>
     $(document).ready(function(){
     $('.collapsible').collapsible({

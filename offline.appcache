@@ -38,6 +38,7 @@ app/js/materialize.js
 app/js/materialize.min.js
 app/js/jquery.min.js
 app/js/parse-1.6.7.js
+app/js/offline.js
 app/js/offline.min.js
 app/js/index.js
 app/js/VehicleCheck.js

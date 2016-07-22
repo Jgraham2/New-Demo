@@ -1,9 +1,12 @@
 function send() {
-        save()
-        post()
-    localStorage.clear();
+    if(navigator.onLine) {
+        save();
+        post();
+    } else {
+        save();
+    }  
+    
     setTimeout(function() { refresh(); }, 3000);
-
     }
     
     function save() {
@@ -63,13 +66,16 @@ function send() {
 function post() {
         var firebaseRoot = new Firebase('https://fir-93e3b.firebaseio.com/');
         var auditRef = firebaseRoot.child('audit');
-        var newRef = auditRef.push();
-        var data = JSON.parse(localStorage.getItem('formInput'));
+        
+        var fbData = JSON.parse(localStorage.getItem('formInput'));
+        if (fbData == undefined || fbData == null || fbData.length == 0){
+            fbData = [];
+        }  
     
-        newRef.set(data);
+        auditRef.push(fbData);
 
-                    alert("Saved Online!"); 
-              
+        alert("Saved Online!");  
+        localStorage.clear();
        
 }
 
@@ -77,5 +83,33 @@ function refresh() {
     location.reload();
 }
 
-
+function checkOffline() {
+    
+    var displayOnlineStatus = document.getElementById("online-status");
+    var isOnline = function () {
+                            displayOnlineStatus.innerHTML = "Online";
+                            displayOnlineStatus.className = "online";
+                            post();
+                    },
+    isOffline = function () {
+                            displayOnlineStatus.innerHTML = "Offline";
+                            displayOnlineStatus.className = "offline";
+                    };
+    if (window.addEventListener) {
+            window.addEventListener("online", isOnline);
+            window.addEventListener("offline", isOffline);
+    }
+    else {
+            document.body.ononline = isOnline;
+            document.body.onoffline = isOffline;
+    }
+    if(navigator.onLine) {
+        checkOnLoad: true,
+        isOnline();
+    } else {
+        checkOnLoad: false,
+        isOffine();
+    }  
+    
+  }
 
