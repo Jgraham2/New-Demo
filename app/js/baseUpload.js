@@ -4,8 +4,7 @@ function send() {
         post();
     } else {
         save();
-    }  
-    
+    }     
     setTimeout(function() { refresh(); }, 3000);
     }
     
@@ -64,6 +63,7 @@ function send() {
 
 
 function post() {
+    
         var firebaseRoot = new Firebase('https://fir-93e3b.firebaseio.com/');
         var auditRef = firebaseRoot.child('audit');
         
@@ -81,6 +81,17 @@ function post() {
 
 function refresh() {
     location.reload();
+}
+
+function repeat() {
+    setInterval(function() {
+        var local = localStorage.getItem('formInput');
+        if (local == undefined || local == null || local.length == 0){
+            local = [];
+        }  else {
+          checkOffline();  
+        }      
+}, 2000);
 }
 
 function checkOffline() {
