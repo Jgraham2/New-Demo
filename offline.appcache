@@ -28,10 +28,9 @@ app/font/roboto/Roboto-Light.woff2
 app/font/roboto/Roboto-Thin.ttf
 app/font/roboto/Roboto-Thin.woff
 app/font/roboto/Roboto-Thin.woff2
-app/image/SGN-Logo.png
+app/image/niwater-logo.png
 app/image/camera.png
 app/image/takephoto.png
-app/image/sgn_background.jpg
 app/js/baseUpload.js
 app/js/firebase.js
 app/js/materialize.js
