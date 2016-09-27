@@ -42,6 +42,8 @@
         // Get a database reference to our posts
         var ref = new Firebase("https://fir-93e3b.firebaseio.com/");
         var auditRef = ref.child('audit');
+        var dateRef = auditRef.child('date');
+        var path = dateRef.toString();
 
 // Attach an asynchronous callback to read the data at our posts reference
 ref.on("value", function(snapshot) {
@@ -50,20 +52,16 @@ ref.on("value", function(snapshot) {
   console.log("The read failed: " + errorObject.code);
 });
         
+ref.child("audit").on("value", function(snapshot) {
+  alert(snapshot.val());
+  var newPost = snapshot.val();
+  console.log("Name: " + newPost.name);
+  console.log("Date: " + newPost.date);
+  console.log("Location: " + newPost.location);
+});
         
-  function returnList(event) {      
-        var auditDate = document.getElementById('Date').value.trim();
+ 
         
-        	var td = '<td>' + auditDate + '</td>';
-        
-        if(document.getElementById('auditRef') != null){
-    var idPost=document.getElementById('auditRef').innerHTML;
-}
-        
-        document.getElementById('auditDate').value = '';
-      return false;
-        
-  }
     </script>
   
     <title>Plant & Maintenance Inspection</title>
@@ -135,7 +133,7 @@ $( document ).ready(function(){
 </div>
 <div class="container "> 
     
-  <div id="demo">
+  <div id="demo" onload="returnList(event)">
   <!-- Responsive table starts here -->
   <!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
   <div class="table-responsive-vertical shadow-z-1">
@@ -151,7 +149,7 @@ $( document ).ready(function(){
       </thead>
       <tbody>
         <tr>
-          <td id="Date" onload="return returnList(event)"></td>
+          <td id="Date" ></td>
           <td id="Name"></td>
           <td id="Location">
             <a href="" target="_blank">View</a>
