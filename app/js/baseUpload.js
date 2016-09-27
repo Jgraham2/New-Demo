@@ -62,22 +62,47 @@ function send() {
     }
 
 
+var firebaseRoot = new Firebase('https://fir-93e3b.firebaseio.com/');
+var auditRef = firebaseRoot.child('audit');
+
 function post() {
-    
-        var firebaseRoot = new Firebase('https://fir-93e3b.firebaseio.com/');
-        var auditRef = firebaseRoot.child('audit');
         
         var fbData = JSON.parse(localStorage.getItem('formInput'));
-        if (fbData == undefined || fbData == null || fbData.length == 0){
-            fbData = [];
-        }  
-    
+        
         auditRef.push(fbData);
 
         alert("Saved Online!");  
         localStorage.clear();
        
 }
+
+function refreshUI(list) {
+    var lis = '';
+    for (var i = 0; i < list.length; i++) {
+        lis += '<li data-key="' + list[i].key + '">' + list[i].name + '</li>';
+    };
+    document.getElementById('auditRef').innerHTML = lis;
+};
+
+// this will get fired on inital load as well as when ever there is a change in the data
+auditRef.on("value", function(snapshot) {
+    var data = snapshot.val();
+    var list = [];
+    for (var key in data) {
+        if (data.hasOwnProperty(key)) {
+            name = data[key].name ? data[key].name : '';
+            if (name.trim().length > 0) {
+                list.push({
+                    name: name,
+                    key: key
+                })
+            }
+        }
+    }
+    // refresh the UI
+    refreshUI(list);
+});
+
 
 function refresh() {
     location.reload();

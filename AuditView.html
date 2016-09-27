@@ -41,7 +41,7 @@
         
         // Get a database reference to our posts
         var ref = new Firebase("https://fir-93e3b.firebaseio.com/");
-        var auditRef = firebaseRoot.child('audit');
+        var auditRef = ref.child('audit');
 
 // Attach an asynchronous callback to read the data at our posts reference
 ref.on("value", function(snapshot) {
@@ -49,7 +49,21 @@ ref.on("value", function(snapshot) {
 }, function (errorObject) {
   console.log("The read failed: " + errorObject.code);
 });
-
+        
+        
+  function returnList(event) {      
+        var auditDate = document.getElementById('Date').value.trim();
+        
+        	var td = '<td>' + auditDate + '</td>';
+        
+        if(document.getElementById('auditRef') != null){
+    var idPost=document.getElementById('auditRef').innerHTML;
+}
+        
+        document.getElementById('auditDate').value = '';
+      return false;
+        
+  }
     </script>
   
     <title>Plant & Maintenance Inspection</title>
@@ -121,8 +135,6 @@ $( document ).ready(function(){
 </div>
 <div class="container "> 
     
- 
-    
   <div id="demo">
   <!-- Responsive table starts here -->
   <!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
@@ -139,27 +151,16 @@ $( document ).ready(function(){
       </thead>
       <tbody>
         <tr>
-          <td data-title="Date" id="Date"></td>
-          <td data-title="Name" id="Name"></td>
-          <td data-title="Link" id="Link">
-            <a href="https://github.com/zavoloklom/material-design-color-palette" target="_blank">View</a>
+          <td id="Date" onload="return returnList(event)"></td>
+          <td id="Name"></td>
+          <td id="Location">
+            <a href="" target="_blank">View</a>
           </td>
           <td data-title="Status" id="Status">Completed</td>
         </tr>
       </tbody>
     </table>
-      
-    <script> 
-      $(document).on('ready', function () {
-          // Get a database reference to our posts
-        var ref = new Firebase("https://fir-93e3b.firebaseio.com/");
-        var auditRef = firebaseRoot.child('audit');
-  var $date = $('#Date');
-  auditRef.child('0').child('date').on('value', function (snapshot) {
-    $date.text(snapshot.val());
-  });
-});
-     </script>   
+       
       
   </div>
   
