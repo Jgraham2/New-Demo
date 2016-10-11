@@ -60,7 +60,7 @@ $( document ).ready(function(){
     </script>
       <nav class="light-blue darken-2" role="navigation">
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo"><img class="logo center" src="app/image/niwater-logo.png" alt="logo"></a>
+      <a href="#!" class="brand-logo"><img class="logo center" src="app/image/Kainos-Logo.png" alt="logo"></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="dropdown-button" href="#!" data-activates="d1">More Forms<i class="mdi-navigation-arrow-drop-down right"></i></a>
@@ -692,7 +692,17 @@ $( document ).ready(function(){
       <div class="file-path-wrapper">
         <input class="file-path validate" type="text" placeholder="Upload one or more files">
       </div>
-    </div>                
+    </div> 
+                        
+        <script>
+          var ref = new Firebase('gs://fir-93e3b.appspot.com');
+var firebaseImageUploader = new FirebaseImageUploader(ref);
+
+document.querySelector('[type=file]').addEventListener('change', function () {
+	firebaseImageUploader.upload(this.files); 
+});              
+        
+        </script>   
                         
  
          <h5>Photos:</h5>
@@ -703,9 +713,9 @@ $( document ).ready(function(){
                         <center>
                             <div id="photos-content">
                                 <video id="video" style="display: none;" autoplay></video>
-                                <a class="btn indigo darken-3" id="new" href="#photos" onclick="openCamera();"><i class="mdi-image-camera-alt"></i></a>
-                                <a class="btn indigo darken-3" id="snap" href="#photos" style="display: none;" onclick="takePhoto();"><i class="mdi-image-camera-alt"></i></a>
-                            <a class="btn" id="switch" href="#photos" style="display: none;" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>
+                                <a class="btn indigo darken-3" id="new" type="file" href="#photos" onclick="openCamera();"><i class="mdi-image-camera-alt"></i></a>
+                                <a class="btn indigo darken-3" id="snap" href="#photos" style="display: none;" type="file" onclick="takePhoto();"><i class="mdi-image-camera-alt"></i></a>
+                            <a class="btn" id="switch" href="#photos" style="display: none;" type="file" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>
                                 <br>
                             </div>
                         </center>
@@ -746,7 +756,7 @@ $( document ).ready(function(){
 	</script> 
         
 <center>
-        <a class="btn-large waves-effect waves-light indigo darken-3" id="form-submit" onclick="send()" >Submit</a>
+        <a class="btn-large waves-effect waves-light indigo darken-3" id="form-submit" type="file" onclick="send()" >Submit</a>
         </center>
     
 </div>

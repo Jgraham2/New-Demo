@@ -53,7 +53,7 @@ ref.on("value", function(snapshot) {
 });
         
 ref.child("audit").on("value", function(snapshot) {
-  alert(snapshot.val());
+  //alert(snapshot.val());
   var newPost = snapshot.val();
   console.log("Name: " + newPost.name);
   console.log("Date: " + newPost.date);
@@ -83,7 +83,7 @@ $( document ).ready(function(){
     </script>
       <nav class="light-blue darken-2" role="navigation">
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo"><img class="logo center" src="app/image/niwater-logo.png" alt="logo"></a>
+      <a href="#!" class="brand-logo"><img class="logo center" src="app/image/Kainos-Logo.png" width="42" alt="logo"></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="dropdown-button" href="#!" data-activates="d1">More Forms<i class="mdi-navigation-arrow-drop-down right"></i></a>

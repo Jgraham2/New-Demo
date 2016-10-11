@@ -576,8 +576,9 @@ logo {
 img.logo {
 margin: 0 auto;
 text-align: center;
-width: 120px;
-height: 60px;
+padding-top: 10px;
+width: 150px;
+height: 40px;
 }
 
 fieldset {
