@@ -54,7 +54,7 @@ ref.on("value", function(snapshot) {
         
 ref.child("audit").on("value", function(snapshot) {
   //alert(snapshot.val());
-  var newPost = snapshot.val();
+  var newPost = snapshot.val(name);
   console.log("Name: " + newPost.name);
   console.log("Date: " + newPost.date);
   console.log("Location: " + newPost.location);
