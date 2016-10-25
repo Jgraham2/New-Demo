@@ -127,7 +127,7 @@ function checkOffline() {
                             displayOnlineStatus.className = "online";
                             post();
                     },
-    isOffline = function () {
+    var isOffline = function () {
                             displayOnlineStatus.innerHTML = "Offline";
                             displayOnlineStatus.className = "offline";
                     };
@@ -139,13 +139,6 @@ function checkOffline() {
             document.body.ononline = isOnline;
             document.body.onoffline = isOffline;
     }
-    if(navigator.onLine) {
-        checkOnLoad: true,
-        isOnline();
-    } else {
-        checkOnLoad: false,
-        isOffine();
-    }  
     
   }
 
