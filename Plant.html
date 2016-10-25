@@ -45,7 +45,7 @@
     
 </head>
 
-<body onload="repeat()">
+<body >
     <script>
 $( document ).ready(function(){
     $(".button-collapse").sideNav();
@@ -58,6 +58,17 @@ $( document ).ready(function(){
   });
   })
     </script>
+    <script type="text/javascript">
+        function codeAddress() {
+            if(navigator.onLine) {
+            post();
+            } else {
+            checkOffline();
+            }     
+
+        }
+        window.onload = codeAddress;
+        </script>
       <nav class="light-blue darken-2" role="navigation">
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo"><img class="logo center" src="app/image/Kainos-Logo.png" alt="logo"></a>
@@ -755,7 +766,7 @@ document.querySelector('[type=file]').addEventListener('change', function () {
 	</script> 
         
 <center>
-        <a class="btn-large waves-effect waves-light light-blue darken-2" id="form-submit" type="file" onclick="send()" >Submit</a>
+        <a class="btn-large light-blue darken-2" id="form-submit" type="file" onclick="send()" >Submit</a>
         </center>
     
 </div>

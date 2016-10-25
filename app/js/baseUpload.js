@@ -108,26 +108,15 @@ function refresh() {
     location.reload();
 }
 
-function repeat() {
-    setInterval(function() {
-        var local = localStorage.getItem('formInput');
-        if (local == undefined || local == null || local.length == 0){
-            local = [];
-        }  else {
-          checkOffline();  
-        }      
-}, 2000);
-}
 
-function checkOffline() {
-    
+function checkOffline() {  
     var displayOnlineStatus = document.getElementById("online-status");
     var isOnline = function () {
                             displayOnlineStatus.innerHTML = "Online";
                             displayOnlineStatus.className = "online";
                             post();
                     },
-    var isOffline = function () {
+    isOffline = function () {
                             displayOnlineStatus.innerHTML = "Offline";
                             displayOnlineStatus.className = "offline";
                     };
