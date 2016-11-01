@@ -5,7 +5,8 @@ function send() {
     } else {
         save();
     }     
-    setTimeout(function() { refresh(); }, 3000);
+    var form = document.getElementById("form");
+    form.reset();
     }
     
     function save() {
@@ -58,6 +59,39 @@ function send() {
         jsonArray.push(formInput);
         localStorage.setItem("formInput", JSON.stringify(jsonArray));
         alert("Saved Offline!"); 
+        
+/*        txtLocation.value = '';
+        txtDate.value = '';
+        txtFireOne.value = '';
+        txtFireTwo.value = '';
+        txtFireThree.value = '';
+        txtFireFour.value = '';
+        txtFireFive.value = '';
+        txtFireSix.value = '';
+        txtBuildingOne.value = '';
+        txtBuildingTwo.value = '';
+        txtBuildingThree.value = '';
+        txtBuildingFour.value = '';
+        txtWorkOne.value = '';
+        txtWorkTwo.value = '';
+        txtWorkThree.value = '';
+        txtWorkFour.value = '';
+        txtMachinesOne.value = '';
+        txtMachinesTwo.value = '';
+        txtMachinesThree.value = '';
+        txtMachinesFour.value = '';
+        txtMachinesFive.value = '';
+        txtElectricOne.value = '';
+        txtElectricTwo.value = '';
+        txtElectricThree.value = '';
+        txtChemOne.value = '';
+        txtChemTwo.value = '';
+        txtChemThree.value = '';
+        txtChemFour.value = '';
+        txtChemFive.value = '';
+        txtChemSix.value = '';
+        txtName.value = '';
+        txtSignature.value = '';*/
 
     }
 
@@ -114,7 +148,6 @@ function checkOffline() {
     var isOnline = function () {
                             displayOnlineStatus.innerHTML = "Online";
                             displayOnlineStatus.className = "online";
-                            post();
                     },
     isOffline = function () {
                             displayOnlineStatus.innerHTML = "Offline";
