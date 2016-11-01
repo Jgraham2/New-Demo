@@ -142,25 +142,27 @@ function refresh() {
     location.reload();
 }
 
+function doesConnectionExist() {
+    var xhr = new XMLHttpRequest();
+    var file = "app/image/Kainos-Logo.png";
+    var randomNum = Math.round(Math.random() * 10000);
+ 
+    xhr.open('HEAD', file + "?rand=" + randomNum, true);
+    xhr.send();
+     
+    xhr.addEventListener("readystatechange", processRequest, false);
+ 
+    function processRequest(e) {
+      if (xhr.readyState == 4) {
+        if (xhr.status >= 200 && xhr.status < 304) {
+          alert("connection exists!");
+            post();
+        } else {
+          alert("connection doesn't exist!");
+        }
+      }
+    }
+}
 
-function checkOffline() {  
-    var displayOnlineStatus = document.getElementById("online-status");
-    var isOnline = function () {
-                            displayOnlineStatus.innerHTML = "Online";
-                            displayOnlineStatus.className = "online";
-                    },
-    isOffline = function () {
-                            displayOnlineStatus.innerHTML = "Offline";
-                            displayOnlineStatus.className = "offline";
-                    };
-    if (window.addEventListener) {
-            window.addEventListener("online", isOnline);
-            window.addEventListener("offline", isOffline);
-    }
-    else {
-            document.body.ononline = isOnline;
-            document.body.onoffline = isOffline;
-    }
-    
-  }
+
 
