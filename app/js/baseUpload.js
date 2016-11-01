@@ -63,17 +63,16 @@ function send() {
     }
 
 
-var firebaseRoot = new Firebase('https://fir-93e3b.firebaseio.com/');
-var auditRef = firebaseRoot.child('audit');
-
 function post() {
-        
+        var firebaseRoot = new Firebase('https://fir-93e3b.firebaseio.com/');
+        var auditRef = firebaseRoot.child('audit');
         var fbData = JSON.parse(localStorage.getItem('formInput'));
         
         auditRef.push(fbData);
 
         alert("Saved Online!");  
         localStorage.clear();
+        location.reload();
        
 }
 

@@ -6,7 +6,6 @@
 <!--  Scripts-->
 <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
 <script type="text/javascript" src="app/js/index.js"></script>
-<script type="text/javascript" src="app/js/offline.js"></script>
 <script type="text/javascript" src="app/js/offline.min.js"></script>
 <script type="text/javascript" src="app/js/jquery.min.js"></script>
 <script type="text/javascript" src="app/js/firebase.js"></script>
@@ -38,39 +37,10 @@
     storageBucket: "fir-93e3b.appspot.com",
   };
   firebase.initializeApp(config);
-
-    </script>
-    
-    <script>
-    function checkOffline() {  
-    var displayOnlineStatus = document.getElementById("online-status");
-    var isOnline = function () {
-                            displayOnlineStatus.innerHTML = "Online";
-                            displayOnlineStatus.className = "online";
-                            post();
         
-    isOffline = function () {
-                            displayOnlineStatus.innerHTML = "Offline";
-                            displayOnlineStatus.className = "offline";
-                    };
-    if (window.addEventListener) {
-            window.addEventListener("online", isOnline);
-            window.addEventListener("offline", isOffline);
-    }
-    else {
-            document.body.ononline = isOnline;
-            document.body.onoffline = isOffline;
-    }
-    if(navigator.onLine) {
-        checkOnLoad: true,
-        isOnline();
-    } else {
-        checkOnLoad: false,
-        isOffine();
-    } 
-    
-  }
     </script>
+    
+    <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
   
     <title>Plant & Maintenance Inspection</title>
     
@@ -125,7 +95,40 @@ $( document ).ready(function(){
       </ul>
     </div>
   </nav>     
-<div id="online-status" class="online" style="opacity: 0;"></div>	
+<div id="online-status" class="online" style="opacity: 0;"></div>
+    
+    <script>
+    function checkOffline() {  
+    var displayOnlineStatus = document.getElementById("online-status");
+    var isOnline = function () {
+                            displayOnlineStatus.innerHTML = "Online";
+                            displayOnlineStatus.className = "online";
+                            post();
+        
+    isOffline = function () {
+                            displayOnlineStatus.innerHTML = "Offline";
+                            displayOnlineStatus.className = "offline";
+                    };
+    if (window.addEventListener) {
+            window.addEventListener("online", isOnline);
+            window.addEventListener("offline", isOffline);
+    }
+    else {
+            document.body.ononline = isOnline;
+            document.body.onoffline = isOffline;
+    }
+    if(navigator.onLine) {
+        checkOnLoad: true,
+        isOnline();
+    } else {
+        checkOnLoad: false,
+        isOffine();
+    } 
+    
+  }
+    }
+    </script>
+    
 <script>
     $(document).ready(function(){
     $('.collapsible').collapsible({
@@ -340,10 +343,7 @@ $( document ).ready(function(){
       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
     </div>
   </div>
-<br><br>
-  
-        
-</p> </div> </div>   
+<br><br>    
     </li>  
     <li>
       <div class="collapsible-header light-blue darken-2"><h5 class="white-text">Building Safety</h5></div>
@@ -480,9 +480,8 @@ $( document ).ready(function(){
     </div>
   </div>
 <br><br>               
-</p></div></div>
+</div></div>
     
-      
     </li>
     <li>
       <div class="collapsible-header light-blue darken-2"><h5 class="white-text">Machines</h5></div>
@@ -559,7 +558,7 @@ $( document ).ready(function(){
   </div>
    
 <br><br>             
-</p></div></div>    
+</div></div>    
 
     </li>
         <li>
@@ -615,7 +614,7 @@ $( document ).ready(function(){
   </div>
 
 <br><br>      
-</p></div></div>
+</div></div>
       
  
     </li>
@@ -705,7 +704,7 @@ $( document ).ready(function(){
     </div>
   </div>
 <br><br>                
-</p></div></div>    
+</div></div>    
  
     </li>
   
@@ -725,14 +724,14 @@ $( document ).ready(function(){
       </div>
     </div> 
                         
-        <script>
+<!--        <script>
           var ref = new Firebase('gs://fir-93e3b.appspot.com');
 var firebaseImageUploader = new FirebaseImageUploader(ref);
 
 document.querySelector('[type=file]').addEventListener('change', function () {
 	firebaseImageUploader.upload(this.files); 
 });                   
-        </script>   
+        </script>   -->
                         
  
          <h5>Photos:</h5>
@@ -754,7 +753,7 @@ document.querySelector('[type=file]').addEventListener('change', function () {
             </div>
         </div>
 <br><br>      
-</p></div></div>
+</div></div>
       
  
     </li>
