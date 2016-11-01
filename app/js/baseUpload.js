@@ -59,39 +59,6 @@ function send() {
         jsonArray.push(formInput);
         localStorage.setItem("formInput", JSON.stringify(jsonArray));
         alert("Saved Offline!"); 
-        
-/*        txtLocation.value = '';
-        txtDate.value = '';
-        txtFireOne.value = '';
-        txtFireTwo.value = '';
-        txtFireThree.value = '';
-        txtFireFour.value = '';
-        txtFireFive.value = '';
-        txtFireSix.value = '';
-        txtBuildingOne.value = '';
-        txtBuildingTwo.value = '';
-        txtBuildingThree.value = '';
-        txtBuildingFour.value = '';
-        txtWorkOne.value = '';
-        txtWorkTwo.value = '';
-        txtWorkThree.value = '';
-        txtWorkFour.value = '';
-        txtMachinesOne.value = '';
-        txtMachinesTwo.value = '';
-        txtMachinesThree.value = '';
-        txtMachinesFour.value = '';
-        txtMachinesFive.value = '';
-        txtElectricOne.value = '';
-        txtElectricTwo.value = '';
-        txtElectricThree.value = '';
-        txtChemOne.value = '';
-        txtChemTwo.value = '';
-        txtChemThree.value = '';
-        txtChemFour.value = '';
-        txtChemFive.value = '';
-        txtChemSix.value = '';
-        txtName.value = '';
-        txtSignature.value = '';*/
 
     }
 
@@ -110,7 +77,7 @@ function post() {
        
 }
 
-function refreshUI(list) {
+/*function refreshUI(list) {
     var lis = '';
     for (var i = 0; i < list.length; i++) {
         lis += '<li data-key="' + list[i].key + '">' + list[i].name + '</li>';
@@ -135,34 +102,10 @@ auditRef.on("value", function(snapshot) {
     }
     // refresh the UI
     refreshUI(list);
-});
+});*/
 
 
 function refresh() {
     location.reload();
 }
-
-function doesConnectionExist() {
-    var xhr = new XMLHttpRequest();
-    var file = "app/image/Kainos-Logo.png";
-    var randomNum = Math.round(Math.random() * 10000);
- 
-    xhr.open('HEAD', file + "?rand=" + randomNum, true);
-    xhr.send();
-     
-    xhr.addEventListener("readystatechange", processRequest, false);
- 
-    function processRequest(e) {
-      if (xhr.readyState == 4) {
-        if (xhr.status >= 200 && xhr.status < 304) {
-          alert("connection exists!");
-            post();
-        } else {
-          alert("connection doesn't exist!");
-        }
-      }
-    }
-}
-
-
 
