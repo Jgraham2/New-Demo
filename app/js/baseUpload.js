@@ -1,13 +1,14 @@
 function send() {
-    if(navigator.onLine) {
+if(navigator.onLine) {
         save();
         post();
     } else {
         save();
-    }     
+    } 
     var form = document.getElementById("form");
     form.reset();
     }
+    
     
     function save() {
         var jsonArray = JSON.parse(localStorage.getItem("formInput")); 
@@ -62,19 +63,45 @@ function send() {
 
     }
 
+    function checkOffline() {  
+    var displayOnlineStatus = document.getElementById("online-status");
+    var isOnline = function () {
+                            displayOnlineStatus.innerHTML = "Online";
+                            displayOnlineStatus.className = "online";
+                            post();
+    },
+    isOffline = function () {
+                            displayOnlineStatus.innerHTML = "Offline";
+                            displayOnlineStatus.className = "offline";
+                    };
+    if (window.addEventListener) {
+            window.addEventListener("online", isOnline);
+            window.addEventListener("offline", isOffline);
+    }
+    else {
+            document.body.ononline = isOnline;
+            document.body.onoffline = isOffline;
+    }
+    if(navigator.onLine) {
+        checkOnLoad: true,
+        isOnline();
+    } else {
+        checkOnLoad: false,
+        isOffine();
+    }
+    
+    }
 
 function post() {
         var firebaseRoot = new Firebase('https://fir-93e3b.firebaseio.com/');
         var auditRef = firebaseRoot.child('audit');
         var fbData = JSON.parse(localStorage.getItem('formInput'));
-        
+    
         auditRef.push(fbData);
-
         alert("Saved Online!");  
         localStorage.clear();
         location.reload();
-       
-}
+        }
 
 /*function refreshUI(list) {
     var lis = '';
