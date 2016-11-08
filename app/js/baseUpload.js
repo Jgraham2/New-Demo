@@ -72,6 +72,7 @@ if(navigator.onLine) {
     isOffline = function () {
                             displayOnlineStatus.innerHTML = "Offline";
                             displayOnlineStatus.className = "offline";
+                            
                     };
     if (window.addEventListener) {
             window.addEventListener("online", isOnline);
@@ -81,18 +82,17 @@ if(navigator.onLine) {
             document.body.ononline = isOnline;
             document.body.onoffline = isOffline;
     }
-    if(navigator.onLine) {
-        checkOnLoad: true,
-        isOnline();
-    } else {
-        checkOnLoad: false,
-        isOffine();
-    }
-    if (displayOnlineStatus.className = "online") {
+    Offline.check();
+    if(Offline.state == 'up') {
         post();
+        isOnline()
+    } 
+    (Offline.state == 'down') {
+         isOffine();
     }
-        
+       
     }
+    
 
 function post() {
         var firebaseRoot = new Firebase('https://fir-93e3b.firebaseio.com/');
@@ -136,6 +136,4 @@ auditRef.on("value", function(snapshot) {
 function refresh() {
     location.reload();
 }
-
-
 
