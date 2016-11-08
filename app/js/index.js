@@ -106,7 +106,7 @@ function resetCameraButtons() {
  * Tested on Win8.1 with browsers: Chrome 37, Firefox 32, Opera 25, IE 11, Safari 5.1.7
  * You can use this table in Bootstrap (v3) projects. Material Design Responsive Table CSS-style will override basic bootstrap style.
  * JS used only for table constructor: you don't need it in your project
- */
+ 
 
 $(document).ready(function() {
 
@@ -164,3 +164,4 @@ $(document).ready(function() {
 	}
 
 })(jQuery.fn.removeClass);
+*/

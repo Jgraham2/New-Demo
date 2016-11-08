@@ -7,6 +7,14 @@ app/css/materialize.css
 app/css/materialize.min.css
 app/css/style.css
 app/css/fonts.css
+app/css/offline-language-english-indicator.css
+app/css/offline-language-english.css
+app/css/offline-theme-chrome-indicator.css
+app/css/offline-theme-chrome.css
+app/css/offline-theme-dark.css
+app/css/offline-theme-default.css
+app/css/offline-theme-hubspot.css
+app/css/offline-theme-slide.css
 app/font/material-design-icons/Material-Design-Icons.eot
 app/font/material-design-icons/Material-Design-Icons.svg
 app/font/material-design-icons/Material-Design-Icons.ttf
@@ -37,15 +45,22 @@ app/js/materialize.js
 app/js/materialize.min.js
 app/js/jquery.min.js
 app/js/parse-1.6.7.js
-app/js/offline.min.js
 app/js/index.js
 app/js/VehicleCheck.js
 app/js/flashcanvas.js
 app/js/flashcanvas.swf
 app/js/jSignature.js
+app/js/offline.js
+app/js/reconnect.js
+app/js/requests.js
+simulate.js
+app/js/snake.js
+app/js/ui.js
 offline.appcache
 Plant.html
 VehicleCheck.html
+AuditView.html
+favicon.ico
 
 
 # offline.html will be displayed if the user is offline

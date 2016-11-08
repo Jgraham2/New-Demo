@@ -95,8 +95,15 @@ $( document ).ready(function(){
       </ul>
     </div>
   </nav>     
-<div id="online-status" class="online" style="opacity: 0;"></div>
+<div id="online-status" class="online" style="opacity: 0;" onchange="post()"></div>
 
+    <script>
+$(document).ready(function(){    
+$('.offline-ui.offline-ui-up').on('online', function(){
+post();
+});
+});
+    </script>
     
 <script>
     $(document).ready(function(){

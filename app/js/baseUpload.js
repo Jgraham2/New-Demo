@@ -65,10 +65,9 @@ if(navigator.onLine) {
 
     function checkOffline() {  
     var displayOnlineStatus = document.getElementById("online-status");
-    var isOnline = function () {
+        var isOnline = function () {
                             displayOnlineStatus.innerHTML = "Online";
                             displayOnlineStatus.className = "online";
-                            post();
     },
     isOffline = function () {
                             displayOnlineStatus.innerHTML = "Offline";
@@ -89,7 +88,10 @@ if(navigator.onLine) {
         checkOnLoad: false,
         isOffine();
     }
-    
+    if (displayOnlineStatus.className = "online") {
+        post();
+    }
+        
     }
 
 function post() {
@@ -134,4 +136,6 @@ auditRef.on("value", function(snapshot) {
 function refresh() {
     location.reload();
 }
+
+
 
