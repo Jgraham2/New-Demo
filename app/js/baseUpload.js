@@ -85,10 +85,10 @@ if(navigator.onLine) {
     Offline.check();
     if(Offline.state == 'up') {
         post();
-        isOnline()
+        isOnline();
     } 
-    (Offline.state == 'down') {
-         isOffine();
+    if (Offline.state == 'down') {
+        isOffine();
     }
        
     }
