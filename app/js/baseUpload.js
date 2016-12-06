@@ -1,12 +1,14 @@
 function send() {
-    if(navigator.onLine) {
+if(navigator.onLine) {
         save();
         post();
     } else {
         save();
-    }     
-    setTimeout(function() { refresh(); }, 3000);
+    } 
+    var form = document.getElementById("form");
+    form.reset();
     }
+    
     
     function save() {
         var jsonArray = JSON.parse(localStorage.getItem("formInput")); 
@@ -61,50 +63,16 @@ function send() {
 
     }
 
-
-function post() {
-    
-        var firebaseRoot = new Firebase('https://fir-93e3b.firebaseio.com/');
-        var auditRef = firebaseRoot.child('audit');
-        
-        var fbData = JSON.parse(localStorage.getItem('formInput'));
-        if (fbData == undefined || fbData == null || fbData.length == 0){
-            fbData = [];
-        }  
-    
-        auditRef.push(fbData);
-
-        alert("Saved Online!");  
-        localStorage.clear();
-       
-}
-
-function refresh() {
-    location.reload();
-}
-
-function repeat() {
-    setInterval(function() {
-        var local = localStorage.getItem('formInput');
-        if (local == undefined || local == null || local.length == 0){
-            local = [];
-        }  else {
-          checkOffline();  
-        }      
-}, 2000);
-}
-
-function checkOffline() {
-    
+    function checkOffline() {  
     var displayOnlineStatus = document.getElementById("online-status");
-    var isOnline = function () {
+        var isOnline = function () {
                             displayOnlineStatus.innerHTML = "Online";
                             displayOnlineStatus.className = "online";
-                            post();
-                    },
+    },
     isOffline = function () {
                             displayOnlineStatus.innerHTML = "Offline";
                             displayOnlineStatus.className = "offline";
+                            
                     };
     if (window.addEventListener) {
             window.addEventListener("online", isOnline);
@@ -114,13 +82,58 @@ function checkOffline() {
             document.body.ononline = isOnline;
             document.body.onoffline = isOffline;
     }
-    if(navigator.onLine) {
-        checkOnLoad: true,
+    Offline.check();
+    if(Offline.state == 'up') {
+        post();
         isOnline();
-    } else {
-        checkOnLoad: false,
+    } 
+    if (Offline.state == 'down') {
         isOffine();
-    }  
+    }
+       
+    }
     
-  }
+
+function post() {
+        var firebaseRoot = new Firebase('https://fir-93e3b.firebaseio.com/');
+        var auditRef = firebaseRoot.child('audit');
+        var fbData = JSON.parse(localStorage.getItem('formInput'));
+    
+        auditRef.push(fbData);
+        alert("Saved Online!");  
+        localStorage.clear();
+        location.reload();
+        }
+
+/*function refreshUI(list) {
+    var lis = '';
+    for (var i = 0; i < list.length; i++) {
+        lis += '<li data-key="' + list[i].key + '">' + list[i].name + '</li>';
+    };
+    document.getElementById('auditRef').innerHTML = lis;
+};
+
+// this will get fired on inital load as well as when ever there is a change in the data
+auditRef.on("value", function(snapshot) {
+    var data = snapshot.val();
+    var list = [];
+    for (var key in data) {
+        if (data.hasOwnProperty(key)) {
+            name = data[key].name ? data[key].name : '';
+            if (name.trim().length > 0) {
+                list.push({
+                    name: name,
+                    key: key
+                })
+            }
+        }
+    }
+    // refresh the UI
+    refreshUI(list);
+});*/
+
+
+function refresh() {
+    location.reload();
+}
 

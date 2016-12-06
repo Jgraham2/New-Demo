@@ -6,7 +6,6 @@
 <!--  Scripts-->
 <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
 <script type="text/javascript" src="app/js/index.js"></script>
-<script type="text/javascript" src="app/js/offline.js"></script>
 <script type="text/javascript" src="app/js/offline.min.js"></script>
 <script type="text/javascript" src="app/js/jquery.min.js"></script>
 <script type="text/javascript" src="app/js/firebase.js"></script>
@@ -38,14 +37,16 @@
     storageBucket: "fir-93e3b.appspot.com",
   };
   firebase.initializeApp(config);
-
+        
     </script>
+    
+    <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
   
-    <title>Plant & Maintenance Inspection</title>
+    <title>Health and Safety Inspection</title>
     
 </head>
 
-<body onload="repeat()">
+<body>
     <script>
 $( document ).ready(function(){
     $(".button-collapse").sideNav();
@@ -58,19 +59,19 @@ $( document ).ready(function(){
   });
   })
     </script>
-      <nav class="indigo darken-4" role="navigation">
+      <nav class="light-blue darken-2" role="navigation">
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo"><img class="logo center" src="app/image/SGN-Logo.png" alt="logo"></a>
+      <a href="#!" class="brand-logo"><img class="logo center" src="app/image/Kainos-Logo.png" alt="logo"></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="dropdown-button" href="#!" data-activates="d1">More Forms<i class="mdi-navigation-arrow-drop-down right"></i></a>
       <ul id='d1' class='dropdown-content'>
-        <li><a href="VehicleCheck.html">Transport  & Driving Safety Inspection</a></li>
-        <li><a href="#!">WID DREPR</a></li>
-        <li><a href="#!">WID Mains</a></li>
-        <li><a href="#!">WID Construction Services</a></li>
-        <li><a href="#!">WID Meter</a></li>
-        <li><a href="Plant.html">Plant & Maintenance Inspection</a></li>
+        <li><a href="VehicleCheck.html">Transport and Driving Safety Inspection</a></li>
+        <li><a href="#!">Emergency Check</a></li>
+        <li><a href="#!">Water Mains</a></li>
+        <li><a href="#!">Construction Services</a></li>
+        <li><a href="#!">Meter Check</a></li>
+        <li><a href="Plant.html">Health and Safety Inspection</a></li>
       </ul>
     </li>
         <li><a href="badges.html">Account</a></li>
@@ -80,12 +81,12 @@ $( document ).ready(function(){
       <ul class="side-nav" id="mobile-demo">
   <li><a class="dropdown-button" href="#!" data-activates="d2">More Forms<i class="mdi-navigation-arrow-drop-down right"></i></a>
       <ul id='d2' class='dropdown-content'>
-        <li><a href="VehicleCheck.html">Transport  & Driving Safety Inspection</a></li>
-        <li><a href="#!">WID DREPR</a></li>
-        <li><a href="#!">WID Mains</a></li>
-        <li><a href="#!">WID Construction Services</a></li>
-         <li><a href="#!">WID Meter</a></li>
-        <li><a href="Plant.html">Plant & Maintenance Inspection</a></li>
+        <li><a href="VehicleCheck.html">Transport and Driving Safety Inspection</a></li>
+        <li><a href="#!">Emergency Check</a></li>
+        <li><a href="#!">Water Mains</a></li>
+        <li><a href="#!">Construction Services</a></li>
+        <li><a href="#!">Meter Check</a></li>
+        <li><a href="Plant.html">Health and Safety Inspection</a></li>
       </ul>
     </li>
         <li><a href="badges.html">Account</a></li>
@@ -94,7 +95,16 @@ $( document ).ready(function(){
       </ul>
     </div>
   </nav>     
-<div id="online-status" class="online" style="opacity: 0;"></div>	
+<div id="online-status" class="online" style="opacity: 0;"></div>
+
+    <script>
+$(document).ready(function(){    
+Offline.on('up',function(){
+post();
+});
+});
+    </script>
+    
 <script>
     $(document).ready(function(){
     $('.collapsible').collapsible({
@@ -123,7 +133,7 @@ $( document ).ready(function(){
 <form id="form" data-parsley-validate >
               <div class="section no-pad-bot" id="index-banner">
   <div class="container">
-    <h3 class="header center black-text">Plant & Maintenance Inspection Form</h3>
+    <h3 class="header center black-text">Health and Safety Inspection Form</h3>
     <div class="row center">
     <!--     <div class="progress" >
       <div class="determinate" id='percentage'></div>
@@ -132,11 +142,11 @@ $( document ).ready(function(){
     </div>
   </div>
 </div>
-<div class="container "> 
+<div class="container"> 
     
-<ul class="collapsible indigo darken-4" data-collapsible="accordion">
+<ul class="collapsible light-blue darken-2" data-collapsible="accordion">
     <li>
-        <div class="collapsible-header indigo darken-4"><h5 class="white-text">Details</h5></div>
+        <div class="collapsible-header light-blue darken-2"><h5 class="white-text">Details</h5></div>
       <div class="collapsible-body white"><p>             
           <div class="container white">
 <div class="input-field col s12"> 
@@ -226,7 +236,7 @@ $( document ).ready(function(){
               </div>    
     </li>
     <li>
-        <div class="collapsible-header indigo darken-4"><h5 class="white-text">Fire Prevention</h5></div>
+        <div class="collapsible-header light-blue darken-2"><h5 class="white-text">Fire Prevention</h5></div>
                 <div class="collapsible-body white"><p>                       
                     <div class="container white">
          <div class="input-field col s6" >
@@ -309,13 +319,10 @@ $( document ).ready(function(){
       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
     </div>
   </div>
-<br><br>
-  
-        
-</p> </div> </div>   
+<br><br>    
     </li>  
     <li>
-      <div class="collapsible-header  indigo darken-4"><h5 class="white-text">Building Safety</h5></div>
+      <div class="collapsible-header light-blue darken-2"><h5 class="white-text">Building Safety</h5></div>
               <div class="collapsible-body white"><p>
                   <div class="container white">        
                        <div class="input-field col s6">
@@ -386,7 +393,7 @@ $( document ).ready(function(){
  
     </li>
         <li>
-      <div class="collapsible-header  indigo darken-4"><h5 class="white-text">Work Station</h5></div>
+      <div class="collapsible-header  light-blue darken-2"><h5 class="white-text">Work Station</h5></div>
               <div class="collapsible-body white"><p>
                   <div class="container white">
                     <div class="input-field col s6">
@@ -449,12 +456,11 @@ $( document ).ready(function(){
     </div>
   </div>
 <br><br>               
-</p></div></div>
+</div></div>
     
-      
     </li>
     <li>
-      <div class="collapsible-header indigo darken-4"><h5 class="white-text">Machines</h5></div>
+      <div class="collapsible-header light-blue darken-2"><h5 class="white-text">Machines</h5></div>
               <div class="collapsible-body white"><p>
                   <div class="container white">
                     <div class="input-field col s6">
@@ -528,11 +534,11 @@ $( document ).ready(function(){
   </div>
    
 <br><br>             
-</p></div></div>    
+</div></div>    
 
     </li>
         <li>
-      <div class="collapsible-header indigo darken-4"><h5 class="white-text">Electrical Safety</h5></div>
+      <div class="collapsible-header light-blue darken-2"><h5 class="white-text">Electrical Safety</h5></div>
               <div class="collapsible-body white"><p>
                   <div class="container white">
                     <div class="input-field col s6">
@@ -584,12 +590,12 @@ $( document ).ready(function(){
   </div>
 
 <br><br>      
-</p></div></div>
+</div></div>
       
  
     </li>
     <li>
-      <div class="collapsible-header  indigo darken-4"><h5 class="white-text">Chemical Safety</h5></div>
+      <div class="collapsible-header  light-blue darken-2"><h5 class="white-text">Chemical Safety</h5></div>
               <div class="collapsible-body white"><p>
         <div class="container white">
 <div class="input-field col s6"><br>
@@ -674,12 +680,12 @@ $( document ).ready(function(){
     </div>
   </div>
 <br><br>                
-</p></div></div>    
+</div></div>    
  
     </li>
   
            <li>
-      <div class="collapsible-header indigo darken-4"><h5 class="white-text">Supporting Material</h5></div>
+      <div class="collapsible-header light-blue darken-2"><h5 class="white-text">Supporting Material</h5></div>
               <div class="collapsible-body white"><p>
                   <div class="container white">
                     <div class="input-field col s6">
@@ -692,7 +698,16 @@ $( document ).ready(function(){
       <div class="file-path-wrapper">
         <input class="file-path validate" type="text" placeholder="Upload one or more files">
       </div>
-    </div>                
+    </div> 
+                        
+<!--        <script>
+          var ref = new Firebase('gs://fir-93e3b.appspot.com');
+var firebaseImageUploader = new FirebaseImageUploader(ref);
+
+document.querySelector('[type=file]').addEventListener('change', function () {
+	firebaseImageUploader.upload(this.files); 
+});                   
+        </script>   -->
                         
  
          <h5>Photos:</h5>
@@ -703,9 +718,9 @@ $( document ).ready(function(){
                         <center>
                             <div id="photos-content">
                                 <video id="video" style="display: none;" autoplay></video>
-                                <a class="btn indigo darken-3" id="new" href="#photos" onclick="openCamera();"><i class="mdi-image-camera-alt"></i></a>
-                                <a class="btn indigo darken-3" id="snap" href="#photos" style="display: none;" onclick="takePhoto();"><i class="mdi-image-camera-alt"></i></a>
-                            <a class="btn" id="switch" href="#photos" style="display: none;" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>
+                                <a class="btn indigo darken-3" id="new" type="file" href="#photos" onclick="openCamera();"><i class="mdi-image-camera-alt"></i></a>
+                                <a class="btn indigo darken-3" id="snap" href="#photos" style="display: none;" type="file" onclick="takePhoto();"><i class="mdi-image-camera-alt"></i></a>
+                            <a class="btn" id="switch" href="#photos" style="display: none;" type="file" onclick="cycleCameras();"><i class="material-icons">&#xE41E;</i></a>
                                 <br>
                             </div>
                         </center>
@@ -714,7 +729,7 @@ $( document ).ready(function(){
             </div>
         </div>
 <br><br>      
-</p></div></div>
+</div></div>
       
  
     </li>
@@ -746,7 +761,7 @@ $( document ).ready(function(){
 	</script> 
         
 <center>
-        <a class="btn-large waves-effect waves-light indigo darken-3" id="form-submit" onclick="send()" >Submit</a>
+        <a class="btn-large light-blue darken-2" id="form-submit" type="file" onclick="send()" >Submit</a>
         </center>
     
 </div>

@@ -1,71 +1,3 @@
-/* Custom Stylesheet */
-/**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
- */
-
-.icon-block {
-  padding: 0 15px;
-}
-.icon-block .material-icons {
-	font-size: inherit;
-}
-.online {
-    color: green;
-}
-
-.offline {
-    color: red;
-}
-
-.-blue {
-  background-color: #012249;
-}
-
-.-orange {
-  background-color: #EF663B;
-}
-
-.-orange-text {
-  color: #EF663B;
-}
-
-.no-margin-or-padding {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-  position: relative;
-}
-
-.thumbnail {
-  background-color: #CCC;
-  background-position: center center;
-  background-repeat: no-repeat;
-  position: relative;
-  width: 117px;
-  height: 117px;
-  margin: 5px 5px 5px 0px;
-  background-size: cover;
-  -moz-background-size: cover;
-}
-
-.thumbnail-text {
-  position: absolute;
-  top: 35%;
-  left: 35%;
-}
-
-video {
-  width: 100%;
-}
-
-logo {
-  max-width: 40px;
-  max-height: 40px;
-}
-
 /* line 4, ../sass/_offline-theme-base.sass */
 .offline-ui, .offline-ui *, .offline-ui:before, .offline-ui:after, .offline-ui *:before, .offline-ui *:after {
   -webkit-box-sizing: border-box;
@@ -526,7 +458,7 @@ logo {
   }
 }
 
-/* line 21, ../sass/offline-theme-slide.sass */
+/* line 16, ../sass/offline-theme-dark.sass */
 .offline-ui {
   -webkit-border-radius: 0 0 4px 4px;
   -moz-border-radius: 0 0 4px 4px;
@@ -534,13 +466,16 @@ logo {
   -o-border-radius: 0 0 4px 4px;
   border-radius: 0 0 4px 4px;
   font-family: "Helvetica Neue", sans-serif;
+  font-weight: 300;
   padding: 1em;
   width: 38em;
   max-width: 100%;
+  background: black;
+  color: #cccccc;
   overflow: hidden;
 }
 @media (max-width: 38em) {
-  /* line 21, ../sass/offline-theme-slide.sass */
+  /* line 16, ../sass/offline-theme-dark.sass */
   .offline-ui {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -549,8 +484,46 @@ logo {
     border-radius: 0;
   }
 }
-
-/* line 45, ../sass/offline-theme-slide.sass */
+/* line 30, ../sass/offline-theme-dark.sass */
+.offline-ui .offline-ui-content {
+  padding-left: 2em;
+}
+/* line 33, ../sass/offline-theme-dark.sass */
+.offline-ui .offline-ui-content:before {
+  line-height: 1.25em;
+}
+/* line 36, ../sass/offline-theme-dark.sass */
+.offline-ui .offline-ui-content:after {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 1em;
+  margin: auto;
+  height: 1em;
+  width: 1em;
+}
+/* line 48, ../sass/offline-theme-dark.sass */
+.offline-ui .offline-ui-retry {
+  position: absolute;
+  right: 3em;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  color: inherit;
+  line-height: 3.5em;
+  height: 3.5em;
+  margin: auto;
+  padding: 0 1em;
+}
+/* line 61, ../sass/offline-theme-dark.sass */
 .offline-ui.offline-ui-up {
   -webkit-animation: offline-dropout forwards 0.5s 2s;
   -moz-animation: offline-dropout forwards 0.5s 2s;
@@ -558,10 +531,12 @@ logo {
   -o-animation: offline-dropout forwards 0.5s 2s;
   animation: offline-dropout forwards 0.5s 2s;
   -webkit-backface-visibility: hidden;
-  background: #d6e9c6;
-  color: #468847;
 }
-/* line 50, ../sass/offline-theme-slide.sass */
+/* line 64, ../sass/offline-theme-dark.sass */
+.offline-ui.offline-ui-up .offline-ui-content:after {
+  background: #80d580;
+}
+/* line 67, ../sass/offline-theme-dark.sass */
 .offline-ui.offline-ui-down {
   -webkit-animation: offline-dropin 0.5s;
   -moz-animation: offline-dropin 0.5s;
@@ -569,25 +544,51 @@ logo {
   -o-animation: offline-dropin 0.5s;
   animation: offline-dropin 0.5s;
   -webkit-backface-visibility: hidden;
-  background: #ec8787;
-  color: #551313;
 }
-
-img.logo {
-margin: 0 auto;
-text-align: center;
-padding-top: 10px;
-width: 150px;
-height: 40px;
+/* line 70, ../sass/offline-theme-dark.sass */
+.offline-ui.offline-ui-down .offline-ui-content:after {
+  background: #e24949;
 }
-
-fieldset {
-    border: 0;
+/* line 73, ../sass/offline-theme-dark.sass */
+.offline-ui.offline-ui-down.offline-ui-connecting, .offline-ui.offline-ui-down.offline-ui-waiting {
+  padding-right: 3em;
 }
-
-#containerBar {
-  margin: 20px;
-  width: 400px;
-  height: 8px;
-  position: relative;
+/* line 76, ../sass/offline-theme-dark.sass */
+.offline-ui.offline-ui-down.offline-ui-connecting .offline-ui-content:after, .offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content:after {
+  background: #e24949;
+}
+/* line 79, ../sass/offline-theme-dark.sass */
+.offline-ui.offline-ui-down.offline-ui-connecting:after, .offline-ui.offline-ui-down.offline-ui-waiting:after {
+  -webkit-animation: offline-rotation 0.7s linear infinite;
+  -moz-animation: offline-rotation 0.7s linear infinite;
+  -ms-animation: offline-rotation 0.7s linear infinite;
+  -o-animation: offline-rotation 0.7s linear infinite;
+  animation: offline-rotation 0.7s linear infinite;
+  -webkit-backface-visibility: hidden;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  content: " ";
+  display: block;
+  position: absolute;
+  right: 1em;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 1em;
+  width: 1em;
+  border: 2px solid transparent;
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-left-color: rgba(255, 255, 255, 0.5);
+  opacity: 0.7;
+}
+/* line 96, ../sass/offline-theme-dark.sass */
+.offline-ui.offline-ui-down.offline-ui-waiting {
+  padding-right: 11em;
+}
+/* line 99, ../sass/offline-theme-dark.sass */
+.offline-ui.offline-ui-down.offline-ui-waiting.offline-ui-reconnect-failed-2s {
+  padding-right: 0;
 }
